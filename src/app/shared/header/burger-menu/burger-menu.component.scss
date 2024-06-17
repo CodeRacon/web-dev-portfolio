@@ -1,0 +1,69 @@
+@import "../../../../variables.scss";
+
+$icon-color: $accent;
+$icon-width: 60px;
+$icon-height: 46px;
+$icon-line-height: 25%;
+
+.hamburger-icon-animated {
+  transform: scale(0.8);
+
+  .wrapper {
+    width: $icon-width;
+    height: $icon-height;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .line {
+      position: absolute;
+      width: 100%;
+      height: $icon-line-height;
+      background-color: $icon-color;
+      border-radius: 0px;
+    }
+
+    &.icon-burger {
+      .line:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      .line:nth-child(2) {
+        top: calc(50% - #{$icon-line-height} / 2);
+        left: 0;
+        z-index: 1;
+      }
+
+      .line:nth-child(3) {
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    &.icon-close {
+      transform: rotate(-90deg);
+
+      .line:nth-child(1) {
+        transform: rotate(45deg);
+        top: calc(50% - #{$icon-line-height} / 2);
+        left: 0;
+        opacity: 0;
+      }
+
+      .line:nth-child(2) {
+        transform: rotate(45deg);
+        top: calc(50% - #{$icon-line-height} / 2);
+        left: 0;
+        opacity: 0;
+      }
+    }
+  }
+}
