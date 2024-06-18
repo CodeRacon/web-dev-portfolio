@@ -25,7 +25,7 @@ body {
   padding: 0;
   color: $text;
   background-image: radial-gradient($primary 1px, transparent 2px);
-  background-size: 4rem 4rem;
+  background-size: 2rem 2rem;
 
   &::before {
     content: "";
