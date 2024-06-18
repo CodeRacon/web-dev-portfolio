@@ -5,8 +5,9 @@ header {
   justify-content: space-between;
   width: 100%;
   max-width: 1440px;
-  height: 5rem;
+  height: 4.75rem;
   padding: 1rem $section-padding;
+  background-color: $background;
 
   .logo img {
     height: 46px;
