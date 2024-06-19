@@ -1,8 +1,9 @@
 @import "../../../variables.scss";
 
 .hero {
+  position: relative;
   width: 100%;
-  height: calc(100vh - 6rem);
+  height: calc(100vh - $header-height);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,12 +13,17 @@
   .atf {
     height: fit-content;
     cursor: default;
+    margin-top: 6rem;
+
+    @media (width <= 512px) {
+      margin-top: 2.5rem;
+    }
 
     h1 {
+      margin: 0;
       font-family: "Montserrat", sans-serif;
-      font-size: $section-heading;
+      font-size: $heading-fs;
       font-weight: 900;
-      margin: 6rem 0 0 0;
       line-height: 100%;
       text-align: center;
     }
@@ -31,7 +37,7 @@
 
       h2 {
         font-family: "Overpass", sans-serif;
-        font-size: $section-subheading;
+        font-size: $subheading-fs;
         font-weight: 700;
         color: $accent;
         line-height: 2.75rem;
@@ -43,7 +49,7 @@
     .stroke {
       flex-grow: 1;
       height: 3px;
-      margin-top: 3px;
+      margin-top: 8px;
       background-color: $text;
 
       @media (width <= 428px) {
@@ -76,10 +82,14 @@
   }
 
   .hero-cta {
+    position: absolute;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
+    padding: 0 $section-padding 1rem $section-padding;
+
     font-family: "Overpass", sans-serif;
     font-size: 1.5rem;
     line-height: 1.5rem;
@@ -111,7 +121,7 @@
 
         img {
           display: block;
-          // animation: scrollArrow 2.5s infinite;
+          animation: scrollArrow 2.5s infinite;
           filter: invert(8%) sepia(8%) saturate(503%) hue-rotate(289deg)
             brightness(93%) contrast(95%);
         }
