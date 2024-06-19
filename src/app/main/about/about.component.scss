@@ -1,0 +1,101 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+$gap: clamp(1rem, 12.903vw + -5.194rem, 4rem);
+$portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 $section-padding;
+  margin-bottom: 4rem;
+
+  h1 {
+    width: 100%;
+    @include sectionHeading;
+    @media (width <= 384px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: $gap;
+
+    @media (max-width: 960px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .text {
+      width: calc(50% - $gap / 2);
+      @include sectionText;
+
+      &:hover span:not(:first-of-type) {
+        color: $accent;
+      }
+
+      @media (width <= 960px) {
+        width: 82.5%;
+        align-items: flex-start;
+      }
+
+      @media (width <= 640px) {
+        width: 100%;
+        align-items: center;
+      }
+
+      span {
+        color: $text;
+        transition: all 0.15s ease-in-out;
+      }
+
+      span:first-of-type {
+        color: $accent;
+        font-weight: 700;
+      }
+    }
+
+    .img-box {
+      position: relative;
+      margin-top: 8rem;
+      background-image: url("../../../assets/img/me.jpeg");
+      background-size: cover;
+      background-position: center;
+      width: $portrait-size;
+      height: $portrait-size;
+
+      @media (width <= 960px) {
+        margin-top: 0;
+        align-self: flex-end;
+      }
+
+      @media (width <= 448px) {
+        align-self: center;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        top: 1.25rem;
+        left: 1.25rem;
+        width: calc(100% - 0.25rem);
+        height: calc(100% - 0.25rem);
+        outline: 4px $text solid;
+        opacity: 0;
+        transition: all 0.15s ease-in-out;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+}
