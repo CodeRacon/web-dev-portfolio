@@ -51,7 +51,7 @@ body {
   padding: 0;
   color: $text;
   background-image: radial-gradient($primary 1px, transparent 2px);
-  background-size: 2rem 2rem;
+  background-size: 3rem 3rem;
 
   &::before {
     content: "";
@@ -62,7 +62,7 @@ body {
     height: 100%;
     background-image: radial-gradient(
       circle at var(--mouse-x) var(--mouse-y),
-      $bg-hover 1rem,
+      $background 1rem,
       $transparent var(--radius),
       $transparent calc(var(--radius) + 1px),
       $transparent 100%
