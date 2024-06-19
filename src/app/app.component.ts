@@ -3,11 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { HeroComponent } from './main/hero/hero.component';
 import { AboutComponent } from './main/about/about.component';
+import { SkillsComponent } from './main/skills/skills.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, HeroComponent, AboutComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

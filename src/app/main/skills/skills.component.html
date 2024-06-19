@@ -1,0 +1,15 @@
+<section class="skills">
+  <fieldset>
+    <legend>My Skills</legend>
+    <div class="icon-box">
+      @for(tech of techStack; track techStack) {
+      <figure>
+        <img
+          src="./assets/img/icons/{{ tech.icon }}.svg"
+          alt="{{ tech.caption }}"
+        />
+      </figure>
+      }
+    </div>
+  </fieldset>
+</section>
