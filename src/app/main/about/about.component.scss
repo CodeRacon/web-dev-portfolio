@@ -34,7 +34,7 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
       width: calc(50% - $gap / 2);
       @include sectionText;
 
-      &:hover span:not(:first-of-type) {
+      p:hover span:not(:first-of-type) {
         color: $accent;
       }
 
@@ -57,11 +57,29 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
         color: $accent;
         font-weight: 700;
       }
+
+      .btn-box {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 3rem;
+
+        @media (width <= 960px) {
+          display: none;
+        }
+      }
+
+      button {
+        padding: 1.25rem 3.5rem;
+        background-color: unset;
+        border: $standard-border;
+        font-size: inherit;
+      }
     }
 
     .img-box {
       position: relative;
-      margin-top: 8rem;
+      margin-top: 12rem;
       background-image: url("../../../assets/img/me.jpeg");
       background-size: cover;
       background-position: center;
@@ -69,11 +87,11 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
       height: $portrait-size;
 
       @media (width <= 960px) {
-        margin-top: 4rem;
+        margin-top: 2rem;
         align-self: flex-end;
       }
 
-      @media (width <= 448px) {
+      @media (width <= 512px) {
         align-self: center;
         width: 100%;
         aspect-ratio: 1 / 1;
