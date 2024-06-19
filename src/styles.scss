@@ -18,6 +18,18 @@
   border: 1px solid transparent;
 }
 
+html {
+  font-size: 16px;
+
+  @media (width <= 768px) {
+    font-size: 14px;
+  }
+
+  @media (width <= 375px) {
+    font-size: 12px;
+  }
+}
+
 button,
 a {
   cursor: pointer;
@@ -43,14 +55,14 @@ body {
 
   &::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-image: radial-gradient(
       circle at var(--mouse-x) var(--mouse-y),
-      $background 1rem,
+      $bg-hover 1rem,
       $transparent var(--radius),
       $transparent calc(var(--radius) + 1px),
       $transparent 100%

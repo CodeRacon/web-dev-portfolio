@@ -16,10 +16,10 @@ bootstrapApplication(AppComponent, appConfig).catch((err) =>
  *
  * @param mouse - An object containing the current mouse position and whether it has changed.
  */
-const applyMouseEffect = ({ mouse }: TornisUpdateValues) => {
+const applyMouseEffect = ({ mouse, position }: TornisUpdateValues) => {
   if (mouse.changed) {
-    const mouseX = mouse.x;
-    const mouseY = mouse.y;
+    const mouseX = mouse.x - position.left;
+    const mouseY = mouse.y - position.top;
     const radius = 8 * 16;
 
     const bodyElement = document.querySelector('body');
