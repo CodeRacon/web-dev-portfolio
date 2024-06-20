@@ -32,3 +32,23 @@
     margin-bottom: 0;
   }
 }
+
+@mixin contactButton {
+  width: fit-content;
+  padding: 1.25rem 3.5rem;
+  background-color: unset;
+  border: $standard-border;
+  font-size: 1.5rem;
+  transition: all 0.125s ease-in-out;
+
+  &:hover {
+    padding: 1.25rem 4.5rem;
+    font-weight: 700;
+    letter-spacing: 0.025rem;
+  }
+
+  &:active {
+    color: $background;
+    background-color: $text;
+  }
+}
