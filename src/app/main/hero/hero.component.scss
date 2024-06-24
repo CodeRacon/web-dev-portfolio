@@ -38,6 +38,7 @@
       align-items: center;
       gap: clamp(0.675rem, 2.34vw + 0.236rem, 1.5rem);
       padding: 0 clamp(0.375rem, 4.61vw + -0.489rem, 2rem);
+      width: 100%;
 
       h2 {
         font-family: "Overpass", sans-serif;
@@ -62,7 +63,7 @@
 
     .stroke {
       flex-grow: 1;
-      height: 3px;
+      height: 4px;
       margin-top: 8px;
       background-color: $text;
 
