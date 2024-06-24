@@ -18,6 +18,13 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
     @media (width <= 384px) {
       font-size: 3.5rem;
     }
+
+    &:hover {
+      & ~ .about-content .text span:not(:first-of-type) {
+        color: $accent;
+        transition: color 0.15s ease-in-out;
+      }
+    }
   }
 
   .about-content {
@@ -33,10 +40,7 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
     .text {
       width: calc(50% - $gap / 2);
       @include sectionText;
-
-      p:hover span:not(:first-of-type) {
-        color: $accent;
-      }
+      text-wrap: balance;
 
       @media (width <= 960px) {
         width: 82.5%;
