@@ -1,0 +1,124 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.portfolio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 $section-padding;
+  margin-bottom: 4rem;
+
+  h1 {
+    width: 100%;
+    @include sectionHeading;
+    @media (width <= 384px) {
+      font-size: 3.5rem;
+    }
+
+    &:hover {
+      & ~ .text span {
+        color: $accent;
+        transition: color 0.15s ease-in-out;
+      }
+    }
+  }
+
+  .text {
+    @include sectionText;
+
+    span {
+      color: $text;
+      transition: color 0.15s ease-in-out;
+    }
+  }
+
+  .project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    & > .project:nth-last-of-type(odd) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 4rem 0;
+
+      .video-box::before {
+        left: 1.25rem;
+      }
+
+      .video-box::after {
+        right: -2.125rem;
+      }
+    }
+
+    & > .project:nth-of-type(even) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 4rem 0;
+
+      .video-box::before {
+        right: 1.25rem;
+      }
+
+      .video-box::after {
+        left: -2.125rem;
+      }
+    }
+  }
+
+  video {
+    width: 600px;
+    aspect-ratio: 2 / 1;
+    filter: sepia(0.6) brightness(1.45) contrast(0.8);
+  }
+
+  .info-box {
+    @include sectionText;
+  }
+}
+
+.video-box {
+  position: relative;
+  width: fit-content;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: 1.25rem;
+    width: calc(100% - 4px);
+    height: calc(100% - 8px);
+    outline: 4px $text solid;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 11;
+    top: calc(50% + 1.25rem);
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: $text;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}

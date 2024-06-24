@@ -1,0 +1,23 @@
+<section class="portfolio">
+  <h1>Portfolio</h1>
+  <div class="text">
+    <p>
+      I've devoted more than a year now to making the web a little bit brighter.
+      Below, you'll see my approach on doing that
+      <span>with my most recent projects</span>. Feel free to try them out and
+      take a look at their codebase if you like.
+    </p>
+  </div>
+  <div class="project-box">
+    @for( project of projectList; track projectList) {
+    <div class="project">
+      <div class="video-box">
+        <video src="./assets/vid/{{ project.video }}"></video>
+      </div>
+      <div class="info-box">
+        <p>{{ project.name }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</section>
