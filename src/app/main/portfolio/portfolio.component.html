@@ -15,6 +15,7 @@
       (mouseenter)="playVideo(video)"
       (mouseleave)="pauseVideo(video)"
     >
+      <span class="count">{{ $index + 1 }}/{{ projectList.length }}</span>
       <div class="video-box">
         <video #video src="./assets/vid/{{ project.video }}" loop muted></video>
       </div>

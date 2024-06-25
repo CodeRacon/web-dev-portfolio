@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProjectComponent } from './project/project.component';
 
 export interface Project {
   name: string;
@@ -17,7 +16,7 @@ export interface ProjectLink {
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [ProjectComponent],
+  imports: [],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
 })
