@@ -5,17 +5,30 @@
       I've devoted more than a year now to making the web a little bit brighter.
       Below, you'll see my approach on doing that
       <span>with my most recent projects</span>. Feel free to try them out and
-      take a look at their codebase if you like.
+      take a look at their codebase.
     </p>
   </div>
   <div class="project-box">
-    @for( project of projectList; track projectList) {
-    <div class="project">
+    @for ( project of projectList; track project.name) {
+    <div
+      class="project"
+      (mouseenter)="playVideo(video)"
+      (mouseleave)="pauseVideo(video)"
+    >
       <div class="video-box">
-        <video src="./assets/vid/{{ project.video }}"></video>
+        <video #video src="./assets/vid/{{ project.video }}" loop muted></video>
       </div>
       <div class="info-box">
-        <p>{{ project.name }}</p>
+        <h3>{{ project.name }}</h3>
+        <span>{{ project.technologies }}</span>
+        <p>{{ project.description }}</p>
+        <div class="links">
+          @for (link of project.links; track link.name ){
+          <a href="{{ link.url }}" target="_blank">
+            {{ link.name }}
+          </a>
+          }
+        </div>
       </div>
     </div>
     }

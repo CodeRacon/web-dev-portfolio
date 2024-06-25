@@ -25,10 +25,10 @@ export class PortfolioComponent {
   projectList: Project[] = [
     {
       name: 'Join',
-      technologies: ['JavaScript', 'Firebase', 'HTML', 'CSS'],
+      technologies: ['JavaScript | Firebase | HTML | CSS'],
       description:
         'Kanban-based project management tool designed to streamline your workflow and enhance collaboration within your team.',
-      video: 'cq.mp4',
+      video: 'join.mp4',
       links: [
         { name: 'GitHub', url: 'https://github.com/CodeRacon/join' },
         {
@@ -39,9 +39,9 @@ export class PortfolioComponent {
     },
     {
       name: 'CavernQuest',
-      technologies: ['JavaScript', 'OOP', 'Firebase', 'HTML', 'CSS'],
+      technologies: ['JavaScript | OOP | Firebase | HTML | CSS'],
       description:
-        "2D jump'n run browser game, where you play as the brave wizard Woozle, conquering a mossy cavern full of toxic plants, thorns, stings and many more angry, blobby things!",
+        "2D jump'n run browser game, where you help Woozle conquering a mossy cavern full of mystery and danger.",
       video: 'cq.mp4',
       links: [
         {
@@ -53,10 +53,10 @@ export class PortfolioComponent {
     },
     {
       name: 'PokeDex',
-      technologies: ['REST API', 'JavaScript', 'HTML', 'CSS'],
+      technologies: ['REST API | JavaScript | HTML |  CSS'],
       description:
-        'PokeAPI-powered Pokemon-Database to get all the information you need about your favorite litlle monsters!',
-      video: 'cq.mp4',
+        'PokeAPI-powered Pokemon-Database to get all the information you need about your favorite little monsters!',
+      video: 'poke.mp4',
       links: [
         {
           name: 'GitHub',
@@ -66,4 +66,13 @@ export class PortfolioComponent {
       ],
     },
   ];
+
+  playVideo(video: HTMLVideoElement): void {
+    video.play();
+  }
+
+  pauseVideo(video: HTMLVideoElement): void {
+    video.pause();
+    video.currentTime = 0;
+  }
 }
