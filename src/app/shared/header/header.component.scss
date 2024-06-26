@@ -1,4 +1,5 @@
 @import "../../../variables.scss";
+@import "../../../mixins.scss";
 
 header {
   display: flex;
@@ -9,7 +10,23 @@ header {
   padding: 1rem $section-padding;
   background-color: $background;
 
-  .logo img {
-    height: 46px;
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .name p {
+      @include sectionText;
+      font-size: 1rem;
+      margin: 0.25rem;
+      line-height: 100%;
+      font-weight: 300;
+      color: $accent;
+      text-shadow: 1px 1px 0px $primary;
+    }
+
+    img {
+      height: 46px;
+    }
   }
 }
