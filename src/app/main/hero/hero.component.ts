@@ -1,9 +1,11 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { TextShadowOffsetDirective } from '../../shared/common/text-shadow-offset.directive';
+import { BoxShadowOffsetDirective } from '../../shared/common/box-shadow-offset.directive';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [],
+  imports: [TextShadowOffsetDirective, BoxShadowOffsetDirective],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
