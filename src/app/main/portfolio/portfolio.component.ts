@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TextShadowOffsetDirective } from '../../shared/common/text-shadow-offset.directive';
+import { BoxShadowOffsetDirective } from '../../shared/common/box-shadow-offset.directive';
 
 export interface Project {
   name: string;
@@ -16,7 +18,7 @@ export interface ProjectLink {
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [],
+  imports: [TextShadowOffsetDirective, BoxShadowOffsetDirective],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
 })

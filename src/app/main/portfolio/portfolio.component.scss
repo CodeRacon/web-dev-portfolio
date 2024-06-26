@@ -205,6 +205,12 @@
 
       a {
         @include contactButton;
+        padding: 1rem 2.875rem;
+        font-size: 1.25rem;
+
+        &:hover {
+          padding: 1rem 3.75rem;
+        }
       }
     }
   }
