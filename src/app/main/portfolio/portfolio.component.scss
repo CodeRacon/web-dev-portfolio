@@ -1,13 +1,16 @@
 @import "../../../variables.scss";
 @import "../../../mixins.scss";
 
+$vid-width-960: clamp(25rem, 41.667vw + 0rem, 37.5rem);
+$info-box-gap-960: clamp(0.75rem, 1.25vw + 0rem, 1.125rem);
+
 .portfolio {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 $section-padding;
-  margin-bottom: 4rem;
+  padding: 0 $section-padding-960;
+  margin-bottom: 2rem;
 
   h1 {
     width: 100%;
@@ -92,29 +95,21 @@
       .video-box::after {
         right: -2.125rem;
         transform: translateY(-50%) translateX(1rem);
+
+        @media (width <= 960px) {
+          transform: translateY(calc(100% + 3.125rem)) translateX(1rem);
+        }
       }
 
       &:hover .info-box {
-        animation: moveInRight 0.2s ease-in-out forwards;
+        animation: moveInRight_row 0.2s ease-in-out forwards;
       }
 
       &:hover .video-box::after {
-        animation: rotateRight 0.375s ease-in-out forwards;
-      }
+        animation: rotateRight_row 0.375s ease-in-out forwards;
 
-      @keyframes moveInRight {
-        0% {
-          transform: translateX(calc(-100% - 4rem));
-          opacity: 0;
-        }
-
-        50% {
-          opacity: 0;
-        }
-
-        100% {
-          transform: translateX(0);
-          opacity: 1;
+        @media (width <= 960px) {
+          animation: rotateLeft_col 0.375s ease-in-out forwards !important;
         }
       }
     }
@@ -138,30 +133,31 @@
       .video-box::after {
         left: -2.125rem;
         transform: translateY(-50%) translateX(-1rem);
+
+        @media (width <= 960px) {
+          transform: translateY(calc(100% + 3.125rem)) translateX(-1rem);
+        }
       }
 
       &:hover .info-box {
-        animation: moveInLeft 0.2s ease-in-out forwards;
+        animation: moveInLeft_row 0.2s ease-in-out forwards;
+
+        @media (width <= 960px) {
+          animation: moveInDown 0.2s ease-in-out forwards;
+        }
       }
 
       &:hover .video-box::after {
-        animation: rotateLeft 0.375s ease-in-out forwards;
+        animation: rotateLeft_row 0.375s ease-in-out forwards;
+
+        @media (width <= 960px) {
+          animation: rotateRight_col 0.375s ease-in-out forwards !important;
+        }
       }
 
-      @keyframes moveInLeft {
-        0% {
-          transform: translateX(calc(100% + 4rem));
-          opacity: 0;
-        }
-
-        50% {
-          opacity: 0;
-        }
-
-        100% {
-          transform: translateX(0);
-          opacity: 1;
-        }
+      &:hover .count {
+        transition: all 0.15s ease-in-out;
+        top: 2rem;
       }
     }
   }
@@ -169,48 +165,61 @@
   video {
     position: relative;
     z-index: 10;
-    width: 600px;
+    width: $vid-width-960;
     aspect-ratio: 2 / 1;
     filter: sepia(0.6) brightness(1.125) contrast(0.8);
     transition: all 0.15s ease-in-out;
+
+    @media (width <= 960px) {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+}
+
+.info-box {
+  position: inherit;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.25rem;
+  gap: $info-box-gap-960;
+  opacity: 0;
+
+  @media (width <= 960px) {
+    transform: translateX(0) translateY(0);
+    width: 100%;
+    max-width: calc(600px - 2rem);
   }
 
-  .info-box {
-    position: inherit;
-    z-index: 0;
+  h3 {
+    @include projectHeading;
+  }
+
+  span {
+    @include projectTechnologies;
+  }
+
+  p {
+    @include sectionText;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .links {
     display: flex;
-    flex-direction: column;
-    margin-top: 2.25rem;
-    gap: 1.125rem;
-    opacity: 0;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 25rem;
+    gap: 2rem;
 
-    h3 {
-      @include projectHeading;
-    }
+    a {
+      @include contactButton;
+      padding: 1rem 2.875rem;
+      font-size: 1.25rem;
 
-    span {
-      @include projectTechnologies;
-    }
-
-    p {
-      @include sectionText;
-      font-size: 1rem;
-      margin: 0;
-    }
-
-    .links {
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-
-      a {
-        @include contactButton;
-        padding: 1rem 2.875rem;
-        font-size: 1.25rem;
-
-        &:hover {
-          padding: 1rem 3.75rem;
-        }
+      &:hover {
+        padding: 1rem 3.75rem;
       }
     }
   }
@@ -252,7 +261,55 @@
   }
 }
 
-@keyframes rotateLeft {
+@keyframes moveInLeft_row {
+  0% {
+    transform: translateX(calc(100% + 4rem));
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInRight_row {
+  0% {
+    transform: translateX(calc(-100% - 4rem));
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInDown {
+  0% {
+    transform: translateX(0) translateY(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes rotateLeft_row {
   0% {
     transform: translateY(-50%) translateX(-1rem) rotate(0deg);
   }
@@ -276,7 +333,7 @@
   }
 }
 
-@keyframes rotateRight {
+@keyframes rotateRight_row {
   0% {
     transform: translateY(-50%) translateX(+1rem) rotate(0deg);
   }
@@ -297,5 +354,88 @@
   }
   100% {
     transform: translateY(-50%) translateX(+1rem) rotate(315deg);
+  }
+}
+
+@keyframes rotateRight_col {
+  0% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(-1rem) rotate(0deg);
+  }
+  20% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(-1rem)
+      rotate(250deg);
+  }
+  40% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(-1rem)
+      rotate(340deg);
+  }
+  60% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(-1rem)
+      rotate(290deg);
+  }
+  80% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(-1rem)
+      rotate(325deg);
+  }
+  90% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(-1rem)
+      rotate(310deg);
+  }
+  100% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(-1rem)
+      rotate(315deg);
+  }
+}
+
+@keyframes rotateLeft_col {
+  0% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(1rem) rotate(0deg);
+  }
+  20% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(1rem) rotate(110deg);
+  }
+  40% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(1rem) rotate(20deg);
+  }
+  60% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(1rem) rotate(70deg);
+  }
+  80% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(1rem) rotate(35deg);
+  }
+  90% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(1rem) rotate(50deg);
+  }
+  100% {
+    transform: translateY(calc(100% + 3.125rem)) translateX(1rem) rotate(45deg);
+  }
+}
+
+@media (width <= 960px) {
+  .portfolio {
+    .project-box {
+      .project:nth-of-type(odd),
+      .project:nth-of-type(even) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+
+        .video-box {
+          video {
+            width: 100%;
+            max-width: 600px;
+          }
+        }
+        .info-box {
+          transform: translateX(0) translateY(0);
+          width: 100%;
+          max-width: calc(600px - 2rem);
+        }
+        &:hover .info-box {
+          animation: moveInDown 0.2s ease-in-out forwards;
+        }
+      }
+    }
   }
 }
