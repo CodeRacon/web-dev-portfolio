@@ -28,7 +28,7 @@ export class PortfolioComponent {
       name: 'Join',
       technologies: ['JavaScript | Firebase | HTML | CSS'],
       description:
-        'Kanban-based project management tool designed to streamline your workflow and enhance collaboration within your team.',
+        'Kanban-based project management tool designed to enhance workflow & collaboration within your team.',
       video: 'join.mp4',
       links: [
         { name: 'GitHub', url: 'https://github.com/CodeRacon/join' },
