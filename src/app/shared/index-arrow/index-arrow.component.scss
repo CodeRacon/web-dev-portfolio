@@ -1,0 +1,21 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.index-arrow {
+  display: flex;
+  width: 100%;
+  padding: 0 calc($section-padding-960 - 1.25rem);
+  transition: filter 0.675s ease-out;
+
+  &.indexLeft {
+    justify-content: flex-start;
+
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &.indexRight {
+    justify-content: flex-end;
+  }
+}
