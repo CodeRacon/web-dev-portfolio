@@ -18,8 +18,8 @@ bootstrapApplication(AppComponent, appConfig).catch((err) =>
  */
 const applyMouseEffect = ({ mouse, position }: TornisUpdateValues) => {
   if (mouse.changed) {
-    const mouseX = mouse.x - position.left;
-    const mouseY = mouse.y - position.top;
+    const mouseX = mouse.x;
+    const mouseY = mouse.y;
     const radius = 8 * 16;
 
     const bodyElement = document.querySelector('body');
@@ -28,6 +28,14 @@ const applyMouseEffect = ({ mouse, position }: TornisUpdateValues) => {
       bodyElement.style.setProperty('--mouse-y', `${mouseY}px`);
       bodyElement.style.setProperty('--radius', `${radius}px`);
     }
+    console.log('mouse.x:', mouse.x, 'mouse.y:', mouse.y);
+    console.log('position.left:', position.left, 'position.top:', position.top);
+    console.log(
+      'Viewport width:',
+      window.innerWidth,
+      'height:',
+      window.innerHeight
+    );
   }
 };
 
