@@ -9,8 +9,8 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 $section-padding;
-  margin-bottom: 4rem;
+  padding: 0 $section-padding-960;
+  margin-bottom: 3rem;
 
   h1 {
     width: 100%;
@@ -40,10 +40,10 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
     .text {
       width: calc(50% - $gap / 2);
       @include sectionText;
-      text-wrap: balance;
+      // text-wrap: balance;
 
       @media (width <= 960px) {
-        width: 82.5%;
+        width: 75%;
         align-items: flex-start;
       }
 
@@ -89,6 +89,7 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
 
       @media (width <= 960px) {
         margin-top: 2rem;
+        margin-right: 1rem;
         align-self: flex-end;
       }
 
