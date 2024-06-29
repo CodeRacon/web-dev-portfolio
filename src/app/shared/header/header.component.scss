@@ -4,6 +4,7 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 1440px;
   height: $header-height;
@@ -27,6 +28,10 @@ header {
 
     img {
       height: 46px;
+
+      @media (width <= 375px) {
+        transform: scale(0.66666);
+      }
     }
   }
 }
