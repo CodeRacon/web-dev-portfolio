@@ -6,6 +6,7 @@ import { AboutComponent } from './main/about/about.component';
 import { SkillsComponent } from './main/skills/skills.component';
 import { PortfolioComponent } from './main/portfolio/portfolio.component';
 import { IndexArrowComponent } from './shared/index-arrow/index-arrow.component';
+import { ContactComponent } from './main/contact/contact.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { IndexArrowComponent } from './shared/index-arrow/index-arrow.component'
     AboutComponent,
     SkillsComponent,
     PortfolioComponent,
+    ContactComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
