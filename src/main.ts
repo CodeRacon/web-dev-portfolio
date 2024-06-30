@@ -28,14 +28,6 @@ const applyMouseEffect = ({ mouse, position }: TornisUpdateValues) => {
       bodyElement.style.setProperty('--mouse-y', `${mouseY}px`);
       bodyElement.style.setProperty('--radius', `${radius}px`);
     }
-    console.log('mouse.x:', mouse.x, 'mouse.y:', mouse.y);
-    console.log('position.left:', position.left, 'position.top:', position.top);
-    console.log(
-      'Viewport width:',
-      window.innerWidth,
-      'height:',
-      window.innerHeight
-    );
   }
 };
 
