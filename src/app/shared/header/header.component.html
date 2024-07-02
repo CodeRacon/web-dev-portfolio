@@ -1,11 +1,19 @@
 <header>
-  <div class="logo">
+  <div class="logo" (click)="scrollToSection('home', 0)">
     <img src="assets/img/mb.png" alt="" />
     <div class="name">
       <p>Michael</p>
       <p>Buschmann</p>
     </div>
   </div>
-  <app-burger-icon />
+  <button id="burger-icon" class="burger-icon" popovertarget="burger-menu">
+    <app-burger-icon #burgerIcon />
+  </button>
 </header>
-<app-burger-menu />
+<app-burger-menu
+  popover
+  id="burger-menu"
+  class="burger-menu"
+  #burgerMenu
+  [burgerIcon]="burgerIcon"
+/>

@@ -85,5 +85,23 @@ export class BurgerIconComponent {
         }
       });
     }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        this.closeMenu();
+      }
+    });
+  }
+
+  public closeMenu() {
+    if (
+      this.hamburgerIcon &&
+      !this.hamburgerIcon.classList.contains('menu-closed')
+    ) {
+      this.hamburgerIcon.classList.add('menu-closed');
+      if (this.tl) {
+        this.tl.reverse();
+      }
+    }
   }
 }

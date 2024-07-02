@@ -1,56 +1,52 @@
-<section class="menu">
+<section #burgerMenu class="menu">
   <nav #navLinks>
     <span
-      (click)="scrollToSection('about', 76)"
+      (click)="scrollToSection('about', 76); closePopover()"
       appTextShadowOffset
       [maxOffset]="6"
       >About me</span
     >
     <span
-      (click)="scrollToSection('skills', 76)"
+      (click)="scrollToSection('skills', 76); closePopover()"
       appTextShadowOffset
       [maxOffset]="6"
       >Skills</span
     >
     <span
-      (click)="scrollToSection('portfolio', 76)"
+      (click)="scrollToSection('portfolio', 76); closePopover()"
       appTextShadowOffset
       [maxOffset]="6"
       >Portfolio</span
     >
     <span
-      (click)="scrollToSection('contact', 76)"
+      (click)="scrollToSection('contact', 76); closePopover()"
       appTextShadowOffset
       [maxOffset]="6"
       >Contact</span
     >
   </nav>
   <div class="tilt" style="overflow: hidden">
-    <svg
-      preserveAspectRatio="none"
-      viewBox="0 0 1440 120"
-      xmlns="http://www.w3.org/2000/svg"
-      style="
-        fill: #1b1819;
-        width: 150%;
-        height: 200px;
-        transform: rotate(180deg);
-      "
-    >
-      <path d="M1440 120L0 16.48V0h1440v120z" />
-    </svg>
-    <!-- <svg
-      preserveAspectRatio="none"
-      viewBox="0 0 1440 120"
-      xmlns="http://www.w3.org/2000/svg"
-      style="
-        fill: #1b1819;
-        width: 100%;
-        height: 180px;
-        transform: rotate(180deg);
-      "
-    >
-      <path d="M1440 120L0 16.48V0h1440v120z" />
-    </svg> -->
+    <div class="cta">
+      <span>Say Hej!</span>
+      <a href="mailto: hey@michael-buschmann.dev"
+        >hey&#64;michael-buschmann.dev
+        <div class="underline"></div
+      ></a>
+    </div>
+    <div class="external-links">
+      <a href="https://github.com/CodeRacon" target="_blank"
+        ><img src="assets/img/icons/github.svg" alt="GitHub"
+      /></a>
+
+      <a href="mailto: hey@michael-buschmann.dev"
+        ><img src="assets/img/icons/mail.svg" alt="Mail"
+      /></a>
+
+      <a
+        href="https://de.linkedin.com/in/michael-buschmann-front-end-dev"
+        target="_blank"
+        ><img src="assets/img/icons/linkedin.svg" alt="LinkedIn"
+      /></a>
+    </div>
   </div>
 </section>

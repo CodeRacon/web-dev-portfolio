@@ -9,4 +9,13 @@ import { BurgerIconComponent } from './burger-icon/burger-icon.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  scrollToSection(sectionId: string, offset = 0): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+}

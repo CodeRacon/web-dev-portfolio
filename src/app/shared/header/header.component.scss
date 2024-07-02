@@ -2,6 +2,7 @@
 @import "../../../mixins.scss";
 
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,6 +16,7 @@ header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    cursor: pointer;
 
     .name p {
       @include sectionText;
@@ -33,5 +35,36 @@ header {
         transform: scale(0.66666);
       }
     }
+  }
+
+  button {
+    &:focus {
+      border: unset;
+      outline: unset;
+    }
+  }
+}
+
+.burger-menu {
+  position: fixed;
+  width: 100%;
+  max-width: 1440px;
+
+  height: calc(100vh - $header-height);
+  top: $header-height;
+  padding: 0;
+  border: none;
+  opacity: 0;
+  transition: 0.425s opacity ease-in-out, 0.425s display allow-discrete,
+    0.425s overlay allow-discrete;
+}
+
+.burger-menu:popover-open {
+  opacity: 1;
+}
+
+@starting-style {
+  .burger-menu:popover-open {
+    opacity: 0;
   }
 }
