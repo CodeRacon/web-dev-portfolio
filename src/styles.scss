@@ -30,14 +30,16 @@ html {
   }
 }
 
-button,
-a {
+button {
   cursor: pointer;
+  border: unset;
+  background-color: unset;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 body {
@@ -52,6 +54,7 @@ body {
   color: $text;
   background-image: radial-gradient($primary 1px, transparent 2px);
   background-size: 5rem 5rem;
+  // overflow-x: hidden;
 
   &::before {
     content: "";

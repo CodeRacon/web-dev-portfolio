@@ -1,5 +1,23 @@
 @import "./variables.scss";
 
+@mixin navLink {
+  width: inherit;
+  padding: 1rem 2rem;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 100%;
+  text-align: center;
+  cursor: pointer;
+  border: 4px transparent solid;
+  transition: color ease-in-out 0.15s;
+
+  @media (width <= 390px) {
+    font-size: clamp(2.875rem, 6.944vw + 0.792rem, 3.5rem);
+  }
+}
+
 @mixin sectionHeading {
   font-family: "Montserrat", sans-serif;
   font-size: 4.5rem;
@@ -24,10 +42,6 @@
   text-align: left;
   cursor: default;
   transition: color ease-in-out 0.15s;
-
-  &:hover {
-    color: $accent;
-  }
 }
 
 @mixin projectTechnologies {
