@@ -1,7 +1,7 @@
 @import "../../../variables.scss";
 @import "../../../mixins.scss";
 
-$vid-width-960: clamp(25rem, 79.365vw + -10.119rem, 37.5rem);
+$vid-width-960: clamp(25rem, 78.125vw + -21.875rem, 37.5rem);
 $vid-width-708: clamp(25rem, 60.241vw + 10.843rem, 37.5rem);
 
 $info-box-gap-960: clamp(0.75rem, 1.25vw + 0rem, 1.125rem);
@@ -32,10 +32,6 @@ $rotateRightCol: translateY(0) translateX(0);
     width: 100%;
     @include sectionHeading;
     text-wrap: balance;
-
-    // @media (width <= 384px) {
-    //   font-size: 3.5rem;
-    // }
 
     &:hover {
       & ~ .text span {
