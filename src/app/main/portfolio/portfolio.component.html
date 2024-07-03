@@ -2,10 +2,9 @@
   <h1 appTextShadowOffset [maxOffset]="6">Portfolio</h1>
   <div class="text">
     <p>
-      I've devoted more than a year now to making the web a little bit brighter.
-      Below, you'll see my approach on doing that
-      <span>with my very best projects</span>. Feel free to try them out and
-      take a look at their codebase.
+      {{ "portfolio.intro.part1" | translate }}
+      <span>{{ "portfolio.intro.highlight" | translate }}</span>
+      {{ "portfolio.intro.part2" | translate }}
     </p>
   </div>
   <div class="project-box">
@@ -22,7 +21,8 @@
       <div class="info-box">
         <h3>{{ project.name }}</h3>
         <span>{{ project.technologies }}</span>
-        <p>{{ project.description }}</p>
+        <p>{{ project.descriptionKey | translate }}</p>
+
         <div class="links">
           @for (link of project.links; track link.name ){
           <a
