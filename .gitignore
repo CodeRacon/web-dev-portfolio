@@ -42,4 +42,6 @@ testem.log
 Thumbs.db
 
 # Assets
-assets
+**/vid/
+**/fonts/
+**/img/
