@@ -12,6 +12,11 @@ header {
   padding: 1rem $section-padding-960;
   background-color: $background;
 
+  &:hover .language-switch {
+    opacity: 1;
+    right: calc(5rem + $section-padding-960);
+  }
+
   .logo {
     display: flex;
     align-items: center;
@@ -34,6 +39,48 @@ header {
       @media (width <= 375px) {
         transform: scale(0.66666);
       }
+    }
+  }
+
+  .language-switch {
+    position: absolute;
+    top: 50%;
+    bottom: -8px;
+    right: calc(1rem + $section-padding-960);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 5rem;
+    @include projectHeading;
+    font-size: 1.125rem;
+    color: $secondary;
+    opacity: 0;
+    transition: all 0.25s ease-out;
+
+    span {
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+
+      &:first-of-type {
+        text-align: left;
+      }
+      &:last-of-type {
+        text-align: right;
+      }
+
+      &:hover {
+        color: $accent;
+      }
+
+      &:active {
+        color: $text;
+      }
+    }
+
+    span.selected {
+      color: $text;
     }
   }
 

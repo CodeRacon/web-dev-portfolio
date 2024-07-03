@@ -6,6 +6,14 @@
       <p>Buschmann</p>
     </div>
   </div>
+  <div class="language-switch">
+    <span [class.selected]="currentLang === 'en'" (click)="changeLanguage('en')"
+      >eng</span
+    >
+    <span [class.selected]="currentLang === 'de'" (click)="changeLanguage('de')"
+      >ger</span
+    >
+  </div>
   <button id="burger-icon" class="burger-icon" popovertarget="burger-menu">
     <app-burger-icon #burgerIcon />
   </button>
