@@ -1,34 +1,35 @@
 <section class="about" id="about">
-  <h1 appTextShadowOffset [maxOffset]="6">About Me</h1>
+  <h1 appTextShadowOffset [maxOffset]="6">{{ "about.title" | translate }}</h1>
   <div class="about-content">
     <div class="text">
       <p>
-        <span> Hi, I'm Micha!</span>
+        <span>{{ "about.intro.greeting" | translate }}</span>
         <br />
-        Based in Dresden, Germany, I'm a passionate Front-end developer with a
-        <span>keen eye for detail</span> and a strong affinity for interactive
-        web design.
+        {{ "about.intro.location" | translate }}
+        <span>{{ "about.intro.detail" | translate }}</span>
+        {{ "about.intro.affinity" | translate }}
         <br />
-        With a <span>solid foundation in design principles</span> from both work
-        and study, I've honed my skills in crafting all the key elements that
-        make a difference in the development process.
+        {{ "about.background.foundation" | translate }}
+        <span>{{ "about.background.foundationDetail" | translate }}</span>
+        {{ "about.background.experience" | translate }}
         <br />
-        Additionally, my <span>profound coding skills</span> allow me to bring
-        these designs to life,
-        <span>ensuring both functionality and aesthetics</span>.
+        {{ "about.skills.coding" | translate }}
+        <span>{{ "about.skills.codingDetail" | translate }}</span>
+        {{ "about.skills.application" | translate }}
+        <span>{{ "about.skills.result" | translate }}</span
+        >.
         <br />
-        My dedication is to help awesome people craft
-        <span>unique, accessible and lasting user experiences</span>.
-        <!-- I'm excited to continue my career as a
-        <span>web developer</span>. -->
-
+        {{ "about.dedication.intro" | translate }}
+        <span>{{ "about.dedication.goal" | translate }}</span
+        >.
         <br />
         <br />
-        If you think I’d be a great fit for your projects, feel free to reach
-        out!
+        {{ "about.outro" | translate }}
       </p>
       <div class="btn-box">
-        <button appBoxShadowOffset [maxOffset]="8">Let's talk!</button>
+        <button appBoxShadowOffset [maxOffset]="8">
+          {{ "about.cta" | translate }}
+        </button>
       </div>
     </div>
     <div class="img-box"></div>
