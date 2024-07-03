@@ -1,0 +1,47 @@
+{
+  "about": {
+    "title": "About Me",
+    "intro": {
+      "greeting": "Hi, ich bin Micha!",
+      "location": "Ich bin ein leidenschaftlicher Frontend-Entwickler mit einem",
+      "detail": "geübten Auge für's Detail",
+      "affinity": "und einer starken Affinität für interaktives Webdesign."
+    },
+    "background": {
+      "foundation": "Durch meine",
+      "foundationDetail": "soliden Grundlagen in Designprinzipien",
+      "experience": ", die ich sowohl durch Arbeit als auch durch Studium erworben habe, bin ich in der Lage, all die Schlüsselelemente zu gestalten, die im Entwicklungsprozess den Unterschied machen."
+    },
+    "skills": {
+      "coding": "Darüber hinaus ermöglichen mir meine",
+      "codingDetail": "fundierten Programmierkenntnisse",
+      "application": ", diese Designs zum Leben zu erwecken und dabei sowohl",
+      "result": "Funktionalität als auch Ästhetik zu vereinen"
+    },
+    "dedication": {
+      "intro": "Ich setze mich dafür ein, großartigen Menschen zu helfen,",
+      "goal": "einzigartige, zugängliche und nachhaltige Nutzererlebnisse"
+    },
+    "outro": "Wenn du denkst, dass ich gut zu deinen Projekten passe, melde dich gerne bei mir!",
+    "cta": "Lass uns reden!"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "intro": {
+      "part1": "Seit über einem Jahr trage ich nun meinen Teil dazu bei, das Web stetig ein bisschen besser zu machen. Im Folgenden siehst du",
+      "highlight": "meine besten Projekte",
+      "part2": "dazu. Schau sie dir gerne an und wirf einen Blick in die Codebase."
+    },
+    "projects": {
+      "join": {
+        "description": "Kanban-basiertes Projektmanagement-Tool, entwickelt zur Verbesserung des Workflows und der Zusammenarbeit in Ihrem Team."
+      },
+      "cavernQuest": {
+        "description": "2D-Jump'n'Run-Browserspiel, in dem du Woozle hilfst, eine verwunschene Höhle voller Gefahren udn Geheimnisse zu erobern."
+      },
+      "pokeDex": {
+        "description": "PokeAPI-gestützte Pokemon-Datenbank, um alle Informationen zu erhalten, die du über deine Lieblingsmonster brauchst!"
+      }
+    }
+  }
+}

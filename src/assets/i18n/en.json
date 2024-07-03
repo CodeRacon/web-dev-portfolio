@@ -1,0 +1,47 @@
+{
+  "about": {
+    "title": "About Me",
+    "intro": {
+      "greeting": "Hi, I'm Micha!",
+      "location": "Based in Dresden, Germany, I'm a passionate Front-end developer with a",
+      "detail": "keen eye for detail",
+      "affinity": "and a strong affinity for interactive web design."
+    },
+    "background": {
+      "foundation": "With a",
+      "foundationDetail": "solid foundation in design principles",
+      "experience": "from both work and study, I've honed my skills in crafting all the key elements that make a difference in the development process."
+    },
+    "skills": {
+      "coding": "Additionally, my",
+      "codingDetail": "profound coding skills",
+      "application": "allow me to bring these designs to life,",
+      "result": "ensuring both functionality and aesthetics"
+    },
+    "dedication": {
+      "intro": "My dedication is to help awesome people craft",
+      "goal": "unique, accessible and lasting user experiences"
+    },
+    "outro": "If you think I'd be a great fit for your projects, feel free to reach out!",
+    "cta": "Let's talk!"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "intro": {
+      "part1": "I've devoted more than a year now to making the web a little bit brighter. Below, you'll see my approach on doing that",
+      "highlight": "with my very best projects",
+      "part2": ". Feel free to try them out and take a look at their codebase."
+    },
+    "projects": {
+      "join": {
+        "description": "Kanban-based project management tool designed to enhance workflow & collaboration within your team."
+      },
+      "cavernQuest": {
+        "description": "2D jump'n run browser game, where you help Woozle conquering a mossy cavern full of mystery and danger."
+      },
+      "pokeDex": {
+        "description": "PokeAPI-powered Pokemon-Database to get all the information you need about your favorite little monsters!"
+      }
+    }
+  }
+}
