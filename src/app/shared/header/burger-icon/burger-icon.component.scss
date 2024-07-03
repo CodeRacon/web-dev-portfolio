@@ -8,6 +8,7 @@ $icon-line-height: 25%;
 .hamburger-icon-animated {
   transform: scale(0.8);
   margin-right: -0.675rem;
+  background-color: $background;
 
   @media (width <= 428px) {
     transform: scale(0.66666);
