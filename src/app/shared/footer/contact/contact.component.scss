@@ -1,6 +1,8 @@
 @import "../../../../variables.scss";
 @import "../../../../mixins.scss";
 
+$topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
+
 .contact {
   position: relative;
   width: 100%;
@@ -8,12 +10,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: $topPadding;
+  padding-bottom: 2rem;
 
   h1 {
     @include sectionHeading;
     width: 100%;
     text-align: left;
     color: $background;
+
+    .split {
+      display: none;
+
+      @media (width <= 672px) {
+        display: block;
+      }
+    }
   }
 
   .subheading {
@@ -23,6 +35,11 @@
     align-items: center;
     gap: 0.5rem;
     margin-top: 2rem;
+
+    @media (width <= 448px) {
+      align-items: flex-start;
+      text-align: left;
+    }
 
     h2 {
       margin: 0;
@@ -38,6 +55,12 @@
       @include sectionText;
       color: $background;
       margin: 0;
+      text-wrap: balance;
+      text-align: center;
+
+      @media (width <= 448px) {
+        text-align: left;
+      }
     }
   }
 
@@ -192,6 +215,7 @@
         padding: 0;
         border: none;
         overflow: hidden;
+        cursor: pointer;
 
         &::after {
           content: url("/assets/img/icons/unchecked.svg");
@@ -349,6 +373,30 @@
   @starting-style {
     .error-message {
       opacity: 0;
+    }
+  }
+
+  .arrow-wrapper {
+    position: absolute;
+    bottom: 4rem;
+    right: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    width: 3rem;
+    height: 5rem;
+    cursor: pointer;
+
+    img {
+      height: 100%;
+      transform-origin: bottom;
+      transform: translateY(25%);
+      transition: all 0.325s ease-in-out;
+
+      &:hover {
+        transform: translateY(0);
+      }
     }
   }
 }
