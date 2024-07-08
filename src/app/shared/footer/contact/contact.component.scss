@@ -1,0 +1,354 @@
+@import "../../../../variables.scss";
+@import "../../../../mixins.scss";
+
+.contact {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    @include sectionHeading;
+    width: 100%;
+    text-align: left;
+    color: $background;
+  }
+
+  .subheading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+
+    h2 {
+      margin: 0;
+      font-family: "Overpass", sans-serif;
+      font-size: $subheading-fs;
+      font-weight: 700;
+      color: $accent;
+      line-height: 2.75rem;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      @include sectionText;
+      color: $background;
+      margin: 0;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 2rem;
+    width: 100%;
+    max-width: 40rem;
+    @include sectionText;
+    font-size: 1rem;
+    color: $background;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      width: inherit;
+    }
+
+    fieldset {
+      position: relative;
+      width: 100%;
+      height: fit-content;
+      padding: 0;
+      border: 4px solid transparent;
+      transition: all 0.125s ease-in-out;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 2px solid $background;
+        pointer-events: none;
+        transition: all 0.125s ease-in-out;
+      }
+
+      &:focus-within legend {
+        display: block;
+        opacity: 1;
+      }
+
+      &:has(input:not(:placeholder-shown)) legend,
+      &:has(textarea:not(:placeholder-shown)) legend {
+        display: block !important;
+        opacity: 1 !important;
+      }
+
+      &:focus-within input {
+        padding: 1rem 1.5rem 1rem 1.5rem;
+      }
+
+      &:focus-within input::placeholder,
+      &:focus-within textarea::placeholder {
+        opacity: 0;
+      }
+
+      &:focus-within,
+      &:hover {
+        border: 4px solid $background;
+      }
+
+      &:has(input:not(:placeholder-shown)),
+      &:has(textarea:not(:placeholder-shown)) {
+        border: 4px solid $background !important;
+      }
+
+      legend.has-overflow {
+        margin-bottom: 0.875rem;
+      }
+    }
+
+    @starting-style {
+      fieldset:focus-within legend {
+        opacity: 0;
+      }
+    }
+
+    legend {
+      display: none;
+      font-size: 1rem;
+      font-weight: 200;
+      line-height: 0;
+      margin-left: 0.875rem;
+      padding: 0 0.25rem;
+      opacity: 0;
+      transition: 0.325s opacity ease-in-out, 0.325s margin-bottom ease-in-out,
+        0.325s display allow-discrete, 0.325s overlay allow-discrete;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem 2.75rem 1rem 1.5rem;
+      @include sectionText;
+      color: $background;
+      font-size: 1rem;
+      background-color: transparent;
+      border: none;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      appearance: none;
+      -webkit-appearance: none;
+      height: 3rem;
+    }
+
+    textarea {
+      height: 8.75rem;
+      appearance: none;
+      -moz-appearance: none;
+      resize: none;
+
+      &::-webkit-scrollbar-track {
+        background-color: $text !important;
+        border: 1px solid transparent;
+      }
+    }
+
+    input:focus,
+    textarea:focus {
+      border: none;
+      outline: none;
+      cursor: text;
+    }
+
+    ::placeholder {
+      font-size: inherit;
+      color: $background;
+      opacity: 1;
+      transition: 0.325s opacity ease-in-out;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: fit-content;
+
+      #policy {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        min-width: 3rem;
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+
+        &::after {
+          content: url("/assets/img/icons/unchecked.svg");
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          border: none;
+        }
+
+        &:checked::after {
+          content: url("/assets/img/icons/checked.svg");
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          border: none;
+        }
+      }
+
+      span {
+        display: inline-flex;
+        justify-content: center;
+        width: 7rem;
+
+        &:hover a {
+          letter-spacing: 0.5px;
+          font-weight: 500;
+        }
+
+        a {
+          @include sectionText;
+          width: fit-content;
+          font-size: 1rem;
+          color: $accent;
+          cursor: pointer;
+          transition: all 0.15s ease-in-out;
+
+          &:hover .underline {
+            width: 100%;
+
+            background-color: $accent;
+            opacity: 1;
+          }
+
+          .underline {
+            width: 0;
+            height: 2px;
+            margin-top: -2px;
+            background-color: transparent;
+            opacity: 0;
+            transition: all 0.15s ease-in-out;
+          }
+        }
+      }
+
+      p {
+        margin: 0;
+        line-height: 150%;
+      }
+    }
+
+    button {
+      @include contactButton;
+      color: $background;
+      border-color: $background;
+
+      &:active {
+        color: $text;
+        background-color: $background;
+      }
+    }
+
+    button.disabled {
+      border-color: $disabled;
+      color: $disabled;
+      pointer-events: none;
+    }
+  }
+
+  .name-box,
+  .mail-box,
+  .message-box {
+    position: relative;
+
+    %icon-base {
+      content: "";
+      position: absolute;
+      right: 1rem;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .wrapper,
+    .message-wrapper {
+      &::after {
+        @extend %icon-base;
+      }
+    }
+
+    .wrapper::after {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .message-wrapper::after {
+      top: 1rem;
+    }
+
+    &:has(.error-message) {
+      .wrapper::after,
+      .message-wrapper::after {
+        content: "";
+        background-image: url("../../../../assets/img/icons/alert.svg");
+        opacity: 1;
+      }
+    }
+
+    &:has(input:valid):not(:has(.error-message), :has(:placeholder-shown)),
+    &:has(textarea:valid):not(:has(.error-message), :has(:placeholder-shown)) {
+      .wrapper::after,
+      .message-wrapper::after {
+        content: "";
+        background-image: url("../../../../assets/img/icons/okay.svg");
+        opacity: 1;
+      }
+    }
+  }
+
+  .message-box {
+    textarea::after {
+      top: 1rem;
+      transform: none;
+    }
+  }
+
+  .error-message {
+    height: 0.875rem;
+    color: #ff0000;
+    font-weight: 100;
+    font-size: 0.875rem;
+    opacity: 1;
+    margin-top: 0.325rem;
+    padding-left: 0.825rem;
+    text-align: left;
+    transition: 0.325s opacity ease-in-out;
+
+    &:last-of-type {
+      padding-left: 3.25rem;
+    }
+  }
+
+  @starting-style {
+    .error-message {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+<section class="contact">
+  <h1>Say Hey!</h1>
+
+  <div class="subheading">
+    <h2>Got a project I can help with?</h2>
+    <p>Let's talk about your ideas and make it happen.</p>
+  </div>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="name-box">
+      <fieldset>
+        <legend for="name">Your name</legend>
+
+        <div class="wrapper">
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            placeholder="Your name"
+            autocomplete="off"
+          />
+        </div>
+      </fieldset>
+      @if (contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty
+      || contactForm.get('name')?.touched)) {
+      <div class="error-message">
+        @if (contactForm.get('name')?.errors?.['required']) {
+        <span>Name is required.&nbsp;</span>
+        } @if (contactForm.get('name')?.errors?.['invalidName']) {
+        <span>Please enter a valid name.</span>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="mail-box">
+      <fieldset>
+        <legend for="email">Your mail</legend>
+
+        <div class="wrapper">
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Your mail"
+            autocomplete="off"
+          />
+        </div>
+      </fieldset>
+      @if (contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty
+      || contactForm.get('email')?.touched)) {
+      <div class="error-message">
+        @if (contactForm.get('email')?.errors?.['required']) {
+        <span>Email is required.&nbsp;</span>
+        } @if (contactForm.get('email')?.errors?.['invalidEmail']) {
+        <span>Please enter a valid email address.</span>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="message-box">
+      <fieldset>
+        <legend for="message">Your message</legend>
+        <div class="message-wrapper">
+          <textarea
+            id="message"
+            #message
+            formControlName="message"
+            placeholder="Your message"
+            autocomplete="off"
+          ></textarea>
+        </div>
+      </fieldset>
+      @if (contactForm.get('message')?.invalid &&
+      (contactForm.get('message')?.dirty ||
+      contactForm.get('message')?.touched)) {
+      <div class="error-message">
+        @if (contactForm.get('message')?.errors?.['required'] ||
+        contactForm.get('message')?.errors?.['whitespace']) {
+        <span>Really nothing to say? Please enter a message.</span>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="policy-box">
+      <div class="checkbox">
+        <input type="checkbox" formControlName="policy" id="policy" />
+        <p>
+          I've read the
+
+          <span
+            ><a href="/privacy"
+              >privacy policy
+
+              <div class="underline"></div> </a
+          ></span>
+
+          and agree to the processing of my data as outlined.
+        </p>
+      </div>
+      @if (contactForm.get('policy')?.invalid &&
+      (contactForm.get('policy')?.dirty || contactForm.get('policy')?.touched))
+      {
+      <div class="error-message">
+        <span>You must agree to the privacy policy.</span>
+      </div>
+      }
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="!isFormValid"
+      [class.disabled]="!isFormValid"
+    >
+      Send message
+    </button>
+  </form>
+</section>
