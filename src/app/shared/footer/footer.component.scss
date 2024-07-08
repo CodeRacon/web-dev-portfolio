@@ -1,0 +1,156 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+app-contact {
+  width: 100%;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $section-padding-960 $section-padding-960 2rem $section-padding-960;
+  flex-grow: 1;
+  background-color: $text;
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+
+  .bottom-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 4.5rem;
+    width: 100%;
+
+    .logo-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      height: 100%;
+
+      .name p {
+        @include sectionText;
+        font-size: 1rem;
+        margin: 0;
+        margin-bottom: -4px;
+
+        line-height: 1rem;
+        font-weight: 300;
+        color: $background;
+      }
+
+      img {
+        height: 40px;
+        object-fit: contain;
+
+        @media (width <= 375px) {
+          transform: scale(0.66666);
+        }
+      }
+    }
+
+    .external {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 100%;
+
+      .external-links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap: 1.125rem;
+
+        @media (width <= 375px) {
+          gap: 0.5rem;
+        }
+
+        a {
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 4px;
+            bottom: -4px;
+            left: 0;
+            background-color: $accent;
+            opacity: 0;
+            transition: all 0.15s ease-in-out;
+
+            @media (width <= 375px) {
+              height: 2px;
+              bottom: -2px;
+            }
+          }
+
+          &:hover::after {
+            width: 100%;
+            opacity: 1;
+          }
+
+          &:hover {
+            filter: invert(46%) sepia(59%) saturate(898%) hue-rotate(318deg)
+              brightness(80%) contrast(98%);
+          }
+        }
+
+        img {
+          width: 32px;
+
+          @media (width <= 375px) {
+            transform: scale(0.75);
+          }
+        }
+      }
+
+      span {
+        display: inline-flex;
+        justify-content: center;
+        width: 6.5rem;
+        margin-bottom: -6px;
+
+        &:hover a {
+          letter-spacing: 0.5px;
+          font-weight: 500;
+        }
+
+        a {
+          @include sectionText;
+          font-size: 1rem;
+          color: $background;
+          width: fit-content;
+          cursor: pointer;
+          transition: all 0.15s ease-in-out;
+
+          &:hover {
+            color: $accent;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+          }
+
+          &:hover .underline {
+            width: 100%;
+            background-color: $accent;
+
+            opacity: 1;
+          }
+
+          .underline {
+            width: 0;
+            height: 2px;
+            margin-top: -2px;
+            background-color: $background;
+            opacity: 0;
+            transition: all 0.15s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
