@@ -14,7 +14,11 @@ header {
 
   &:hover .language-switch {
     opacity: 1;
-    right: calc(4rem + $section-padding-960);
+    right: calc(5rem + $section-padding-960);
+
+    @media (width <= 375px) {
+      right: calc(4rem + $section-padding-960);
+    }
   }
 
   .logo-box {
@@ -57,13 +61,14 @@ header {
   .language-switch {
     position: absolute;
     top: 50%;
-    bottom: -8px;
+    // bottom: -8px;
     right: calc(1rem + $section-padding-960);
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    justify-content: space-between;
     width: 5rem;
+    height: 2.5rem;
     @include projectHeading;
     font-size: 1.125rem;
     color: $secondary;
