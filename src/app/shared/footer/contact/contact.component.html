@@ -1,5 +1,5 @@
 <section class="contact">
-  <h1>Say Hey!</h1>
+  <h1>Say <br class="split" />Hey!</h1>
 
   <div class="subheading">
     <h2>Got a project I can help with?</h2>
@@ -117,4 +117,11 @@
       Send message
     </button>
   </form>
+
+  <div class="arrow-wrapper" (click)="scrollToSection('home', 0)">
+    <img
+      src="./assets/img/arrows/arrow-up.svg"
+      alt="down-pointing arrow, suggesting to scroll down to next section"
+    />
+  </div>
 </section>
