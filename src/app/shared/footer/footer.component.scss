@@ -112,8 +112,12 @@ footer {
       span {
         display: inline-flex;
         justify-content: center;
-        width: 6.5rem;
+        width: 6rem;
         margin-bottom: -6px;
+
+        @media (width <= 375px) {
+          width: 6.5rem;
+        }
 
         &:hover a {
           letter-spacing: 0.5px;
