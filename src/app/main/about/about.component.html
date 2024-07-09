@@ -27,7 +27,11 @@
         {{ "about.outro" | translate }}
       </p>
       <div class="btn-box">
-        <button appBoxShadowOffset [maxOffset]="8">
+        <button
+          appBoxShadowOffset
+          [maxOffset]="8"
+          (click)="scrollToSection('contact', 0)"
+        >
           {{ "about.cta" | translate }}
         </button>
       </div>
