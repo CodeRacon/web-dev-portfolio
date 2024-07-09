@@ -1,15 +1,24 @@
 <section class="imprint">
+  <div class="arrow-wrapper" [routerLink]="['']">
+    <img src="./assets/img/arrows/arrow-up.svg" alt="" />
+  </div>
+
   <h1 appTextShadowOffset [maxOffset]="6">{{ "imprint.title" | translate }}</h1>
   <address>
-    {{ "imprint.name" | translate }} <br />
-    {{ "imprint.address" | translate }} <br />
-    {{ "imprint.city" | translate }} <br />
+    <strong>{{ "imprint.name" | translate }} </strong>
+    <br />
+    <strong>{{ "imprint.address" | translate }} </strong>
+    <br />
+    <strong>{{ "imprint.city" | translate }} </strong>
+    <br />
+    <br />
+
     {{ "imprint.phone" | translate }}:
     <span><a href="tel:+4915205383732">0152 05 38 37 32</a></span> <br />
     {{ "imprint.email" | translate }}:
     <span
       ><a href="mailto:hey@michael.buschmann.dev"
-        >hey&#64;michael.buschmann.dev</a
+        >hey&#64;michael-buschmann.dev</a
       ></span
     >
   </address>

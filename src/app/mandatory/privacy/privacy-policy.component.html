@@ -1,4 +1,8 @@
 <section class="privacy-policy">
+  <div class="arrow-wrapper" [routerLink]="['']">
+    <img src="./assets/img/arrows/arrow-up.svg" alt="" />
+  </div>
+
   <h1 appTextShadowOffset [maxOffset]="6">{{ "privacy.title" | translate }}</h1>
 
   <article>
@@ -17,9 +21,13 @@
     <h2>{{ "privacy.section1.title" | translate }}</h2>
     <p>{{ "privacy.section1.description" | translate }}</p>
     <address>
-      {{ "privacy.section1.name" | translate }}<br />
-      {{ "privacy.section1.address" | translate }}<br />
-      {{ "privacy.section1.city" | translate }}<br /><br />
+      <strong>{{ "privacy.section1.name" | translate }}</strong>
+      <br />
+      <strong>{{ "privacy.section1.address" | translate }}</strong
+      ><br />
+      <strong>{{ "privacy.section1.city" | translate }}</strong>
+      <br />
+      <br />
       {{ "privacy.section1.phone" | translate }}:
       <span><a href="tel:+4915205383732">0152 05 38 37 32</a></span>
 
@@ -28,7 +36,7 @@
 
       <span
         ><a href="mailto:hey@michael.buschmann.dev"
-          >hey&#64;michael.buschmann.dev</a
+          >hey&#64;michael-buschmann.dev</a
         ></span
       >
     </address>
