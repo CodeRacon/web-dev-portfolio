@@ -210,8 +210,8 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
         -webkit-appearance: none;
         -moz-appearance: none;
         min-width: 3rem;
-        width: 3rem;
-        height: 3rem;
+        width: fit-content;
+        height: fit-content;
         padding: 0;
         border: none;
         overflow: hidden;
@@ -280,6 +280,18 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       @include contactButton;
       color: $background;
       border-color: $background;
+
+      @media (width <= 375px) {
+        font-size: clamp(1rem, 5.333vw + 0rem, 1.25rem);
+        padding: 1rem 2.375rem;
+        align-self: flex-start;
+      }
+
+      &:hover {
+        @media (width <= 375px) {
+          padding: 1rem 3rem;
+        }
+      }
 
       &:active {
         color: $text;
