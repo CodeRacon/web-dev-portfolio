@@ -89,7 +89,7 @@
         <input type="checkbox" formControlName="policy" id="policy" />
         <p>
           I've read the
-          <span
+          <span (click)="scrollToSection('home', 0)"
             ><a [routerLink]="['/privacy']"
               >privacy policy
 
@@ -111,15 +111,19 @@
       type="submit"
       [disabled]="!isFormValid"
       [class.disabled]="!isFormValid"
+      popovertarget="feedback"
     >
       Send message
     </button>
   </form>
 
+  <div class="popover-wrapper">
+    <div id="feedback" popover>
+      <p>{{ feedbackMessage }}</p>
+    </div>
+  </div>
+
   <div class="arrow-wrapper" (click)="scrollToSection('home', 0)">
-    <img
-      src="./assets/img/arrows/arrow-up.svg"
-      alt="down-pointing arrow, suggesting to scroll down to next section"
-    />
+    <img src="./assets/img/arrows/arrow-up.svg" alt="" />
   </div>
 </section>

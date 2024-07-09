@@ -411,4 +411,42 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       }
     }
   }
+
+  .popover-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem;
+  }
+
+  #feedback {
+    max-width: 18rem;
+    padding: 1.75rem 2.5rem;
+    background-color: $feedback;
+    border: 6px solid $text;
+    white-space: pre-line;
+    opacity: 0;
+    transition: 0.425s opacity ease-in-out, 0.425s display allow-discrete,
+      0.425s overlay allow-discrete;
+
+    p {
+      @include sectionText;
+      margin: 0;
+      font-weight: 600;
+      line-height: 120%;
+      text-wrap: balance;
+      text-align: center;
+    }
+  }
+
+  #feedback:popover-open {
+    opacity: 1;
+  }
+
+  @starting-style {
+    #feedback:popover-open {
+      opacity: 0;
+    }
+  }
 }
