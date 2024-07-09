@@ -1,7 +1,9 @@
 <header>
   <div class="logo-box" (click)="scrollToSection('home', 0)">
     <div class="logo">
-      <img src="assets/img/logo.png" alt="" />
+      <a [routerLink]="['']">
+        <img src="assets/img/logo.png" alt="" />
+      </a>
     </div>
 
     <div class="name">

@@ -12,13 +12,14 @@ import {
   emailValidator,
   messageValidator,
 } from './custom-validators';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
 })
 export class ContactComponent {
   contactForm: FormGroup;
