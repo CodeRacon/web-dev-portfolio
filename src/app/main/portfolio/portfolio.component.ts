@@ -36,7 +36,7 @@ export class PortfolioComponent {
       video: 'join.mp4',
       links: [
         { name: 'GitHub', url: 'https://github.com/CodeRacon/join' },
-        { name: 'Live', url: 'https://www.join.michael-buschmann.dev/' },
+        { name: 'Live', url: 'https://join.michael-buschmann.dev/' },
       ],
     },
     {
@@ -46,7 +46,7 @@ export class PortfolioComponent {
       video: 'cq.mp4',
       links: [
         { name: 'GitHub', url: 'https://github.com/CodeRacon/CavernQuest' },
-        { name: 'Live', url: 'https://www.cq.michael-buschmann.dev/' },
+        { name: 'Live', url: 'https://cavernquest.michael-buschmann.dev/' },
       ],
     },
     {
@@ -56,7 +56,7 @@ export class PortfolioComponent {
       video: 'poke.mp4',
       links: [
         { name: 'GitHub', url: 'https://github.com/CodeRacon/PokeDex' },
-        { name: 'Live', url: 'https://www.pokedex.michael-buschmann.dev/' },
+        { name: 'Live', url: 'https://pokedex.michael-buschmann.dev/' },
       ],
     },
   ];
