@@ -1,5 +1,4 @@
 import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-
 import {
   FormBuilder,
   FormGroup,
@@ -13,6 +12,7 @@ import {
   messageValidator,
 } from './custom-validators';
 import { RouterModule } from '@angular/router';
+import { EmailService } from '../../../shared/common/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -24,8 +24,9 @@ import { RouterModule } from '@angular/router';
 export class ContactComponent {
   contactForm: FormGroup;
   @ViewChild('message') messageTextarea!: ElementRef;
+  feedbackMessage: string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private emailService: EmailService) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, nameValidator()]],
       email: ['', [Validators.required, emailValidator()]],
@@ -58,7 +59,36 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
+      this.emailService.sendEmail(this.contactForm.value).subscribe(
+        (response) => {
+          if (response.success) {
+            this.feedbackMessage =
+              'Vielen Dank für Deine Nachricht!\n\nIch melde mich in Kürze.';
+            this.contactForm.reset();
+          } else {
+            this.feedbackMessage =
+              'Uups, das hat nicht geklappt.\n\nBitte versuche es später erneut.';
+          }
+          this.showFeedbackPopover();
+        },
+        (error) => {
+          this.feedbackMessage =
+            'Ein Fehler ist aufgetreten.\n\nBitte versuche es später erneut.';
+          this.showFeedbackPopover();
+        }
+      );
+    }
+  }
+
+  showFeedbackPopover() {
+    const popover = document.getElementById('feedback') as any;
+    if (popover && popover.showPopover) {
+      popover.showPopover();
+      setTimeout(() => {
+        if (popover.hidePopover) {
+          popover.hidePopover();
+        }
+      }, 4000);
     }
   }
 
