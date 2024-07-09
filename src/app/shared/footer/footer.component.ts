@@ -9,4 +9,13 @@ import { RouterModule } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  scrollToSection(sectionId: string, offset = 0): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+}
