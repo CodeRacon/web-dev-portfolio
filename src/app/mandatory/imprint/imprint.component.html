@@ -1,0 +1,26 @@
+<section class="imprint">
+  <h1 appTextShadowOffset [maxOffset]="6">{{ "imprint.title" | translate }}</h1>
+  <address>
+    {{ "imprint.name" | translate }} <br />
+    {{ "imprint.address" | translate }} <br />
+    {{ "imprint.city" | translate }} <br />
+    {{ "imprint.phone" | translate }}:
+    <span><a href="tel:+4915205383732">0152 05 38 37 32</a></span> <br />
+    {{ "imprint.email" | translate }}:
+    <span
+      ><a href="mailto:hey@michael.buschmann.dev"
+        >hey&#64;michael.buschmann.dev</a
+      ></span
+    >
+  </address>
+
+  <article>
+    <h2>{{ "imprint.disclaimer.title" | translate }}</h2>
+
+    <p>{{ "imprint.disclaimer.paragraph1" | translate }}</p>
+
+    <p>{{ "imprint.disclaimer.paragraph2" | translate }}</p>
+
+    <p>{{ "imprint.disclaimer.paragraph3" | translate }}</p>
+  </article>
+</section>
