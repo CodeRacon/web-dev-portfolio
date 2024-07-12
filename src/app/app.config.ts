@@ -13,6 +13,18 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 export const appConfig: ApplicationConfig = {
+  /**
+   * Configures the providers for the Angular application.
+   *
+   * The `providers` array sets up the following:
+   * - Configures the router with the defined routes
+   * - Enables animations for the application
+   * - Provides the HTTP client for making HTTP requests
+   * - Imports the HttpClientModule for HTTP functionality
+   * - Configures the TranslateModule for internationalization
+   *   - Specifies the TranslateHttpLoader as the loader for translation files
+   *   - Sets the default language to 'en'
+   */
   providers: [
     provideRouter(routes),
     provideAnimations(),
