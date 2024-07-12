@@ -1,4 +1,13 @@
 {
+  "menu": {
+    "navLinks": {
+      "about": "About Me",
+      "skills": "My Skills",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "cta": "Sag Hey!"
+  },
   "about": {
     "title": "About Me",
     "intro": {
@@ -105,9 +114,52 @@
     "email": "Email",
     "disclaimer": {
       "title": "Some thoughts on responsibility",
-      "paragraph1": "I firmly believe that as designers and developers, we have a duty to ensure that our creations do no harm. I strive to maintain high ethical standards in the projects I undertake.",
+      "paragraph1": "I firmly believe that as developers and designers alike, we have a duty to ensure that our products do no harm. I strive to maintain high ethical standards in the projects I undertake.",
       "paragraph2": "If your organization is involved in online gambling, payday loans, big tobacco, or monetizing personal data, I might not be the right fit for your project. Additionally, due to the significant energy consumption associated with crypto technology, I avoid projects in that area. While I don't completely dismiss any technology, I can't in good conscience work with it in its current state. I may reconsider if it becomes genuinely carbon-neutral beyond simple offsetting, but until then, I'm not the right person for such projects.",
-      "paragraph3": "That said, if you're seeking to develop something that fosters sustainability, diversity, or generally aims to have a positive impact, let's discuss how we can work together."
+      "paragraph3": "That said, if you're seeking to develop something that fosters sustainability, diversity, or generally aims to have a positive impact, let's link up and figure how we can achieve this together."
     }
-  }
+  },
+  "contact": {
+    "title": {
+      "part1": "Say",
+      "part2": "Hey!"
+    },
+    "subtitle": "Got a project I can help with?",
+    "description": "Let's link up, talk about your ideas and make them happen.",
+    "form": {
+      "name": {
+        "label": "Your name",
+        "placeholder": "Your name",
+        "errors": {
+          "required": "Name is required.",
+          "invalid": "Please enter a valid name."
+        }
+      },
+      "email": {
+        "label": "Your email",
+        "placeholder": "Your email",
+        "errors": {
+          "required": "Email is required.",
+          "invalid": "Please enter a valid email address."
+        }
+      },
+      "message": {
+        "label": "Your message",
+        "placeholder": "Your message",
+        "errors": {
+          "required": "Really nothing to say? Please enter a message."
+        }
+      },
+      "policy": {
+        "text1": "I've read the ",
+        "linkText": "privacy policy",
+        "text2": " and agree to the processing of my data as outlined.",
+        "errors": {
+          "required": "You must agree to the privacy policy."
+        }
+      },
+      "submit": "Send message"
+    }
+  },
+  "footer": "Legal notice"
 }

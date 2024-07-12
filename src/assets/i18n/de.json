@@ -1,4 +1,13 @@
 {
+  "menu": {
+    "navLinks": {
+      "about": "Über mich",
+      "skills": "Meine Skills",
+      "portfolio": "Portfolio",
+      "contact": "Kontakt"
+    },
+    "cta": "Sag Hey!"
+  },
   "about": {
     "title": "About Me",
     "intro": {
@@ -22,25 +31,25 @@
       "intro": "Ich setze mich dafür ein, großartigen Menschen zu helfen,",
       "goal": "einzigartige, zugängliche und nachhaltige Nutzererlebnisse"
     },
-    "outro": "Wenn du denkst, dass ich gut zu deinen Projekten passe, melde dich gerne bei mir!",
+    "outro": "Wenn Du denkst, dass ich gut zu Deinen Projekten passe, melde Dich gerne bei mir!",
     "cta": "Lass uns reden!"
   },
   "portfolio": {
     "title": "Portfolio",
     "intro": {
-      "part1": "Seit über einem Jahr trage ich nun meinen Teil dazu bei, das Web stetig ein bisschen besser zu machen. Im Folgenden siehst du",
+      "part1": "Seit über einem Jahr trage ich nun meinen Teil dazu bei, das Web stetig ein bisschen besser zu machen. Im Folgenden siehst Du",
       "highlight": "meine besten Projekte",
-      "part2": "dazu. Schau sie dir gerne an und wirf einen Blick in die Codebase."
+      "part2": "dazu. Schau sie Dir gerne an und wirf einen Blick in die Codebase."
     },
     "projects": {
       "join": {
-        "description": "Kanban-basiertes Projektmanagement-Tool, entwickelt zur Verbesserung des Workflows und der Zusammenarbeit in Ihrem Team."
+        "description": "Kanban-basiertes Projektmanagement-Tool, entwickelt zur Verbesserung des Workflows und der Zusammenarbeit in Deinem Team."
       },
       "cavernQuest": {
-        "description": "2D-Jump'n'Run-Browserspiel, in dem du Woozle hilfst, eine verwunschene Höhle voller Gefahren udn Geheimnisse zu erobern."
+        "description": "2D Jump & Run Game, in dem Du Woozle hilfst, eine verwunschene Höhle voller Gefahren und Geheimnisse zu erobern."
       },
       "pokeDex": {
-        "description": "PokeAPI-gestützte Pokemon-Datenbank, um alle Informationen zu erhalten, die du über deine Lieblingsmonster brauchst!"
+        "description": "PokeAPI-gestützte Pokemon-Datenbank, um alle Infos zu erhalten, die Du über deine Lieblingsmonster brauchst!"
       }
     }
   },
@@ -105,9 +114,52 @@
     "email": "E-Mail",
     "disclaimer": {
       "title": "Ein paar Gedanken zu Verantwortung",
-      "paragraph1": "Ich bin fest davon überzeugt, dass wir als Designer und Entwickler die Pflicht haben, sicherzustellen, dass unsere Kreationen keinen Schaden anrichten. Ich bemühe mich, bei den Projekten die ich angehe, hohe ethische Standards einzuhalten.",
+      "paragraph1": "Ich bin fest davon überzeugt, dass wir als Entwickler und auch Designer eine Pflicht haben, sicherzustellen, dass unsere Produkte keinen Schaden anrichten. Ich bemühe mich, bei den Projekten die ich angehe, hohe ethische Standards einzuhalten.",
       "paragraph2": "Wenn Ihre Organisation in Online-Glücksspiele, Kurzzeitkredite, die Tabakindustrie oder die Monetarisierung persönlicher Daten involviert ist, bin ich möglicherweise nicht der richtige Ansprechpartner für Ihr Projekt. Aufgrund des erheblichen Energieverbrauchs, der mit Krypto-Tech verbunden ist, vermeide ich zudem Projekte in diesem Bereich. Obwohl ich keine Technologie kategorisch ablehne, kann ich zum derzeitigen Stand der Technik nicht guten Gewissens damit arbeiten. Ich würde meine Meinung eventuell überdenken, wenn sie tatsächlich CO2-neutral wird, über einfaches Offsetting hinaus. Aber bis dahin bin ich nicht die richtige Person für Projekte in den vorgenannten Bereichen.",
-      "paragraph3": "Wenn Sie jedoch etwas entwickeln möchten, das Nachhaltigkeit, Vielfalt oder allgemein positive Auswirkungen fördert und zum Ziel hat, lassen Sie uns besprechen, wie wir zusammenarbeiten können."
+      "paragraph3": "Wenn Du jedoch etwas entwickeln möchtest, das Nachhaltigkeit, Vielfalt oder allgemein Positives fördert und zum Ziel hat, lass uns überlegen, wie wir das gemeinsam umsetzen können."
     }
-  }
+  },
+  "contact": {
+    "title": {
+      "part1": "Sag",
+      "part2": "Hey!"
+    },
+    "subtitle": "Hast du ein Projekt, bei dem ich helfen kann?",
+    "description": "Lass uns über deine Ideen sprechen und wie wir sie verwirklichen.",
+    "form": {
+      "name": {
+        "label": "Dein Name",
+        "placeholder": "Dein Name",
+        "errors": {
+          "required": "Name ist erforderlich.",
+          "invalid": "Bitte gib einen gültigen Namen ein."
+        }
+      },
+      "email": {
+        "label": "Deine E-Mail",
+        "placeholder": "Deine E-Mail",
+        "errors": {
+          "required": "E-Mail ist erforderlich.",
+          "invalid": "Bitte gib eine gültige E-Mail-Adresse ein."
+        }
+      },
+      "message": {
+        "label": "Deine Nachricht",
+        "placeholder": "Deine Nachricht",
+        "errors": {
+          "required": "Wirklich nichts zu sagen? Bitte gib eine Nachricht ein."
+        }
+      },
+      "policy": {
+        "text1": "Ich habe die ",
+        "linkText": "Datenschutzerklärung",
+        "text2": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+        "errors": {
+          "required": "Du musst der Datenschutzerklärung zustimmen."
+        }
+      },
+      "submit": "Senden"
+    }
+  },
+  "footer": "Impressum"
 }
