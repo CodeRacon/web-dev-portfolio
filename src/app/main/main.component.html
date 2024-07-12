@@ -1,7 +1,33 @@
 <app-hero />
 <app-about />
-<app-index-arrow alignment="right" [maxOffset]="4" />
+<app-index-arrow
+  #indexArrow
+  alignment="right"
+  [maxOffset]="4"
+  appScrollAnimation
+  [threshold]="0.5"
+  [rootMargin]="'0px 0px -20% 0px'"
+  (elementVisible)="onArrowVisible($event, 0)"
+/>
+
 <app-skills />
-<app-index-arrow alignment="left" [maxOffset]="4" />
+<app-index-arrow
+  #indexArrow
+  alignment="left"
+  [maxOffset]="4"
+  appScrollAnimation
+  [threshold]="0.5"
+  [rootMargin]="'0px 0px -20% 0px'"
+  (elementVisible)="onArrowVisible($event, 1)"
+/>
+
 <app-portfolio />
-<app-index-arrow alignment="right" [maxOffset]="4" />
+<app-index-arrow
+  #indexArrow
+  alignment="right"
+  [maxOffset]="4"
+  appScrollAnimation
+  [threshold]="0.5"
+  [rootMargin]="'0px 0px -20% 0px'"
+  (elementVisible)="onArrowVisible($event, 2)"
+/>
