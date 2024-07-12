@@ -3,7 +3,9 @@
     <img src="./assets/img/arrows/arrow-up.svg" alt="" />
   </div>
 
-  <h1 appTextShadowOffset [maxOffset]="6">{{ "privacy.title" | translate }}</h1>
+  <h1 class="overlength" appTextShadowOffset [maxOffset]="6">
+    {{ "privacy.title" | translate }}
+  </h1>
 
   <article>
     <p>{{ "privacy.intro.paragraph1" | translate }}</p>
@@ -35,7 +37,8 @@
       {{ "privacy.section1.email" | translate }}:
 
       <span
-        ><a href="mailto:hey@michael.buschmann.dev"
+        ><a
+          href="mailto:hey@michael-buschmann.dev?subject=Hi Micha 👋🏼, I've got a project to talk about!"
           >hey&#64;michael-buschmann.dev</a
         ></span
       >
