@@ -12,10 +12,22 @@ import { BoxShadowOffsetDirective } from '../../shared/common/box-shadow-offset.
 export class HeroComponent implements OnInit {
   private strokeElement: HTMLElement | null;
 
+  /**
+   * Constructs a new instance of the `HeroComponent`.
+   *
+   * @param elementRef - A reference to the element that the component is attached to.
+   * @param renderer - A service that provides methods for manipulating the DOM.
+   */
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {
     this.strokeElement = null;
   }
 
+  /**
+   * Initializes the component and sets up event listeners for the stroke element.
+   *
+   * When the stroke element is hovered over, the 'animate-swing' CSS class is added to it, causing an animation to play.
+   * When the animation ends, the 'animate-swing' class is removed from the stroke element.
+   */
   ngOnInit() {
     this.strokeElement = this.elementRef.nativeElement.querySelector('.stroke');
 
@@ -30,6 +42,12 @@ export class HeroComponent implements OnInit {
     }
   }
 
+  /**
+   * Scrolls the page to the specified section with an optional offset.
+   *
+   * @param sectionId - The ID of the section to scroll to.
+   * @param offset - The vertical offset (in pixels) to apply when scrolling to the section.
+   */
   scrollToSection(sectionId: string, offset = 0): void {
     const element = document.getElementById(sectionId);
     if (element) {
