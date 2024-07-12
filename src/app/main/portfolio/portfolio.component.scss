@@ -22,23 +22,27 @@ $rotateRightCol: translateY(0) translateX(0);
   flex-direction: column;
   align-items: center;
   padding: 0 $section-padding-960;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 
   @media (width <= 960px) {
     padding: 0 $section-padding-300;
   }
 
+  h1.animated {
+    color: $accent;
+    transition: color 0.15s ease-in-out;
+
+    & ~ .text {
+      span {
+        color: $accent;
+        animation: textAttention 0.325s ease-in-out;
+      }
+    }
+  }
+
   h1 {
     width: 100%;
     @include sectionHeading;
-    text-wrap: balance;
-
-    &:hover {
-      & ~ .text span {
-        color: $accent;
-        transition: color 0.15s ease-in-out;
-      }
-    }
   }
 
   .text {
@@ -65,18 +69,20 @@ $rotateRightCol: translateY(0) translateX(0);
       padding: 4rem 0;
       gap: 7rem;
 
-      &:hover .video-box {
-        &::before {
-          opacity: 1;
+      &.animated {
+        .video-box {
+          &::before {
+            opacity: 1;
+          }
+
+          &::after {
+            opacity: 1;
+          }
         }
 
-        &::after {
-          opacity: 1;
+        video {
+          filter: none;
         }
-      }
-
-      &:hover video {
-        filter: none;
       }
 
       .count {
@@ -136,15 +142,21 @@ $rotateRightCol: translateY(0) translateX(0);
         }
       }
 
-      &:hover .info-box {
-        animation: moveInRight_row 0.2s ease-in-out forwards;
-      }
+      &.animated {
+        .info-box {
+          animation: moveInRight_row 0.2s ease-in-out forwards;
+        }
 
-      &:hover .video-box::after {
-        animation: rotateRight_row 0.375s ease-in-out forwards;
+        .video-box::after {
+          animation: rotateRight_row 0.375s ease-in-out forwards;
 
-        @media (width <= 960px) {
-          animation: rotateLeft_col 0.375s ease-in-out forwards !important;
+          @media (width <= 960px) {
+            animation: rotateLeft_col 0.375s ease-in-out forwards !important;
+          }
+        }
+
+        .count {
+          top: 1.25rem;
         }
       }
     }
@@ -193,25 +205,26 @@ $rotateRightCol: translateY(0) translateX(0);
         }
       }
 
-      &:hover .info-box {
-        animation: moveInLeft_row 0.2s ease-in-out forwards;
+      &.animated {
+        .info-box {
+          animation: moveInLeft_row 0.2s ease-in-out forwards;
 
-        @media (width <= 960px) {
-          animation: moveInDown 0.2s ease-in-out forwards;
+          @media (width <= 960px) {
+            animation: moveInDown 0.2s ease-in-out forwards;
+          }
         }
-      }
 
-      &:hover .video-box::after {
-        animation: rotateLeft_row 0.375s ease-in-out forwards;
+        .video-box::after {
+          animation: rotateLeft_row 0.375s ease-in-out forwards;
 
-        @media (width <= 960px) {
-          animation: rotateRight_col 0.375s ease-in-out forwards !important;
+          @media (width <= 960px) {
+            animation: rotateRight_col 0.375s ease-in-out forwards !important;
+          }
         }
-      }
 
-      &:hover .count {
-        transition: all 0.15s ease-in-out;
-        top: 1.25rem;
+        .count {
+          top: 1.25rem;
+        }
       }
     }
   }
@@ -381,6 +394,18 @@ $rotateRightCol: translateY(0) translateX(0);
   }
 }
 
+@keyframes textAttention {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes rotateLeft_row {
   0% {
     transform: $rotateLeftRow rotate(0deg);
@@ -487,8 +512,10 @@ $rotateRightCol: translateY(0) translateX(0);
         align-items: center;
         gap: 2rem;
 
-        &:hover .info-box {
-          animation: moveInDown 0.2s ease-in-out forwards;
+        &.animated {
+          .info-box {
+            animation: moveInDown 0.2s ease-in-out forwards;
+          }
         }
       }
     }

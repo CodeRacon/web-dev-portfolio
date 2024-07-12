@@ -1,5 +1,14 @@
 <section class="portfolio" id="portfolio">
-  <h1 appTextShadowOffset [maxOffset]="6">Portfolio</h1>
+  <h1
+    appScrollAnimation
+    [animationClass]="'animated'"
+    [threshold]="1"
+    [rootMargin]="'0px 0px -33% 0px'"
+    appTextShadowOffset
+    [maxOffset]="6"
+  >
+    Portfolio
+  </h1>
   <div class="text">
     <p>
       {{ "portfolio.intro.part1" | translate }}
@@ -11,12 +20,24 @@
     @for ( project of projectList; track project.name) {
     <div
       class="project"
-      (mouseenter)="playVideo(video)"
-      (mouseleave)="pauseVideo(video)"
+      appScrollAnimation
+      [animationClass]="'animated'"
+      [threshold]="0.5"
+      [rootMargin]="'5% 0px -5% 0px'"
+      (elementVisible)="onElementVisible($event, video)"
     >
       <span class="count">{{ $index + 1 }}/{{ projectList.length }}</span>
       <div class="video-box">
-        <video #video src="./assets/vid/{{ project.video }}" loop muted></video>
+        <video
+          #video
+          src="./assets/vid/{{ project.video }}"
+          loop
+          muted
+          preload="auto"
+          playsinline
+          disablePictureInPicture
+          controlsList="nodownload nofullscreen noremoteplayback"
+        ></video>
       </div>
       <div class="info-box">
         <h3>{{ project.name }}</h3>
