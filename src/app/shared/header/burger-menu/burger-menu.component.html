@@ -4,30 +4,30 @@
       (click)="navigateAndScroll('about', 76); closePopover()"
       appTextShadowOffset
       [maxOffset]="6"
-      >About me</span
+      >{{ "menu.navLinks.about" | translate }}</span
     >
     <span
       (click)="navigateAndScroll('skills', 76); closePopover()"
       appTextShadowOffset
       [maxOffset]="6"
-      >Skills</span
+      >{{ "menu.navLinks.skills" | translate }}</span
     >
     <span
       (click)="navigateAndScroll('portfolio', 76); closePopover()"
       appTextShadowOffset
       [maxOffset]="6"
-      >Portfolio</span
+      >{{ "menu.navLinks.portfolio" | translate }}</span
     >
     <span
       (click)="navigateAndScroll('contact', 76); closePopover()"
       appTextShadowOffset
       [maxOffset]="6"
-      >Contact</span
+      >{{ "menu.navLinks.contact" | translate }}</span
     >
   </nav>
   <div class="tilt" style="overflow: hidden">
     <div class="cta">
-      <span>Say Hej!</span>
+      <span>{{ "menu.cta" | translate }}</span>
       <a href="mailto: hey@michael-buschmann.dev"
         >hey&#64;michael-buschmann.dev
         <div class="underline"></div

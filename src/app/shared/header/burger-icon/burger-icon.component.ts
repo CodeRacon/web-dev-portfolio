@@ -21,6 +21,12 @@ export class BurgerIconComponent {
     this.hamburgerIcon = null;
   }
 
+  /**
+   * Initializes the GSAP timelines for the burger icon animation and hover effect.
+   * The `tl` timeline is used to animate the burger icon to the close icon state.
+   * The `tl_hover` timeline is used to animate the burger icon when hovered over.
+   * The `hamburgerIcon` property holds a reference to the DOM element for the burger icon.
+   */
   ngOnInit() {
     this.tl = new gsap.core.Timeline({ paused: true });
     this.tl_hover = new gsap.core.Timeline({ paused: true });
@@ -93,6 +99,9 @@ export class BurgerIconComponent {
     });
   }
 
+  /**
+   * Closes the menu by adding the 'menu-closed' class to the hamburger icon element and reversing the timeline animation.
+   */
   public closeMenu() {
     if (
       this.hamburgerIcon &&
