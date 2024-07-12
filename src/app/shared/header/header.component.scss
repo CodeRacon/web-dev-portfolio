@@ -2,7 +2,9 @@
 @import "../../../mixins.scss";
 
 header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,15 +13,6 @@ header {
   height: $header-height;
   padding: 1rem $section-padding-960;
   background-color: $background;
-
-  &:hover .language-switch {
-    opacity: 1;
-    right: calc(5rem + $section-padding-960);
-
-    @media (width <= 375px) {
-      right: calc(4rem + $section-padding-960);
-    }
-  }
 
   .logo-box {
     display: flex;
@@ -71,8 +64,13 @@ header {
     @include projectHeading;
     font-size: 1.125rem;
     color: $secondary;
-    opacity: 0;
     transition: all 0.25s ease-out;
+    opacity: 1;
+    right: calc(5rem + $section-padding-960);
+
+    @media (width <= 375px) {
+      right: calc(4rem + $section-padding-960);
+    }
 
     span {
       width: 100%;
