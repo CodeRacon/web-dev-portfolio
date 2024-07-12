@@ -2,7 +2,7 @@
 @import "../../../mixins.scss";
 
 $gap: clamp(1rem, 12.903vw + -5.194rem, 4rem);
-$portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
+$portrait-size: clamp(20rem, 24.242vw + 15.455rem, 30rem);
 
 .about {
   width: 100%;
@@ -10,11 +10,12 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
   flex-direction: column;
   align-items: center;
   padding: 0 $section-padding-960;
-  margin-bottom: 3rem;
+  margin: 3rem 0 4rem 0;
 
   h1 {
     width: 100%;
     @include sectionHeading;
+
     @media (width <= 384px) {
       font-size: 3.5rem;
     }
@@ -23,6 +24,32 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
       & ~ .about-content .text span:not(:first-of-type) {
         color: $accent;
         transition: color 0.15s ease-in-out;
+      }
+    }
+  }
+
+  .animated {
+    color: $accent;
+    transition: color 0.15s ease-in-out;
+
+    & ~ .about-content .text {
+      span:not(:first-of-type) {
+        color: $accent;
+        transition: color 0.15s ease-in-out;
+        animation: textAttention 0.325s ease-in-out;
+        animation-play-state: running;
+      }
+
+      @for $i from 2 through 6 {
+        span:nth-of-type(#{$i}) {
+          animation-delay: #{($i - 2) * 0.15}s;
+        }
+      }
+    }
+
+    & ~ .about-content .img-box {
+      &::before {
+        opacity: 1;
       }
     }
   }
@@ -53,12 +80,12 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
 
       span {
         color: $text;
-        transition: all 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out;
       }
 
       span:first-of-type {
         color: $accent;
-        font-weight: 700;
+        font-weight: 900;
       }
 
       .btn-box {
@@ -116,5 +143,17 @@ $portrait-size: clamp(20rem, 29.091vw + 14.545rem, 32rem);
         opacity: 1;
       }
     }
+  }
+}
+
+@keyframes textAttention {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }

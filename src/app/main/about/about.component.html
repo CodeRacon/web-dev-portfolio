@@ -1,5 +1,15 @@
 <section class="about" id="about">
-  <h1 appTextShadowOffset [maxOffset]="6">{{ "about.title" | translate }}</h1>
+  <h1
+    appScrollAnimation
+    [animationClass]="'animated'"
+    [threshold]="1"
+    [rootMargin]="'50% 0px -35% 0px'"
+    appTextShadowOffset
+    [maxOffset]="6"
+  >
+    {{ "about.title" | translate }}
+  </h1>
+
   <div class="about-content">
     <div class="text">
       <p>
@@ -36,6 +46,12 @@
         </button>
       </div>
     </div>
-    <div class="img-box"></div>
+    <div
+      class="img-box"
+      appScrollAnimation
+      [animationClass]="'animated'"
+      [threshold]="1"
+      [rootMargin]="'-76px 0px -5% 0px'"
+    ></div>
   </div>
 </section>
