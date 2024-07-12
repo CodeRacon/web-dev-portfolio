@@ -54,7 +54,6 @@ body {
   color: $text;
   background-image: radial-gradient($primary 1px, transparent 2px);
   background-size: 5rem 5rem;
-  // overflow-x: hidden;
 
   &::before {
     content: "";

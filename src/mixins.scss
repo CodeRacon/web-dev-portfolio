@@ -27,10 +27,6 @@
   text-align: left;
   cursor: default;
   transition: color ease-in-out 0.15s;
-
-  &:hover {
-    color: $accent;
-  }
 }
 
 @mixin projectHeading {
@@ -72,6 +68,7 @@
   border: $standard-border;
   font-family: "Overpass", sans-serif;
   font-size: 1.5rem;
+  color: $text;
   transition: all 0.125s ease-in-out;
 
   @media (width <= 375px) {
