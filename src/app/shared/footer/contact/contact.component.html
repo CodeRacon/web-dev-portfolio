@@ -1,22 +1,26 @@
-<section class="contact">
-  <h1>Say <br class="split" />Hey!</h1>
+<section class="contact" id="contact">
+  <h1>
+    {{ "contact.title.part1" | translate }} <br class="split" />{{
+      "contact.title.part2" | translate
+    }}
+  </h1>
 
   <div class="subheading">
-    <h2>Got a project I can help with?</h2>
-    <p>Let's talk about your ideas and make it happen.</p>
+    <h2>{{ "contact.subtitle" | translate }}</h2>
+    <p>{{ "contact.description" | translate }}</p>
   </div>
 
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="name-box">
       <fieldset>
-        <legend for="name">Your name</legend>
+        <legend for="name">{{ "contact.form.name.label" | translate }}</legend>
 
         <div class="wrapper">
           <input
             type="text"
             id="name"
             formControlName="name"
-            placeholder="Your name"
+            placeholder="{{ 'contact.form.name.placeholder' | translate }}"
             autocomplete="off"
           />
         </div>
@@ -25,9 +29,11 @@
       || contactForm.get('name')?.touched)) {
       <div class="error-message">
         @if (contactForm.get('name')?.errors?.['required']) {
-        <span>Name is required.&nbsp;</span>
+        <span
+          >{{ "contact.form.name.errors.required" | translate }} &nbsp;</span
+        >
         } @if (contactForm.get('name')?.errors?.['invalidName']) {
-        <span>Please enter a valid name.</span>
+        <span>{{ "contact.form.name.errors.invalid" | translate }}</span>
         }
       </div>
       }
@@ -35,14 +41,16 @@
 
     <div class="mail-box">
       <fieldset>
-        <legend for="email">Your mail</legend>
+        <legend for="email">
+          {{ "contact.form.email.label" | translate }}
+        </legend>
 
         <div class="wrapper">
           <input
             type="email"
             id="email"
             formControlName="email"
-            placeholder="Your mail"
+            placeholder="{{ 'contact.form.email.placeholder' | translate }}"
             autocomplete="off"
           />
         </div>
@@ -51,9 +59,11 @@
       || contactForm.get('email')?.touched)) {
       <div class="error-message">
         @if (contactForm.get('email')?.errors?.['required']) {
-        <span>Email is required.&nbsp;</span>
+        <span
+          >{{ "contact.form.email.errors.required" | translate }} &nbsp;</span
+        >
         } @if (contactForm.get('email')?.errors?.['invalidEmail']) {
-        <span>Please enter a valid email address.</span>
+        <span>{{ "contact.form.email.errors.invalid" | translate }}</span>
         }
       </div>
       }
@@ -61,13 +71,15 @@
 
     <div class="message-box">
       <fieldset>
-        <legend for="message">Your message</legend>
+        <legend for="message">
+          {{ "contact.form.message.label" | translate }}
+        </legend>
         <div class="message-wrapper">
           <textarea
             id="message"
             #message
             formControlName="message"
-            placeholder="Your message"
+            placeholder="{{ 'contact.form.message.placeholder' | translate }}"
             autocomplete="off"
           ></textarea>
         </div>
@@ -78,7 +90,7 @@
       <div class="error-message">
         @if (contactForm.get('message')?.errors?.['required'] ||
         contactForm.get('message')?.errors?.['whitespace']) {
-        <span>Really nothing to say? Please enter a message.</span>
+        <span>{{ "contact.form.message.errors.required" | translate }}</span>
         }
       </div>
       }
@@ -88,21 +100,24 @@
       <div class="checkbox">
         <input type="checkbox" formControlName="policy" id="policy" />
         <p>
-          I've read the
-          <span (click)="scrollToSection('home', 0)"
-            ><a [routerLink]="['/privacy']"
-              >privacy policy
-
-              <div class="underline"></div> </a
-          ></span>
-          and agree to the processing of my data as outlined.
+          {{ "contact.form.policy.text1" | translate }}
+          <span
+            [ngClass]="{ narrow: isGerman, broad: !isGerman }"
+            (click)="scrollToSection('home', 0)"
+          >
+            <a [routerLink]="['/privacy']">
+              {{ "contact.form.policy.linkText" | translate }}
+              <div class="underline"></div>
+            </a>
+          </span>
+          {{ "contact.form.policy.text2" | translate }}
         </p>
       </div>
       @if (contactForm.get('policy')?.invalid &&
       (contactForm.get('policy')?.dirty || contactForm.get('policy')?.touched))
       {
       <div class="error-message">
-        <span>You must agree to the privacy policy.</span>
+        <span>{{ "contact.form.policy.errors.required" | translate }}</span>
       </div>
       }
     </div>
@@ -113,7 +128,7 @@
       [class.disabled]="!isFormValid"
       popovertarget="feedback"
     >
-      Send message
+      {{ "contact.form.submit" | translate }}
     </button>
   </form>
 

@@ -47,8 +47,14 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       font-size: $subheading-fs;
       font-weight: 700;
       color: $accent;
-      line-height: 2.75rem;
+      line-height: normal;
       letter-spacing: -0.025em;
+      text-align: center;
+      text-wrap: balance;
+
+      @media (width <= 620px) {
+        text-align: left;
+      }
     }
 
     p {
@@ -58,7 +64,7 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       text-wrap: balance;
       text-align: center;
 
-      @media (width <= 448px) {
+      @media (width <= 620px) {
         text-align: left;
       }
     }
@@ -237,7 +243,14 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       span {
         display: inline-flex;
         justify-content: center;
-        width: 7rem;
+
+        &.broad {
+          width: 7rem;
+        }
+
+        &.narrow {
+          width: 11rem;
+        }
 
         &:hover a {
           letter-spacing: 0.5px;
@@ -369,11 +382,11 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
   .error-message {
     height: 0.875rem;
     color: #ff0000;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 0.875rem;
     opacity: 1;
     margin-top: 0.325rem;
-    padding-left: 0.825rem;
+    padding-left: 0.325rem;
     text-align: left;
     transition: 0.325s opacity ease-in-out;
 
@@ -423,12 +436,14 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
   #feedback {
     max-width: 18rem;
     padding: 1.75rem 2.5rem;
-    background-color: $feedback;
-    border: 6px solid $text;
+    background-color: $secondary;
+    border: 6px solid $background;
     white-space: pre-line;
     opacity: 0;
+    transform: translateY(-3rem);
+
     transition: 0.425s opacity ease-in-out, 0.425s display allow-discrete,
-      0.425s overlay allow-discrete;
+      0.425s overlay allow-discrete, 0.425s transform ease-out;
 
     p {
       @include sectionText;
@@ -442,11 +457,13 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
 
   #feedback:popover-open {
     opacity: 1;
+    transform: translateY(0);
   }
 
   @starting-style {
     #feedback:popover-open {
       opacity: 0;
+      transform: translateY(3rem);
     }
   }
 }
