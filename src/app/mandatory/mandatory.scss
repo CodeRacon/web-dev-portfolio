@@ -25,12 +25,9 @@ section {
     &:hover {
       color: initial;
     }
-    @media (width <= 384px) {
-      font-size: 3.5rem;
-    }
 
-    &.overlength {
-      font-size: 2.875rem;
+    @media (width <= 520px) {
+      font-size: clamp(2.75rem, 13.793vw + -0.483rem, 4rem);
     }
   }
 
