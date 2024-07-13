@@ -29,10 +29,8 @@
       || contactForm.get('name')?.touched)) {
       <div class="error-message">
         @if (contactForm.get('name')?.errors?.['required']) {
-        <span
-          >{{ "contact.form.name.errors.required" | translate }} &nbsp;</span
-        >
-        } @if (contactForm.get('name')?.errors?.['invalidName']) {
+        <span>{{ "contact.form.name.errors.required" | translate }}</span>
+        } @else if (contactForm.get('name')?.errors?.['invalidName']) {
         <span>{{ "contact.form.name.errors.invalid" | translate }}</span>
         }
       </div>
@@ -59,10 +57,8 @@
       || contactForm.get('email')?.touched)) {
       <div class="error-message">
         @if (contactForm.get('email')?.errors?.['required']) {
-        <span
-          >{{ "contact.form.email.errors.required" | translate }} &nbsp;</span
-        >
-        } @if (contactForm.get('email')?.errors?.['invalidEmail']) {
+        <span>{{ "contact.form.email.errors.required" | translate }}</span>
+        } @else if (contactForm.get('email')?.errors?.['invalidEmail']) {
         <span>{{ "contact.form.email.errors.invalid" | translate }}</span>
         }
       </div>
@@ -88,9 +84,10 @@
       (contactForm.get('message')?.dirty ||
       contactForm.get('message')?.touched)) {
       <div class="error-message">
-        @if (contactForm.get('message')?.errors?.['required'] ||
-        contactForm.get('message')?.errors?.['whitespace']) {
+        @if (contactForm.get('message')?.errors?.['required']) {
         <span>{{ "contact.form.message.errors.required" | translate }}</span>
+        } @else if (contactForm.get('message')?.errors?.['whitespace']) {
+        <span>{{ "contact.form.message.errors.whitespace" | translate }}</span>
         }
       </div>
       }

@@ -124,7 +124,7 @@
       "part1": "Sag",
       "part2": "Hey!"
     },
-    "subtitle": "Hast du ein Projekt, bei dem ich helfen kann?",
+    "subtitle": "Du hast ein Projekt, bei dem ich helfen kann?",
     "description": "Lass uns über deine Ideen sprechen und wie wir sie verwirklichen.",
     "form": {
       "name": {
@@ -147,7 +147,7 @@
         "label": "Deine Nachricht",
         "placeholder": "Deine Nachricht",
         "errors": {
-          "required": "Wirklich nichts zu sagen? Bitte gib eine Nachricht ein."
+          "required": "Nichts zu sagen? Bitte gib eine Nachricht ein."
         }
       },
       "policy": {
@@ -158,7 +158,12 @@
           "required": "Du musst der Datenschutzerklärung zustimmen."
         }
       },
-      "submit": "Senden"
+      "submit": "Senden",
+      "feedback": {
+        "success": "Danke für Deine Nachricht!\n\nIch melde mich in Kürze zurück.",
+        "error": "Uups, das hat nicht geklappt.\n\nBitte versuche es später nochmal.",
+        "serverError": "Ein Fehler ist aufgetreten.\n\nBitte versuche es später nochmal."
+      }
     }
   },
   "footer": "Impressum"

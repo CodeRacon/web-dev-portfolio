@@ -107,18 +107,21 @@ export class ContactComponent {
       this.emailService.sendEmail(this.contactForm.value).subscribe(
         (response) => {
           if (response.success) {
-            this.feedbackMessage =
-              'Danke für Deine Nachricht!\n\nIch melde mich in Kürze bei Dir.';
+            this.feedbackMessage = this.translateService.instant(
+              'contact.form.feedback.success'
+            );
             this.contactForm.reset();
           } else {
-            this.feedbackMessage =
-              'Uups, das hat nicht geklappt.\n\nBitte versuche es später nochmal.';
+            this.feedbackMessage = this.translateService.instant(
+              'contact.form.feedback.error'
+            );
           }
           this.showFeedbackPopover();
         },
         (error) => {
-          this.feedbackMessage =
-            'Ein Fehler ist aufgetreten.\n\nBitte versuche es später nochmal.';
+          this.feedbackMessage = this.translateService.instant(
+            'contact.form.feedback.serverError'
+          );
           this.showFeedbackPopover();
         }
       );
