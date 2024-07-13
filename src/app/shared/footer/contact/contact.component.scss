@@ -294,10 +294,13 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       color: $background;
       border-color: $background;
 
+      @media (width <= 480px) {
+        align-self: flex-start;
+      }
+
       @media (width <= 375px) {
         font-size: clamp(1rem, 5.333vw + 0rem, 1.25rem);
         padding: 1rem 2.375rem;
-        align-self: flex-start;
       }
 
       &:hover {
