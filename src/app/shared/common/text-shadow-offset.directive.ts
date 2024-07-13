@@ -1,6 +1,6 @@
 import { Directive, ElementRef, OnInit, OnDestroy, Input } from '@angular/core';
 import { ShadowOffsetService } from './shadow-offset.service';
-import { Subscription } from 'rxjs';
+import { Subscription, combineLatest } from 'rxjs';
 
 @Directive({
   selector: '[appTextShadowOffset]',
@@ -21,15 +21,21 @@ export class TextShadowOffsetDirective implements OnInit, OnDestroy {
   ) {}
 
   /**
-   * Subscribes to the `getMousePosition$()` observable from the `ShadowOffsetService` and calls the `updateShadow()` method whenever the mouse position changes.
-   * This ensures that the text shadow offset is updated in response to mouse movements.
+   * Subscribes to the `getMousePosition$()` and `getIsDesktopDevice$()` observables from the `ShadowOffsetService`.
+   * When the mouse position changes and the device is a desktop, it updates the text shadow dynamically.
+   * When the device is not a desktop, it sets a fixed text shadow.
    */
   ngOnInit() {
-    this.subscription = this.shadowOffsetService
-      .getMousePosition$()
-      .subscribe(() => {
+    this.subscription = combineLatest([
+      this.shadowOffsetService.getMousePosition$(),
+      this.shadowOffsetService.getIsDesktopDevice$(),
+    ]).subscribe(([_, isDesktop]) => {
+      if (isDesktop) {
         this.updateShadow();
-      });
+      } else {
+        this.setFixedShadow();
+      }
+    });
   }
 
   /**
@@ -57,5 +63,10 @@ export class TextShadowOffsetDirective implements OnInit, OnDestroy {
 
     this.el.nativeElement.style.textShadow = `${x}px ${y}px 0 #f0dbc7`;
     this.el.nativeElement.style.transition = 'text-shadow 0.675s ease-out';
+  }
+
+  private setFixedShadow() {
+    this.el.nativeElement.style.textShadow = `0.25rem 0.25rem 0 #f0dbc7`;
+    this.el.nativeElement.style.transition = 'unset';
   }
 }

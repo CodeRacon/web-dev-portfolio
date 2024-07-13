@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { watchViewport, TornisUpdateValues } from 'tornis';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,12 +14,23 @@ export class ShadowOffsetService {
     x: 0,
     y: 0,
   });
+  /**
+   * A BehaviorSubject that holds a boolean indicating whether the current device is a desktop device.
+   * This is determined by checking if the window width is at least 768 pixels and if the device supports hover interactions.
+   */
+  private isDesktopDevice$ = new BehaviorSubject<boolean>(false);
 
   /**
-   * Subscribes to the `watchViewport` function from the `tornis` library to track changes in the mouse position.
-   * Whenever the mouse position changes, it updates the `mousePosition$` BehaviorSubject with the new coordinates.
+   * Initializes the ShadowOffsetService by checking the device type and setting up event listeners to track the mouse position.
+   *
+   * The `checkDeviceType()` method is called to determine if the current device is a desktop device based on the window width and hover support.
+   *
+   * The `watchViewport()` function from the `tornis` library is used to subscribe to changes in the mouse position. When the mouse position changes, the `mousePosition$` BehaviorSubject is updated with the new coordinates.
    */
   constructor() {
+    this.checkDeviceType();
+    window.addEventListener('resize', () => this.checkDeviceType());
+
     watchViewport(({ mouse }: TornisUpdateValues) => {
       if (mouse.changed) {
         this.mousePosition$.next({ x: mouse.x, y: mouse.y });
@@ -28,11 +39,34 @@ export class ShadowOffsetService {
   }
 
   /**
-   * Returns an observable that emits the current mouse position.
-   * The observable emits an object with `x` and `y` properties representing the mouse coordinates.
+   * Checks the device type based on the window width and hover support.
+   * Updates the `isDesktopDevice$` BehaviorSubject with the determined device type.
+   * If the window width is at least 768 pixels and the device supports hover interactions, the device is considered a desktop device.
    */
-  getMousePosition$() {
+  private checkDeviceType() {
+    const isWideScreen = window.innerWidth >= 769;
+    const canHover = window.matchMedia('(hover: hover)').matches;
+    this.isDesktopDevice$.next(isWideScreen && canHover);
+  }
+
+  /**
+   * Returns an Observable that emits the current mouse position with `x` and `y` coordinates.
+   * This Observable can be subscribed to in order to track changes in the mouse position.
+   *
+   * @returns An Observable of the current mouse position.
+   */
+  getMousePosition$(): Observable<{ x: number; y: number }> {
     return this.mousePosition$.asObservable();
+  }
+
+  /**
+   * Returns an Observable that emits a boolean indicating whether the current device is a desktop device.
+   * This is determined by checking if the window width is at least 768 pixels and if the device supports hover interactions.
+   *
+   * @returns An Observable of a boolean indicating the device type.
+   */
+  getIsDesktopDevice$(): Observable<boolean> {
+    return this.isDesktopDevice$.asObservable();
   }
 
   /**
