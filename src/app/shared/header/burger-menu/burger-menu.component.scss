@@ -45,17 +45,13 @@ $strokeWidth: 4px;
 
     .cta {
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
       gap: 1rem;
       margin-bottom: -0.5rem;
 
       span {
         @include projectHeading;
         color: $background;
-
-        &:hover {
-          color: $accent;
-        }
       }
 
       a {
@@ -74,6 +70,10 @@ $strokeWidth: 4px;
           width: 100%;
           background-color: $accent;
           opacity: 1;
+        }
+
+        &:hover ~ span {
+          color: $accent;
         }
       }
 
