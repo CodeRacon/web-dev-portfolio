@@ -54,7 +54,7 @@ export class PortfolioComponent {
       ],
     },
     {
-      name: 'M7 - Revenue Dashboard',
+      name: 'M7 - Dashboard',
       descriptionKey: 'portfolio.projects.m7.description',
       technologies: ['REST API | JavaScript | VUE.JS | HTML | SCSS'],
       video: 'm7.mp4',
