@@ -41,9 +41,27 @@
       "highlight": "with my very best projects",
       "part2": ". Feel free to try them out and take a look at their codebase."
     },
+    "website": {
+      "part1": "This website was built using the",
+      "highlight1": "Angular-Framework",
+      "part2": ".",
+      "part3": "During the development process, I used the following technologies and libraries:",
+      "highlight2": "PopoverAPI",
+      "part4": "to make the animation process and the functionality of the navigation menu way more efficient.",
+      "part5": "In terms of libraries: ",
+      "highlight3": "GSAP",
+      "part6": "and ",
+      "highlight4": "Tornis",
+      "part7": "for animation purposes. The latter tracks the mouse and scroll position, which is used to animate the floating box- and drop-shadows on certain elements.",
+      "part8": "You want to take a closer look at the Code? Here you go: ",
+      "highlight5": "Website Codebase"
+    },
     "projects": {
       "join": {
         "description": "Kanban-based project management tool designed to enhance workflow & collaboration within your team."
+      },
+      "m7": {
+        "description": "API-based overview of various charts on the earnings of the worlds 7 largest tech companies, the Magnificent Seven."
       },
       "cavernQuest": {
         "description": "2D jump'n run browser game, where you help Woozle conquering a mossy cavern full of mystery and danger."

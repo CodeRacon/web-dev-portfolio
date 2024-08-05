@@ -41,9 +41,27 @@
       "highlight": "meine besten Projekte",
       "part2": "dazu. Schau sie Dir gerne an und wirf einen Blick in die Codebase."
     },
+    "website": {
+      "part1": "Diese Website wurde mit dem",
+      "highlight1": "Angular-Framework",
+      "part2": "erstellt.",
+      "part3": "Während des Entwicklungsprozesses habe ich die folgenden Technologien und Bibliotheken genutzt:",
+      "highlight2": "PopoverAPI",
+      "part4": ", um den Animationsprozess und die Funktionalität des Navigationsmenüs effizienter zu gestalten.",
+      "part5": "Was die Bibliotheken betrifft: ",
+      "highlight3": "GSAP",
+      "part6": "und ",
+      "highlight4": "Tornis",
+      "part7": "für Animationszwecke. Letztere verfolgt die Mouse- und Scroll-Position, die dazu verwendet wird, die box- und drop-shadows bestimmter Elemente fleißend zu animieren.",
+      "part8": "Du möchtest einen genaueren Blick auf den Code werfen ? Hier lang: ",
+      "highlight5": "Website Codebase"
+    },
     "projects": {
       "join": {
         "description": "Kanban-basiertes Projektmanagement-Tool, entwickelt zur Verbesserung des Workflows und der Zusammenarbeit in Deinem Team."
+      },
+      "m7": {
+        "description": "API-basierte Übersicht verschiedener Charts zu den Erträgen der weltweit 7 größten Tech-Unternehmen, den Magnificent Seven."
       },
       "cavernQuest": {
         "description": "2D Jump & Run Game, in dem Du Woozle hilfst, eine verwunschene Höhle voller Gefahren und Geheimnisse zu erobern."
