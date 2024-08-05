@@ -45,6 +45,7 @@ footer {
       img {
         height: 40px;
         object-fit: contain;
+        cursor: pointer;
 
         @media (width <= 375px) {
           transform: scale(0.66666);
