@@ -54,6 +54,16 @@ export class PortfolioComponent {
       ],
     },
     {
+      name: 'M7 - Revenue Dashboard',
+      descriptionKey: 'portfolio.projects.m7.description',
+      technologies: ['REST API | JavaScript | VUE.JS | HTML | SCSS'],
+      video: 'm7.mp4',
+      links: [
+        { name: 'GitHub', url: 'https://github.com/CodeRacon/MagSeven' },
+        { name: 'Live', url: 'https://m7.michael-buschmann.dev/' },
+      ],
+    },
+    {
       name: 'CavernQuest',
       descriptionKey: 'portfolio.projects.cavernQuest.description',
       technologies: ['JavaScript | OOP | Firebase | HTML | CSS'],
