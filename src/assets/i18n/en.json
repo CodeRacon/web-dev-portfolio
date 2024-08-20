@@ -12,24 +12,25 @@
     "title": "About Me",
     "intro": {
       "greeting": "Hi, I'm Micha!",
-      "location": "Based in Dresden, Germany, I'm a passionate Front-end developer with a",
-      "detail": "keen eye for detail",
-      "affinity": "and a strong affinity for interactive web design."
+      "profession": "I'm a passionate Front-End developer with a",
+      "detail": "keen eye for details",
+      "affinity": "and a strong affinity for interactive web design,",
+      "location": "based in Dresden, Germany."
     },
     "background": {
       "foundation": "With a",
       "foundationDetail": "solid foundation in design principles",
-      "experience": "from both work and study, I've honed my skills in crafting all the key elements that make a difference in the development process."
+      "experience": " from both work and study, I've honed my skills in crafting all the key elements that make a difference in the development process."
     },
     "skills": {
       "coding": "Additionally, my",
       "codingDetail": "profound coding skills",
-      "application": "allow me to bring these designs to life,",
+      "application": " allow me to bring these designs to life,",
       "result": "ensuring both functionality and aesthetics"
     },
     "dedication": {
       "intro": "My dedication is to help awesome people craft",
-      "goal": "unique, accessible and lasting user experiences"
+      "goal": "unique, accessible and lasting user experiences."
     },
     "outro": "If you think I'd be a great fit for your projects, feel free to reach out!",
     "cta": "Let's talk!"
@@ -43,11 +44,11 @@
     },
     "website": {
       "part1": "This website was built using the",
-      "highlight1": "Angular-Framework",
-      "part2": ".",
+      "highlight1": "Angular-Framework.",
+      "part2": "",
       "part3": "During the development process, I used the following technologies and libraries:",
       "highlight2": "PopoverAPI",
-      "part4": "to make the animation process and the functionality of the navigation menu way more efficient.",
+      "part4": " to make the animation process and the functionality of the navigation menu way more efficient.",
       "part5": "In terms of libraries: ",
       "highlight3": "GSAP",
       "part6": "and ",

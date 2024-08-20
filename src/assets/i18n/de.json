@@ -12,9 +12,10 @@
     "title": "About Me",
     "intro": {
       "greeting": "Hi, ich bin Micha!",
-      "location": "Ich bin ein leidenschaftlicher Frontend-Entwickler mit einem",
+      "profession": "ich bin leidenschaftlicher Front-End Entwickler mit einem",
       "detail": "geübten Auge für's Detail",
-      "affinity": "und einer starken Affinität für interaktives Webdesign."
+      "affinity": "und einer starken Affinität für interaktives Webdesign.",
+      "location": ""
     },
     "background": {
       "foundation": "Durch meine",
@@ -28,8 +29,8 @@
       "result": "Funktionalität als auch Ästhetik zu vereinen"
     },
     "dedication": {
-      "intro": "Ich setze mich dafür ein, großartigen Menschen zu helfen,",
-      "goal": "einzigartige, zugängliche und nachhaltige Nutzererlebnisse"
+      "intro": "Ich setze mich dafür ein, großartigen Menschen dabei zu helfen,",
+      "goal": "einzigartige, zugängliche und nachhaltige Nutzer-Erlebnisse zu schaffen."
     },
     "outro": "Wenn Du denkst, dass ich gut zu Deinen Projekten passe, melde Dich gerne bei mir!",
     "cta": "Lass uns reden!"
@@ -39,20 +40,20 @@
     "intro": {
       "part1": "Seit über einem Jahr trage ich nun meinen Teil dazu bei, das Web stetig ein bisschen besser zu machen. Im Folgenden siehst Du",
       "highlight": "meine besten Projekte",
-      "part2": "dazu. Schau sie Dir gerne an und wirf einen Blick in die Codebase."
+      "part2": " dazu. Schau sie Dir gerne an und wirf einen Blick in die Codebase."
     },
     "website": {
       "part1": "Diese Website wurde mit dem",
       "highlight1": "Angular-Framework",
       "part2": "erstellt.",
       "part3": "Während des Entwicklungsprozesses habe ich die folgenden Technologien und Bibliotheken genutzt:",
-      "highlight2": "PopoverAPI",
-      "part4": ", um den Animationsprozess und die Funktionalität des Navigationsmenüs effizienter zu gestalten.",
+      "highlight2": "PopoverAPI,",
+      "part4": " um den Animationsprozess und die Funktionalität des Navigationsmenüs effizienter zu gestalten.",
       "part5": "Was die Bibliotheken betrifft: ",
       "highlight3": "GSAP",
       "part6": "und ",
       "highlight4": "Tornis",
-      "part7": "für Animationszwecke. Letztere verfolgt die Mouse- und Scroll-Position, die dazu verwendet wird, die box- und drop-shadows bestimmter Elemente fleißend zu animieren.",
+      "part7": "für Animationszwecke. Letztere verfolgt die Mouse- und Scroll-Position, um die box- und drop-shadows bestimmter Elemente fließend zu animieren.",
       "part8": "Du möchtest einen genaueren Blick auf den Code werfen ? Hier lang: ",
       "highlight5": "Website Codebase"
     },
