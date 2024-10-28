@@ -58,6 +58,9 @@
       "highlight5": "Website Codebase"
     },
     "projects": {
+      "bubble": {
+        "description": "Messenger-App mit vollem Funktionsumfang: Channels, Chats, Profile, Notifications, Suchfunktion... Alles drin!"
+      },
       "join": {
         "description": "Kanban-basiertes Projektmanagement-Tool, entwickelt zur Verbesserung des Workflows und der Zusammenarbeit in Deinem Team."
       },

@@ -44,6 +44,16 @@ export class PortfolioComponent {
    */
   projectList: Project[] = [
     {
+      name: 'MyBubble',
+      descriptionKey: 'portfolio.projects.bubble.description',
+      technologies: ['Angular | TypeScript | Firebase '],
+      video: 'bubble.mp4',
+      links: [
+        { name: 'GitHub', url: 'https://github.com/CodeRacon/bubble' },
+        { name: 'Live', url: 'https://github.com/CodeRacon/MyBubble' },
+      ],
+    },
+    {
       name: 'Join',
       descriptionKey: 'portfolio.projects.join.description',
       technologies: ['JavaScript | Firebase | HTML | CSS'],
