@@ -49,8 +49,8 @@ export class PortfolioComponent {
       technologies: ['Angular | TypeScript | Firebase '],
       video: 'bubble.mp4',
       links: [
-        { name: 'GitHub', url: 'https://github.com/CodeRacon/bubble' },
-        { name: 'Live', url: 'https://github.com/CodeRacon/MyBubble' },
+        { name: 'GitHub', url: 'https://github.com/CodeRacon/MyBubble' },
+        { name: 'Live', url: 'https://bubble.michael-buschmann.dev/' },
       ],
     },
     {
