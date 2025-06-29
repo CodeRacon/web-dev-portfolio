@@ -1,0 +1,522 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+$vid-width-960: clamp(25rem, 78.125vw + -21.875rem, 37.5rem);
+$vid-width-708: clamp(25rem, 60.241vw + 10.843rem, 37.5rem);
+
+$info-box-gap-960: clamp(0.75rem, 1.25vw + 0rem, 1.125rem);
+
+$arrowSquareSize: clamp(1.75rem, 6.977vw + 0.442rem, 4rem);
+
+$frameOffset: 1.25rem;
+
+$rotateLeftRow: translateY(-50%) translateX(-1rem);
+$rotateRightRow: translateY(-50%) translateX(+1rem);
+
+$rotateLeftCol: translateY(0) translateX(0);
+$rotateRightCol: translateY(0) translateX(0);
+
+.portfolio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 $section-padding-960;
+  margin: 2rem 0;
+
+  @media (width <= 960px) {
+    padding: 0 $section-padding-300;
+  }
+
+  h1.animated {
+    color: $accent;
+    transition: color 0.15s ease-in-out;
+
+    & ~ .text {
+      span {
+        color: $accent;
+        animation: textAttention 0.325s ease-in-out;
+      }
+    }
+  }
+
+  h1 {
+    width: 100%;
+    @include sectionHeading;
+  }
+
+  .text {
+    @include sectionText;
+    text-wrap: balance;
+
+    span {
+      color: $text;
+      transition: color 0.15s ease-in-out;
+    }
+  }
+
+  .project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .project {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      padding: 4rem 0;
+      gap: 7rem;
+
+      &.animated .video-box {
+        &::before {
+          opacity: 1;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &.animated video {
+        filter: none;
+      }
+
+      .count {
+        @include sectionText;
+        font-weight: 700;
+        font-size: 2.25rem;
+        position: absolute;
+        width: fit-content;
+      }
+    }
+
+    & > .project:nth-of-type(odd) {
+      flex-direction: row;
+
+      .count {
+        right: 0.25rem;
+        top: 4rem;
+        transition: all 0.15s ease-out;
+
+        @media (width <= 896px) {
+          top: 1.25rem;
+        }
+      }
+
+      .video-box {
+        @media (width <= 708px) {
+          margin: 0 2.5rem 0 0rem;
+        }
+      }
+
+      .info-box {
+        transform: translateX(calc(-100% - 4rem));
+
+        @media (width <= 960px) {
+          transform: translateX(0) translateY(0);
+          width: 100%;
+          max-width: calc($vid-width-960 - 2rem);
+        }
+      }
+
+      .video-box::before {
+        left: 1.25rem;
+      }
+
+      .video-box::after {
+        right: -2.125rem;
+        transform: translateY(-50%) translateX(1rem);
+
+        @media (width <= 960px) {
+          transform: $rotateLeftCol;
+          top: calc((100% - 4px - ($arrowSquareSize / 2)) + $frameOffset);
+          right: calc(0% - ($arrowSquareSize / 2) - $frameOffset);
+        }
+
+        @media (width <= 816) {
+          transform: $rotateLeftCol;
+        }
+      }
+
+      &.animated .info-box {
+        animation: moveInRight_row 0.2s ease-in-out forwards;
+
+        @media (width <= 960px) {
+          animation: moveInDown 0.2s ease-in-out forwards;
+        }
+      }
+
+      &.animated .video-box::after {
+        animation: rotateRight_row 0.375s ease-in-out forwards;
+
+        @media (width <= 960px) {
+          animation: rotateLeft_col 0.375s ease-in-out forwards !important;
+        }
+      }
+    }
+
+    & > .project:nth-of-type(even) {
+      flex-direction: row-reverse;
+
+      .count {
+        left: 0rem;
+        top: 4rem;
+        transition: all 0.15s ease-out;
+
+        @media (width <= 896px) {
+          top: 1.25rem;
+        }
+      }
+
+      .video-box {
+        @media (width <= 708px) {
+          margin: 0 0rem 0 2.5rem;
+        }
+      }
+
+      .info-box {
+        transform: translateX(calc(100% + 4rem));
+
+        @media (width <= 960px) {
+          transform: translateX(0) translateY(0);
+          width: 100%;
+          max-width: calc($vid-width-960 - 2rem);
+        }
+      }
+
+      .video-box::before {
+        right: 1.25rem;
+      }
+
+      .video-box::after {
+        left: -2.125rem;
+        transform: $rotateLeftRow;
+
+        @media (width <= 960px) {
+          transform: $rotateLeftCol;
+          top: calc((100% - 4px - ($arrowSquareSize / 2)) + $frameOffset);
+          left: calc(0% - ($arrowSquareSize / 2) - $frameOffset);
+        }
+      }
+
+      &.animated .info-box {
+        animation: moveInLeft_row 0.2s ease-in-out forwards;
+
+        @media (width <= 960px) {
+          animation: moveInDown 0.2s ease-in-out forwards;
+        }
+      }
+
+      &.animated .video-box::after {
+        animation: rotateLeft_row 0.375s ease-in-out forwards;
+
+        @media (width <= 960px) {
+          animation: rotateRight_col 0.375s ease-in-out forwards !important;
+        }
+      }
+
+      &.animated .count {
+        transition: all 0.15s ease-in-out;
+        top: 1.25rem;
+      }
+    }
+  }
+
+  video {
+    position: relative;
+    z-index: 10;
+    width: $vid-width-960;
+    aspect-ratio: 2 / 1;
+    filter: sepia(0.6) brightness(1.125) contrast(0.8);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transition: all 0.15s ease-in-out;
+
+    @media (width <= 960px) {
+      width: 37.5rem;
+    }
+    @media (width <= 708px) {
+      width: 100%;
+    }
+  }
+}
+
+.info-box {
+  position: inherit;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.25rem;
+  gap: $info-box-gap-960;
+  width: 100%;
+  max-width: 25rem;
+  opacity: 0;
+  text-wrap: balance;
+
+  @media (width <= 960px) {
+    transform: translateX(0) translateY(0);
+    width: 100%;
+    max-width: calc(37.5rem - 2rem);
+  }
+
+  h3 {
+    @include projectHeading;
+  }
+
+  span {
+    @include projectTechnologies;
+  }
+
+  p {
+    @include sectionText;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 25rem;
+    gap: 2rem;
+
+    @media (width <= 375px) {
+      gap: 1.25rem;
+    }
+
+    a {
+      @include contactButton;
+      padding: 1rem 2.875rem;
+      font-size: 1.25rem;
+
+      @media (width <= 375px) {
+        font-size: clamp(1rem, 5.333vw + 0rem, 1.25rem);
+        padding: 1rem 2.375rem;
+      }
+
+      &:hover {
+        padding: 1rem 3.75rem;
+
+        @media (width <= 375px) {
+          padding: 1rem 3rem;
+        }
+      }
+    }
+  }
+}
+
+.video-box {
+  position: relative;
+  z-index: 5;
+  width: fit-content;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    top: 1.25rem;
+    width: calc(100% - 4px);
+    height: calc(100% - 8px);
+    outline: 4px $text solid;
+    opacity: 1;
+    transition: all 0.15s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 15;
+    top: calc(50% + 1.25rem);
+    width: $arrowSquareSize;
+    height: $arrowSquareSize;
+    background-color: $text;
+    background-image: url("../../../assets/img/arrows/arrow-projects.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 42.5%;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: all 0.15s ease-in-out;
+    transform-origin: center;
+  }
+}
+
+@keyframes moveInLeft_row {
+  0% {
+    transform: translateX(calc(100% + 4rem));
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInRight_row {
+  0% {
+    transform: translateX(calc(-100% - 4rem));
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInDown {
+  0% {
+    transform: translateX(0) translateY(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes textAttention {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateLeft_row {
+  0% {
+    transform: $rotateLeftRow rotate(0deg);
+  }
+  20% {
+    transform: $rotateLeftRow rotate(110deg);
+  }
+  40% {
+    transform: $rotateLeftRow rotate(20deg);
+  }
+  60% {
+    transform: $rotateLeftRow rotate(70deg);
+  }
+  80% {
+    transform: $rotateLeftRow rotate(35deg);
+  }
+  90% {
+    transform: $rotateLeftRow rotate(50deg);
+  }
+  100% {
+    transform: $rotateLeftRow rotate(45deg);
+  }
+}
+
+@keyframes rotateRight_row {
+  0% {
+    transform: $rotateRightRow rotate(0deg);
+  }
+  20% {
+    transform: $rotateRightRow rotate(250deg);
+  }
+  40% {
+    transform: $rotateRightRow rotate(340deg);
+  }
+  60% {
+    transform: $rotateRightRow rotate(290deg);
+  }
+  80% {
+    transform: $rotateRightRow rotate(325deg);
+  }
+  90% {
+    transform: $rotateRightRow rotate(310deg);
+  }
+  100% {
+    transform: $rotateRightRow rotate(315deg);
+  }
+}
+
+@keyframes rotateRight_col {
+  0% {
+    transform: $rotateRightCol rotate(0deg);
+  }
+  20% {
+    transform: $rotateRightCol rotate(250deg);
+  }
+  40% {
+    transform: $rotateRightCol rotate(340deg);
+  }
+  60% {
+    transform: $rotateRightCol rotate(290deg);
+  }
+  80% {
+    transform: $rotateRightCol rotate(325deg);
+  }
+  90% {
+    transform: $rotateRightCol rotate(310deg);
+  }
+  100% {
+    transform: $rotateRightCol rotate(315deg);
+  }
+}
+
+@keyframes rotateLeft_col {
+  0% {
+    transform: $rotateLeftCol rotate(0deg);
+  }
+  20% {
+    transform: $rotateLeftCol rotate(110deg);
+  }
+  40% {
+    transform: $rotateLeftCol rotate(20deg);
+  }
+  60% {
+    transform: $rotateLeftCol rotate(70deg);
+  }
+  80% {
+    transform: $rotateLeftCol rotate(35deg);
+  }
+  90% {
+    transform: $rotateLeftCol rotate(50deg);
+  }
+  100% {
+    transform: $rotateLeftCol rotate(45deg);
+  }
+}
+
+@media (width <= 960px) {
+  .portfolio {
+    .project-box {
+      .project:nth-of-type(odd),
+      .project:nth-of-type(even) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+
+        &.animated .info-box {
+          animation: moveInDown 0.2s ease-in-out forwards;
+        }
+      }
+    }
+  }
+}
