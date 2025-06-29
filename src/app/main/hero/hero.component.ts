@@ -1,16 +1,33 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { TextShadowOffsetDirective } from '../../shared/common/text-shadow-offset.directive';
 import { BoxShadowOffsetDirective } from '../../shared/common/box-shadow-offset.directive';
+import { TerminalComponent } from '../terminal/terminal.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [TextShadowOffsetDirective, BoxShadowOffsetDirective],
+  imports: [
+    TextShadowOffsetDirective,
+    BoxShadowOffsetDirective,
+    TerminalComponent,
+    CommonModule,
+  ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent implements OnInit {
   private strokeElement: HTMLElement | null;
+
+  isTerminalOpen = false;
+
+  openTerminal() {
+    this.isTerminalOpen = true;
+  }
+
+  closeTerminal() {
+    this.isTerminalOpen = false;
+  }
 
   /**
    * Constructs a new instance of the `HeroComponent`.

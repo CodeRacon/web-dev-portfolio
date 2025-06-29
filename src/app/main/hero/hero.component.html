@@ -8,7 +8,12 @@
       <div class="stroke" appBoxShadowOffset [maxOffset]="6"></div>
       <h2>Michael Buschmann</h2>
     </div>
-    <button (click)="scrollToSection('contact', 76)">Send a message</button>
+
+    <div class="btn-box">
+      <button appBoxShadowOffset [maxOffset]="8" (click)="openTerminal()">
+        Interactive Terminal
+      </button>
+    </div>
   </div>
   <div class="hero-cta">
     <a
@@ -30,5 +35,14 @@
         <span>down</span>
       </div>
     </div>
+  </div>
+
+  <div
+    class="terminal"
+    *ngIf="isTerminalOpen"
+    appBoxShadowOffset
+    [maxOffset]="8"
+  >
+    <app-terminal (closeTerminal)="closeTerminal()"></app-terminal>
   </div>
 </section>
