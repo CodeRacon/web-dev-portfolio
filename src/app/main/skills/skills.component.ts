@@ -28,6 +28,7 @@ export class SkillsComponent {
     { caption: 'API', icon: 'api' },
     { caption: 'Git', icon: 'git' },
     { caption: 'Material Design', icon: 'md' },
+    { caption: 'PrimeNG', icon: 'primeng' },
     { caption: 'Scrum', icon: 'scrum' },
     { caption: 'CSS', icon: 'css' },
     { caption: 'HTML', icon: 'html' },
