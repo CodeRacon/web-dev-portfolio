@@ -1,0 +1,43 @@
+<div class="terminal-container" (click)="focusInput()">
+  <div #terminalOutput class="terminal-output">
+    <div *ngFor="let line of outputLines" class="terminal-line">
+      <span *ngIf="line.isCommand" class="prompt"
+        >visitor&#64;portfolio:~$&nbsp;</span
+      >
+      <span [innerHTML]="line.content"></span>
+    </div>
+  </div>
+
+  <div class="terminal-input-container">
+    <!-- Dummy-Eingabezeile für die Autovervollständigung -->
+    <div
+      class="terminal-input-line autocomplete-line"
+      *ngIf="autoCompletePrompt"
+    >
+      <span class="prompt">visitor&#64;portfolio:~$</span>
+      <div class="input-text-container">
+        <span class="typed-text">{{ commandValue }}</span
+        ><span class="suggestion-text">{{
+          autoCompletePrompt.slice(commandValue.length)
+        }}</span>
+      </div>
+    </div>
+
+    <!-- Tatsächliche Eingabezeile (transparent, nimmt nur Nutzereingaben an) -->
+    <div class="terminal-input-line real-input-line">
+      <span class="prompt">visitor&#64;portfolio:~$</span>
+      <input
+        #commandInput
+        type="text"
+        [(ngModel)]="commandValue"
+        (keydown)="handleCommand($event)"
+        class="command-input"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        autofocus
+      />
+    </div>
+  </div>
+</div>

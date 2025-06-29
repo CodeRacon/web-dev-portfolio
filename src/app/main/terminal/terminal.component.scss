@@ -1,0 +1,132 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.terminal-container {
+  background-color: $text;
+  color: $background;
+  font-family: "Fira Code", "Courier New", monospace;
+  padding: 20px;
+  width: calc(100vw - 8rem);
+  height: calc(100vh - 8rem);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-output {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $text;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $accent;
+  }
+}
+
+.terminal-line {
+  padding: 2px 0;
+}
+
+.terminal-input-container {
+  position: relative;
+  margin-top: 5px; // Konsistenter Abstand vom Terminal-Output
+  border-top: 1px solid $disabled;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  padding: 5px 0 0 0; // Einheitliches Padding
+  box-sizing: border-box; // Wichtig für korrekte Größenberechnung
+  height: 30px; // Feste Höhe für beide Zeilen
+}
+
+.autocomplete-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background-color: $text;
+  display: flex;
+  align-items: center;
+  padding: 5px 0 0 0;
+  box-sizing: border-box;
+  height: 30px;
+  border-top: none; // Entferne Border, da dieser in .terminal-input-container ist
+}
+
+.real-input-line {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border-top: none; // Entferne Border, da dieser in .terminal-input-container ist
+}
+
+// Sicherstellen, dass die Schriftarten exakt gleich sind
+.typed-text,
+.suggestion-text,
+.command-input,
+.prompt {
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 14px; // Explizite Schriftgröße
+  line-height: 20px; // Konsistente Zeilenhöhe
+}
+
+// Einheitliche Abstände für die Prompt
+.prompt {
+  color: $accent;
+  font-weight: bold;
+  margin-right: 5px;
+  min-width: 170px; // Feste Breite für die Prompt
+  display: inline-block; // Wichtig für korrekte Ausrichtung
+}
+
+// Entferne jegliche Eigenmargins der Eingabezeile
+.command-input {
+  background: transparent;
+  border: none;
+  color: $background;
+  padding: 0; // Kein Padding
+  margin: 0; // Keine Margins
+  height: 20px; // Konsistente Höhe
+  flex-grow: 1;
+  outline: none;
+  caret-color: $background;
+}
+
+// Eliminiere Unterschiede zwischen den Text-Elementen
+.typed-text,
+.suggestion-text {
+  padding: 0;
+  margin: 0;
+  height: 20px;
+}
+
+.suggestion-text {
+  color: $btn-hover;
+}
+
+.input-text-container {
+  display: flex;
+  flex-grow: 1;
+  height: 20px;
+  align-items: center;
+}
+
+:host ::ng-deep .command-highlight {
+  color: $accent;
+  font-weight: bold;
+}
