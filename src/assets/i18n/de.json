@@ -2,76 +2,125 @@
   "menu": {
     "navLinks": {
       "about": "Über mich",
-      "skills": "Meine Skills",
+      "skills": "Stack",
       "portfolio": "Portfolio",
       "contact": "Kontakt"
     },
     "cta": "Sag Hey!"
   },
+  "skills": {
+    "title": "Stack & Fokus",
+    "intro": "Ich entwickle Web- und Mobile-Interfaces mit Fokus auf klare UX, strukturierte Frontend-Logik und wartbare Umsetzung.",
+    "groups": {
+      "core": {
+        "title": "Kern-Stack"
+      },
+      "additional": {
+        "title": "Weitere Erfahrung"
+      },
+      "styling": {
+        "title": "Styling & UI"
+      },
+      "expanding": {
+        "title": "Aktuell im Ausbau"
+      }
+    },
+    "items": {
+      "react": "React",
+      "typescript": "TypeScript",
+      "nextjs": "Next.js",
+      "reactNative": "React Native",
+      "javascript": "JavaScript",
+      "nodejs": "Node.js",
+      "nestjs": "NestJS",
+      "restApis": "REST APIs",
+      "angular": "Angular",
+      "firebase": "Firebase",
+      "scss": "SCSS",
+      "tailwindCss": "Tailwind CSS",
+      "testing": "Testing",
+      "architectureFundamentals": "Architektur-Grundlagen",
+      "backendBasics": "Backend-Grundlagen",
+      "dataModeling": "Datenmodellierung"
+    }
+  },
+  "hero": {
+    "role": {
+      "main": "Software Developer",
+      "sub": "Frontend & Mobile"
+    },
+    "title": {
+      "line1": "I build user-oriented web and mobile applications."
+    },
+    "proofLines": {
+      "line1": "Productive experience across web & mobile",
+      "line2": "Strong UI / UX orientation",
+      "line3": "Currently expanding into architecture and backend"
+    },
+    "subline": "Fokus auf React, TypeScript, Next.js und React Native — mit klarem Anspruch an verständliche UIs, wartbare Umsetzung und verlässliche Feature-Umsetzung.",
+    "proofPoints": {
+      "product": "Web- und Mobile-Feature-Umsetzung im realen Produktkontext",
+      "uiux": "Klare Interfaces mit starkem UX-Verständnis",
+      "growth": "Aktuell im Ausbau: Architektur, Testing und Backend-Grundlagen"
+    },
+    "cta": {
+      "primary": "Kontakt",
+      "secondary": "Portfolio"
+    },
+    "scroll": "Weiter zu Über mich"
+  },
   "about": {
     "title": "Über mich",
-    "intro": {
-      "greeting": "Hi, ich bin Micha!",
-      "profession": "ich bin leidenschaftlicher Front-End Entwickler mit einem",
-      "detail": "geübten Auge für's Detail",
-      "affinity": "und einer starken Affinität für interaktives Webdesign.",
-      "location": ""
+    "paragraph1": {
+      "start": "Ich bin ein ",
+      "highlight1": "Software Developer mit Schwerpunkt auf Frontend- und Mobile-Anwendungen",
+      "middle1": " aus Dresden. In meiner aktuellen Rolle übersetze ich Anforderungen in zuverlässige Web- und Mobile-Features mit ",
+      "highlight2": "React, TypeScript, Next.js und React Native",
+      "end": "."
     },
-    "background": {
-      "foundation": "Durch meine",
-      "foundationDetail": "soliden Grundlagen in Designprinzipien",
-      "experience": ", die ich sowohl durch Arbeit als auch durch Studium erworben habe, bin ich in der Lage, all die Schlüsselelemente zu gestalten, die im Entwicklungsprozess den Unterschied machen."
+    "paragraph2": {
+      "start": "Ich übersetze Anforderungen in ",
+      "highlight1": "klare User Interfaces",
+      "middle1": ", strukturierte Frontend-Logik und verlässliches Applikationsverhalten. Wichtig sind mir verständlicher Code, ",
+      "highlight2": "wartbare Umsetzung",
+      "end": " und nachhaltige Qualität. Gleichzeitig entwickle ich mich gezielt in Richtung breiteres Software Engineering mit mehr Tiefe in Architektur, Testing und Backend-Grundlagen."
     },
-    "skills": {
-      "coding": "Darüber hinaus ermöglichen mir meine",
-      "codingDetail": "fundierten Programmierkenntnisse",
-      "application": ", diese Designs zum Leben zu erwecken und dabei sowohl",
-      "result": "Funktionalität als auch Ästhetik zu vereinen"
-    },
-    "dedication": {
-      "intro": "Ich setze mich dafür ein, großartigen Menschen dabei zu helfen,",
-      "goal": "einzigartige, zugängliche und nachhaltige Nutzer-Erlebnisse zu schaffen."
-    },
-    "outro": "Wenn Du denkst, dass ich gut zu Deinen Projekten passe, melde Dich gerne bei mir!",
-    "cta": "Lass uns reden!"
+    "cta": "Kontakt aufnehmen"
   },
   "portfolio": {
     "title": "Portfolio",
     "intro": {
-      "part1": "Seit über einem Jahr trage ich nun meinen Teil dazu bei, das Web stetig ein bisschen besser zu machen. Im Folgenden siehst Du",
-      "highlight": "meine besten Projekte",
-      "part2": " dazu. Schau sie Dir gerne an und wirf einen Blick in die Codebase."
+      "text": "Eine kuratierte Auswahl an Arbeiten, die meinen Beitrag in realen Web- und Mobile-Anwendungen zeigt — von klaren Interfaces und nutzbaren Flows bis zu wartbarer Umsetzung."
     },
-    "website": {
-      "part1": "Diese Website wurde mit dem",
-      "highlight1": "Angular-Framework",
-      "part2": "erstellt.",
-      "part3": "Während des Entwicklungsprozesses habe ich die folgenden Technologien und Bibliotheken genutzt:",
-      "highlight2": "PopoverAPI,",
-      "part4": " um den Animationsprozess und die Funktionalität des Navigationsmenüs effizienter zu gestalten.",
-      "part5": "Was die Bibliotheken betrifft: ",
-      "highlight3": "GSAP",
-      "part6": "und ",
-      "highlight4": "Tornis",
-      "part7": "für Animationszwecke. Letztere verfolgt die Mouse- und Scroll-Position, um die box- und drop-shadows bestimmter Elemente fließend zu animieren.",
-      "part8": "Du möchtest einen genaueren Blick auf den Code werfen ? Hier lang: ",
-      "highlight5": "Website Codebase"
+    "labels": {
+      "earlierWork": "Frühere Arbeit",
+      "webApplication": "Web-Anwendung",
+      "mobileApplication": "Mobile-Anwendung"
     },
-    "projects": {
-      "bubble": {
-        "description": "Messenger-App mit vollem Funktionsumfang: Channels, Chats, Profile, Notifications, Suchfunktion... Alles drin!"
+    "links": {
+      "github": "GitHub",
+      "liveDemo": "Live Demo"
+    },
+    "entries": {
+      "webApp": {
+        "title": "Professional Experience",
+        "stack": "React ⋅ TypeScript ⋅ Next.js ⋅ Zustand",
+        "context": "Mitarbeit an einem <span class=\"accent-highlight\">vollständigen Web-Plattform-Makeover für eine Social-Impact-Organisation</span>, die Betroffene von digitaler Gewalt und Online-Hass unterstützt.",
+        "contribution": "Mein Beitrag umfasste ein <span class=\"accent-highlight\">komplettes Frontend-Rebuild</span>, von wiederverwendbaren Core-Components bis zu <span class=\"accent-highlight\">komplexen, mehrstufigen Formular- und Terminbuchungs-Flows</span>, inklusive API-Anbindung für verlässliche Bearbeitungsprozesse.",
+        "note": "Aufgrund von Vertraulichkeit und Produktstatus sind öffentlicher Code und detaillierte Visuals nicht verfügbar."
       },
-      "join": {
-        "description": "Kanban-basiertes Projektmanagement-Tool, entwickelt zur Verbesserung des Workflows und der Zusammenarbeit in Deinem Team."
+      "ynspool": {
+        "title": "YNSPOOL",
+        "stack": "React Native ⋅ TypeScript ⋅ Expo",
+        "context": "Mitarbeit an YNSPOOL, einer <span class=\"accent-highlight\">Mobile-App für KI-unterstützte Content-Creation</span> im DIY-Kontext.",
+        "contribution": "Mein Beitrag umfasste eine Expo-Migration, die Implementierung eines neuen AI-assisted Create-Flows, die <span class=\"accent-highlight\">Abstimmung der API-Datenstruktur mit dem Backend</span> sowie die Umsetzung von Design- und Feature-Anforderungen.",
+        "note": "Öffentlicher Source Code ist nicht verfügbar. Ausgewählte Implementierungsdetails können in persönlichen Gesprächen besprochen werden."
       },
-      "m7": {
-        "description": "API-basierte Übersicht verschiedener Charts zu den Erträgen der weltweit 7 größten Tech-Unternehmen, den Magnificent Seven."
-      },
-      "cavernQuest": {
-        "description": "2D Jump & Run Game, in dem Du Woozle hilfst, eine verwunschene Höhle voller Gefahren und Geheimnisse zu erobern."
-      },
-      "pokeDex": {
-        "description": "PokeAPI-gestützte Pokemon-Datenbank, um alle Infos zu erhalten, die Du über deine Lieblingsmonster brauchst!"
+      "mybubble": {
+        "title": "MyBubble",
+        "stack": "Angular ⋅ TypeScript ⋅ Firebase",
+        "context": "Ein Teamprojekt für eine <span class=\"accent-highlight\">Messaging-Plattform</span> mit Channels, Profilen, Notifications, Suche und responsivem Verhalten.",
+        "contribution": "Mein Beitrag umfasste die Implementierung der Suche, den <span class=\"accent-highlight\">Aufbau zentraler Screens und Interaktionsflüsse</span> sowie die Unterstützung bei Feature-Planung und Teamkoordination."
       }
     }
   },
@@ -146,8 +195,8 @@
       "part1": "Sag",
       "part2": "Hey!"
     },
-    "subtitle": "Du hast ein Projekt, bei dem ich helfen kann?",
-    "description": "Lass uns über deine Ideen sprechen und wie wir sie verwirklichen.",
+    "subtitle": "Offen für professionellen Austausch.",
+    "description": "Wenn du über Frontend- und Mobile-Engineering im realen Produktkontext sprechen möchtest, melde dich gern.",
     "form": {
       "name": {
         "label": "Dein Name",
