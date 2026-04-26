@@ -157,8 +157,11 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       margin-left: 0.875rem;
       padding: 0 0.25rem;
       opacity: 0;
-      transition: 0.325s opacity ease-in-out, 0.325s margin-bottom ease-in-out,
-        0.325s display allow-discrete, 0.325s overlay allow-discrete;
+      transition:
+        0.325s opacity ease-in-out,
+        0.325s margin-bottom ease-in-out,
+        0.325s display allow-discrete,
+        0.325s overlay allow-discrete;
     }
 
     input,
@@ -293,6 +296,7 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       @include contactButton;
       color: $background;
       border-color: $background;
+      background-color: transparent;
 
       @media (width <= 480px) {
         align-self: flex-start;
@@ -304,6 +308,7 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
       }
 
       &:hover {
+        background-color: transparent;
         @media (width <= 375px) {
           padding: 1rem 3rem;
         }
@@ -311,13 +316,12 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
 
       &:active {
         color: $text;
-        background-color: $background;
       }
     }
 
     button.disabled {
-      border-color: $disabled;
-      color: $disabled;
+      border-color: $btn-hover;
+      color: $btn-hover;
       pointer-events: none;
     }
   }
@@ -445,8 +449,11 @@ $topPadding: clamp(3rem, -4.211vw + 3.789rem, 0rem);
     opacity: 0;
     transform: translateY(-3rem);
 
-    transition: 0.425s opacity ease-in-out, 0.425s display allow-discrete,
-      0.425s overlay allow-discrete, 0.425s transform ease-out;
+    transition:
+      0.425s opacity ease-in-out,
+      0.425s display allow-discrete,
+      0.425s overlay allow-discrete,
+      0.425s transform ease-out;
 
     p {
       @include sectionText;

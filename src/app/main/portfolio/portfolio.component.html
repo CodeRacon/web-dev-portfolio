@@ -7,82 +7,67 @@
     appTextShadowOffset
     [maxOffset]="6"
   >
-    Portfolio
+    {{ "portfolio.title" | translate }}
   </h1>
   <div class="text">
     <p>
-      {{ "portfolio.intro.part1" | translate }}
-      <span>{{ "portfolio.intro.highlight" | translate }}</span
-      >{{ "portfolio.intro.part2" | translate }}
-    </p>
-    <p>
-      {{ "portfolio.website.part1" | translate }}
-      {{ "portfolio.website.highlight1" | translate }}
-      {{ "portfolio.website.part2" | translate }}
-      <br />
-      {{ "portfolio.website.part3" | translate }}
-    </p>
-    <p>
-      {{ "portfolio.website.highlight2" | translate }}
-      {{ "portfolio.website.part4" | translate }}
-      {{ "portfolio.website.part5" | translate }}
-      {{ "portfolio.website.highlight3" | translate }}
-      {{ "portfolio.website.part6" | translate }}
-      {{ "portfolio.website.highlight4" | translate }}
-      {{ "portfolio.website.part7" | translate }}
-    </p>
-    <p>
-      {{ "portfolio.website.part8" | translate }}
-      <span>
-        <a href="https://github.com/CodeRacon/web-dev-portfolio">
-          {{ "portfolio.website.highlight5" | translate }}
-          <div class="underline"></div>
-        </a>
-      </span>
+      {{ "portfolio.intro.text" | translate }}
     </p>
   </div>
-  <div class="project-box">
-    @for ( project of projectList; track project.name) {
-    <div
-      class="project"
-      appScrollAnimation
-      [animationClass]="'animated'"
-      [threshold]="0.5"
-      [rootMargin]="'5% 0px -5% 0px'"
-      (elementVisible)="onElementVisible($event, video)"
-    >
-      <span class="count">{{ $index + 1 }}/{{ projectList.length }}</span>
-      <div class="video-box">
-        <video
-          #video
-          src="./assets/vid/{{ project.video }}"
-          loop
-          muted
-          preload="auto"
-          playsinline
-          disablePictureInPicture
-          controlsList="nodownload nofullscreen noremoteplayback"
-        ></video>
-      </div>
-      <div class="info-box">
-        <h3>{{ project.name }}</h3>
-        <span>{{ project.technologies }}</span>
-        <p>{{ project.descriptionKey | translate }}</p>
+  <div class="work-list">
+    @for (entry of selectedWork; track entry.id) {
+      <article
+        class="work-card"
+        [class.earlier-work]="entry.isEarlierWork"
+        appBoxShadowOffset
+        [maxOffset]="8"
+        appScrollAnimation
+        [animationClass]="'work-animated'"
+        [threshold]="0.35"
+        [rootMargin]="'0px 0px -10% 0px'"
+      >
+        <div class="card-header">
+          <h3>{{ entry.titleKey | translate }}</h3>
+          <div class="tags">
+            @if (entry.roleBadgeKey) {
+              <span class="tag tag--plain">{{
+                entry.roleBadgeKey | translate
+              }}</span>
+            }
 
-        <div class="links">
-          @for (link of project.links; track link.name ){
-          <a
-            href="{{ link.url }}"
-            target="_blank"
-            appBoxShadowOffset
-            [maxOffset]="8"
-          >
-            {{ link.name }}
-          </a>
-          }
+            @if (entry.isEarlierWork) {
+              <span class="tag tag--earlier">{{
+                "portfolio.labels.earlierWork" | translate
+              }}</span>
+            }
+          </div>
         </div>
-      </div>
-    </div>
+
+        <p class="stack">{{ entry.stackKey | translate }}</p>
+        <p class="context" [innerHTML]="entry.contextKey | translate"></p>
+        <p
+          class="contribution"
+          [innerHTML]="entry.contributionKey | translate"
+        ></p>
+
+        @if (entry.noteKey) {
+          <p class="note">{{ entry.noteKey | translate }}</p>
+        }
+
+        @if (entry.links.length) {
+          <div class="links">
+            @for (link of entry.links; track link.labelKey) {
+              <a
+                href="{{ link.url }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ link.labelKey | translate }}
+              </a>
+            }
+          </div>
+        }
+      </article>
     }
   </div>
 </section>

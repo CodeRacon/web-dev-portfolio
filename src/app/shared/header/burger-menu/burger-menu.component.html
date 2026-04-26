@@ -1,53 +1,56 @@
 <section #burgerMenu class="menu">
-  <nav #navLinks>
-    <span
-      (click)="navigateAndScroll('about', 76); closePopover()"
-      appTextShadowOffset
-      [maxOffset]="6"
-      >{{ "menu.navLinks.about" | translate }}</span
+  <nav>
+    <button
+      type="button"
+      class="menu-link"
+      [class.active]="activeSection === 'about'"
+      (click)="navigateAndScroll('about'); closePopover()"
     >
-    <span
-      (click)="navigateAndScroll('skills', 76); closePopover()"
-      appTextShadowOffset
-      [maxOffset]="6"
-      >{{ "menu.navLinks.skills" | translate }}</span
+      {{ "menu.navLinks.about" | translate }}
+    </button>
+    <button
+      type="button"
+      class="menu-link"
+      [class.active]="activeSection === 'skills'"
+      (click)="navigateAndScroll('skills'); closePopover()"
     >
-    <span
-      (click)="navigateAndScroll('portfolio', 76); closePopover()"
-      appTextShadowOffset
-      [maxOffset]="6"
-      >{{ "menu.navLinks.portfolio" | translate }}</span
+      {{ "menu.navLinks.skills" | translate }}
+    </button>
+    <button
+      type="button"
+      class="menu-link"
+      [class.active]="activeSection === 'portfolio'"
+      (click)="navigateAndScroll('portfolio'); closePopover()"
     >
-    <span
-      (click)="navigateAndScroll('contact', 76); closePopover()"
-      appTextShadowOffset
-      [maxOffset]="6"
-      >{{ "menu.navLinks.contact" | translate }}</span
+      {{ "menu.navLinks.portfolio" | translate }}
+    </button>
+    <button
+      type="button"
+      class="menu-link"
+      [class.active]="activeSection === 'contact'"
+      (click)="navigateAndScroll('contact'); closePopover()"
     >
+      {{ "menu.navLinks.contact" | translate }}
+    </button>
   </nav>
-  <div class="tilt" style="overflow: hidden">
-    <div class="cta">
-      <a
-        href="mailto:hey@michael-buschmann.dev?subject=Hi Micha 👋🏼, I've got a project to talk about!"
-        >hey&#64;michael-buschmann.dev
-        <div class="underline"></div
-      ></a>
-      <span id="cta-span">{{ "menu.cta" | translate }}</span>
-    </div>
+  <div class="menu-footer">
+    <a
+      class="email-link"
+      href="mailto:hey@michael-buschmann.dev?subject=Hi Micha 👋🏼, I've got a project to talk about!"
+      >hey&#64;michael-buschmann.dev</a
+    >
     <div class="external-links">
       <a href="https://github.com/CodeRacon" target="_blank"
         ><img src="assets/img/icons/github.svg" alt="GitHub"
       /></a>
-
-      <a
-        href="mailto:hey@michael-buschmann.dev?subject=Hi Micha 👋🏼, I've got a project to talk about!"
-        ><img src="assets/img/icons/mail.svg" alt="Mail"
-      /></a>
-
       <a
         href="https://de.linkedin.com/in/michael-buschmann-front-end-dev"
         target="_blank"
         ><img src="assets/img/icons/linkedin.svg" alt="LinkedIn"
+      /></a>
+      <a
+        href="mailto:hey@michael-buschmann.dev?subject=Hi Micha 👋🏼, I've got a project to talk about!"
+        ><img src="assets/img/icons/mail.svg" alt="Mail"
       /></a>
     </div>
   </div>

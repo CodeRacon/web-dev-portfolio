@@ -1,24 +1,19 @@
 import { Component, Input, AfterViewInit } from '@angular/core';
-import { TextShadowOffsetDirective } from '../../common/text-shadow-offset.directive';
-import { BoxShadowOffsetDirective } from '../../common/box-shadow-offset.directive';
 import { BurgerIconComponent } from '../burger-icon/burger-icon.component';
 import { RouterModule, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
-  imports: [
-    TextShadowOffsetDirective,
-    BoxShadowOffsetDirective,
-    RouterModule,
-    TranslateModule,
-  ],
+  imports: [RouterModule, TranslateModule],
   selector: 'app-burger-menu',
   templateUrl: './burger-menu.component.html',
   styleUrls: ['./burger-menu.component.scss'],
 })
 export class BurgerMenuComponent implements AfterViewInit {
   @Input() burgerIcon!: BurgerIconComponent;
+  @Input() activeSection = '';
+  private readonly sectionOffset = 96;
 
   constructor(private router: Router) {}
 
@@ -45,7 +40,10 @@ export class BurgerMenuComponent implements AfterViewInit {
    * @param offset - The offset (in pixels) to apply when scrolling to the section.
    * @returns A Promise that resolves when the navigation and scrolling are complete.
    */
-  async navigateAndScroll(sectionId: string, offset = 0): Promise<void> {
+  async navigateAndScroll(
+    sectionId: string,
+    offset = this.sectionOffset
+  ): Promise<void> {
     if (this.router.url !== '/') {
       await this.router.navigate(['/']);
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -59,7 +57,7 @@ export class BurgerMenuComponent implements AfterViewInit {
    * @param sectionId - The ID of the section to scroll to.
    * @param offset - The offset (in pixels) to apply when scrolling to the section.
    */
-  scrollToSection(sectionId: string, offset = 0): void {
+  scrollToSection(sectionId: string, offset = this.sectionOffset): void {
     const element = document.getElementById(sectionId);
     if (element) {
       const y =
@@ -76,10 +74,6 @@ export class BurgerMenuComponent implements AfterViewInit {
     if (popover instanceof HTMLElement) {
       popover.hidePopover();
     }
-
-    const burgerIcon = document.getElementById('burger-icon');
-    if (burgerIcon) {
-      burgerIcon.classList.add('menu-closed');
-    }
+    this.burgerIcon.closeMenu();
   }
 }
