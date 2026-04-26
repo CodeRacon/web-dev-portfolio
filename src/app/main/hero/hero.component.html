@@ -1,48 +1,49 @@
 <section class="hero">
   <div class="atf">
-    <h1 appTextShadowOffset>
-      Frontend <br />
-      Developer
+    <h1 class="role-main" appTextShadowOffset [maxOffset]="10">
+      {{ "hero.role.main" | translate }}
     </h1>
-    <div class="subheading">
+    <div class="role-sub-row">
       <div class="stroke" appBoxShadowOffset [maxOffset]="6"></div>
-      <h2>Michael Buschmann</h2>
+      <p class="role-sub">{{ "hero.role.sub" | translate }}</p>
     </div>
 
-    <div class="btn-box">
-      <button appBoxShadowOffset [maxOffset]="8" (click)="openTerminal()">
-        Interactive Terminal
+    <p class="claim">
+      {{ "hero.title.line1" | translate }}
+    </p>
+
+    <div class="proof-lines">
+      <p>{{ "hero.proofLines.line1" | translate }}</p>
+      <p>{{ "hero.proofLines.line2" | translate }}</p>
+      <p>{{ "hero.proofLines.line3" | translate }}</p>
+    </div>
+
+    <div class="cta-group">
+      <button
+        type="button"
+        appBoxShadowOffset
+        [maxOffset]="8"
+        (click)="scrollToSection('portfolio')"
+      >
+        {{ "hero.cta.secondary" | translate }}
+      </button>
+      <button
+        type="button"
+        appBoxShadowOffset
+        [maxOffset]="8"
+        (click)="scrollToSection('contact')"
+      >
+        {{ "hero.cta.primary" | translate }}
       </button>
     </div>
   </div>
-  <div class="hero-cta">
+
+  <div class="hero-meta">
     <a
-      class="vert-email"
+      class="email-link"
       href="mailto:hey@michael-buschmann.dev?subject=Hi Micha 👋🏼, I've got a project to talk about!"
     >
-      hey&#64;michael-buschmann.dev</a
-    >
-    <div class="scrolldown">
-      <div class="arrow-wrapper">
-        <img
-          src="./assets/img/arrows/arrow-down.svg"
-          alt="arrow down-pointing arrow, suggesting to scroll down to next section"
-        />
-      </div>
-
-      <div class="text">
-        <span>Scroll</span>
-        <span>down</span>
-      </div>
-    </div>
-  </div>
-
-  <div
-    class="terminal"
-    *ngIf="isTerminalOpen"
-    appBoxShadowOffset
-    [maxOffset]="8"
-  >
-    <app-terminal (closeTerminal)="closeTerminal()"></app-terminal>
+      hey&#64;michael-buschmann.dev
+    </a>
   </div>
 </section>

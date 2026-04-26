@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TextShadowOffsetDirective } from '../../shared/common/text-shadow-offset.directive';
 import { BoxShadowOffsetDirective } from '../../shared/common/box-shadow-offset.directive';
 import { ScrollAnimationDirective } from '../../shared/common/scroll-animation.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills',
@@ -10,27 +11,28 @@ import { ScrollAnimationDirective } from '../../shared/common/scroll-animation.d
     TextShadowOffsetDirective,
     BoxShadowOffsetDirective,
     ScrollAnimationDirective,
+    TranslateModule,
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
-  /**
-   * An array of objects representing the stack of technologies displayed in the skills-section.
-   * Each object has a `caption` property, basically the technologies name, and an `icon`
-   * property to be used in the templates for-loop to build the img tags.
-   */
-  techStack = [
-    { caption: 'Angular', icon: 'angular' },
-    { caption: 'TypeScript', icon: 'ts' },
-    { caption: 'JavaScript', icon: 'js' },
-    { caption: 'Firebase', icon: 'firebase' },
-    { caption: 'API', icon: 'api' },
-    { caption: 'Git', icon: 'git' },
-    { caption: 'Material Design', icon: 'md' },
-    { caption: 'PrimeNG', icon: 'primeng' },
-    { caption: 'Scrum', icon: 'scrum' },
-    { caption: 'CSS', icon: 'css' },
-    { caption: 'HTML', icon: 'html' },
+  readonly skillGroups = [
+    {
+      key: 'core',
+      items: ['react', 'typescript', 'nextjs', 'reactNative'],
+    },
+    {
+      key: 'additional',
+      items: ['javascript', 'nodejs', 'nestjs', 'restApis', 'angular', 'firebase'],
+    },
+    {
+      key: 'styling',
+      items: ['scss', 'tailwindCss'],
+    },
+    {
+      key: 'expanding',
+      items: ['testing', 'architectureFundamentals', 'backendBasics', 'dataModeling'],
+    },
   ];
 }

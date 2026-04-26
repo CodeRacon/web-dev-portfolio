@@ -15,6 +15,7 @@ $portrait-size: clamp(20rem, 24.242vw + 15.455rem, 30rem);
   h1 {
     width: 100%;
     @include sectionHeading;
+    color: $text;
 
     @media (width <= 384px) {
       font-size: 3.5rem;
@@ -29,7 +30,7 @@ $portrait-size: clamp(20rem, 24.242vw + 15.455rem, 30rem);
   }
 
   .animated {
-    color: $accent;
+    color: $text;
     transition: color 0.15s ease-in-out;
 
     & ~ .about-content .text {
@@ -40,7 +41,7 @@ $portrait-size: clamp(20rem, 24.242vw + 15.455rem, 30rem);
         animation-play-state: running;
       }
 
-      @for $i from 2 through 6 {
+      @for $i from 2 through 4 {
         span:nth-of-type(#{$i}) {
           animation-delay: #{($i - 2) * 0.15}s;
         }
@@ -79,6 +80,10 @@ $portrait-size: clamp(20rem, 24.242vw + 15.455rem, 30rem);
       span {
         color: $text;
         transition: color 0.15s ease-in-out;
+      }
+
+      p + p {
+        margin-top: 1rem;
       }
 
       span:first-of-type {

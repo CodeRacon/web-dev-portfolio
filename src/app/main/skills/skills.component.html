@@ -3,22 +3,32 @@
     <legend
       appTextShadowOffset
       [maxOffset]="6"
-      appScrollAnimation
-      [animationClass]="'animated'"
-      [threshold]="1"
-      [rootMargin]="'50% 0px -35% 0px'"
     >
-      My Skills
+      {{ "skills.title" | translate }}
     </legend>
-    <div class="icon-box">
-      @for(tech of techStack; track techStack) {
-      <figure>
-        <img
-          src="./assets/img/icons/{{ tech.icon }}.svg"
-          alt="{{ tech.caption }}"
-        />
-      </figure>
-      }
+    <div
+      class="skills-content"
+      appScrollAnimation
+      [animationClass]="'content-animated'"
+      [threshold]="0.4"
+      [rootMargin]="'0px 0px -10% 0px'"
+    >
+      <p class="skills-intro">
+        {{ "skills.intro" | translate }}
+      </p>
+
+      <div class="skills-groups">
+        @for (group of skillGroups; track group.key) {
+        <article class="skills-group">
+          <h3>{{ ("skills.groups." + group.key + ".title") | translate }}</h3>
+          <ul>
+            @for (itemKey of group.items; track itemKey) {
+            <li>{{ ("skills.items." + itemKey) | translate }}</li>
+            }
+          </ul>
+        </article>
+        }
+      </div>
     </div>
   </fieldset>
 </section>

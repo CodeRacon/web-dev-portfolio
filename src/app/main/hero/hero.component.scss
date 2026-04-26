@@ -4,7 +4,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - $header-height);
+  min-height: calc(100dvh - $header-height);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,172 +12,154 @@
   padding: 0 $section-padding-960;
 
   .atf {
-    position: relative;
-    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: fit-content;
-    cursor: default;
-    margin-top: 6rem;
+    flex: 1;
+    width: 100%;
+    max-width: 56rem;
+    margin-top: clamp(2rem, 8vh, 6rem);
 
-    @media (width <= 512px) {
-      margin-top: 2.5rem;
-    }
-
-    h1 {
+    .role-main {
       margin: 0;
       font-family: "Montserrat", sans-serif;
-      font-size: $heading-fs;
+      font-size: clamp(3rem, 8vw, 7.2rem);
       font-weight: 900;
-      line-height: 100%;
+      line-height: 94%;
+      letter-spacing: -0.01em;
       text-align: center;
+      text-wrap: pretty;
     }
 
-    .subheading {
+    .role-sub-row {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: clamp(0.675rem, 2.34vw + 0.236rem, 1.5rem);
-      padding: 0 clamp(0.375rem, 4.61vw + -0.489rem, 2rem);
+      gap: clamp(0.75rem, 2vw, 1.4rem);
       width: 100%;
+      margin-top: clamp(0.25rem, 1.6vw, 0.75rem);
 
       .stroke {
-        flex-grow: 1;
+        width: clamp(7rem, 18vw, 15rem);
         height: 4px;
-        margin-top: 8px;
+        margin-top: 1.125rem;
         background-color: $text;
-
-        @media (width <= 428px) {
-          display: none;
-        }
       }
 
-      h2 {
+      .role-sub {
+        margin: 1.5rem 0 0;
         font-family: "Overpass", sans-serif;
-        font-size: $subheading-fs;
+        font-size: clamp(1.5rem, 2.2vw + 0.95rem, 2.7rem);
         font-weight: 700;
+        line-height: 1.1;
+        text-align: center;
         color: $accent;
-        line-height: 2.75rem;
-        letter-spacing: -0.025em;
-        margin: clamp(0.375rem, 1.773vw + 0.043rem, 1rem) 0 0;
+        letter-spacing: -0.015em;
       }
     }
-  }
 
-  .hero-cta {
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    padding: 0 $section-padding-960 1rem $section-padding-960;
-
-    font-family: "Overpass", sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    font-weight: 200;
-    color: $text;
-
-    .vert-email {
-      text-decoration: none;
-      font-family: unset;
-      text-align: left;
-      writing-mode: vertical-rl;
-      transform: rotate(-180deg);
+    .claim {
+      @include sectionText;
+      margin: 2.25rem 0 0;
+      font-family: "Overpass", sans-serif;
+      font-size: clamp(1.25rem, 1.05vw + 1rem, 1.95rem);
+      font-weight: 500;
+      line-height: 1.2;
+      text-align: center;
+      text-wrap: pretty;
     }
 
-    .scrolldown {
+    .proof-lines {
+      @include sectionText;
+
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      gap: 1rem;
+      margin: 1.25rem 0 0;
+      text-align: center;
+      color: $text;
+
+      p {
+        margin: 0;
+        font-size: clamp(1rem, 0.5vw + 0.9rem, 1.2rem);
+        font-weight: 300;
+        line-height: 1.125;
+      }
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      gap: 4rem;
 
-      .arrow-wrapper {
-        display: flex;
+      button {
+        @include contactButton;
+        display: inline-flex;
         justify-content: center;
-        align-items: flex-end;
-        overflow: hidden;
-        width: 60px;
-        height: 11.25rem;
-
-        img {
-          display: block;
-          animation: scrollArrow 2.5s infinite;
-          filter: invert(8%) sepia(8%) saturate(503%) hue-rotate(289deg)
-            brightness(93%) contrast(95%);
-        }
+        width: clamp(13.5rem, 18vw, 16rem);
+        white-space: nowrap;
       }
 
-      @keyframes scrollArrow {
-        0% {
-          transform: translateY(-100%);
-        }
-        25% {
-          transform: translateY(0);
-        }
-        75% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(100%);
-        }
-      }
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        cursor: default;
+      button:hover {
+        padding: 1.25rem 3.5rem;
       }
     }
   }
 
-  .btn-box {
+  .hero-meta {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     width: 100%;
-    margin-top: 3rem;
+    padding-bottom: 1rem;
 
-    @media (width <= 960px) {
-      display: none;
+    .email-link {
+      @include sectionText;
+      font-size: 1rem;
+      color: $text;
+      transition: color 0.15s ease-in-out;
+
+      &:hover {
+        color: $accent;
+      }
     }
-
-    button {
-      @include contactButton;
-    }
-  }
-
-  .terminal {
-    position: absolute;
-    z-index: 50;
-    margin-top: 1rem;
   }
 }
 
-.animate-swing {
-  animation: swing 0.35s forwards;
-  transform-origin: center;
-}
+@media (width <= 960px) {
+  .hero {
+    min-height: unset;
+    padding-top: 1rem;
 
-@keyframes swing {
-  0% {
-    transform: scaleX(1);
-  }
-  25% {
-    transform: scaleX(0.9);
-  }
-  50% {
-    transform: scaleX(1.1);
-  }
-  75% {
-    transform: scaleX(0.95);
-  }
-  100% {
-    transform: scaleX(1);
+    .atf {
+      align-items: center;
+      max-width: none;
+      margin-top: 2rem;
+
+      .role-sub-row {
+        justify-content: center;
+      }
+
+      .proof-lines {
+        text-align: center;
+      }
+
+      .cta-group {
+        justify-content: center;
+        gap: 1.5rem;
+      }
+    }
+
+    .hero-meta {
+      justify-content: flex-start;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+    }
   }
 }
