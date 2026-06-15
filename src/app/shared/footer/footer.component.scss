@@ -14,7 +14,13 @@ footer {
   align-items: center;
   padding: $section-padding-960 $section-padding-960 2rem $section-padding-960;
   flex-grow: 1;
-  background-color: $text;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, $deep-teal 26%, transparent),
+      transparent 56%
+    ),
+    $text;
   clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
 
   .bottom-box {
@@ -39,17 +45,14 @@ footer {
 
         line-height: 1rem;
         font-weight: 300;
-        color: $background;
+        color: $paper;
+        text-shadow: 1px 1px 0 $deep-teal;
       }
 
       img {
-        height: 40px;
+        height: 2.625rem;
         object-fit: contain;
         cursor: pointer;
-
-        @media (width <= 375px) {
-          transform: scale(0.66666);
-        }
       }
     }
 
@@ -80,7 +83,7 @@ footer {
             height: 4px;
             bottom: -4px;
             left: 0;
-            background-color: $accent;
+            background-color: $secondary;
             opacity: 0;
             transition: all 0.15s ease-in-out;
 
@@ -95,14 +98,14 @@ footer {
             opacity: 1;
           }
 
-          &:hover {
-            filter: invert(46%) sepia(59%) saturate(898%) hue-rotate(318deg)
-              brightness(80%) contrast(98%);
-          }
+          // &:hover {
+          //   filter: invert(73%) sepia(73%) saturate(793%) hue-rotate(337deg)
+          //     brightness(99%) contrast(91%);
+          // }
         }
 
         img {
-          width: 32px;
+          width: 2rem;
 
           @media (width <= 375px) {
             transform: scale(0.75);
@@ -128,20 +131,20 @@ footer {
         a {
           @include sectionText;
           font-size: 1rem;
-          color: $background;
+          color: $paper;
           width: fit-content;
           cursor: pointer;
           transition: all 0.15s ease-in-out;
 
           &:hover {
-            color: $accent;
+            color: $secondary;
             letter-spacing: 0.5px;
             font-weight: 500;
           }
 
           &:hover .underline {
             width: 100%;
-            background-color: $accent;
+            background-color: $secondary;
 
             opacity: 1;
           }
@@ -150,7 +153,7 @@ footer {
             width: 0;
             height: 2px;
             margin-top: -2px;
-            background-color: $background;
+            background-color: $paper;
             opacity: 0;
             transition: all 0.15s ease-in-out;
           }

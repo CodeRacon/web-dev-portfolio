@@ -44,7 +44,7 @@
   font-family: "Overpass", sans-serif;
   font-size: 1.375rem;
   font-weight: 400;
-  color: #d9534f;
+  color: $accent;
   letter-spacing: -0.025em;
 }
 
@@ -64,12 +64,11 @@
 @mixin contactButton {
   width: fit-content;
   padding: 1.25rem 3.5rem;
-  background-color: unset;
   border: $standard-border;
   font-family: "Overpass", sans-serif;
   font-size: 1.5rem;
   color: $text;
-  background-color: $background;
+  background-color: $paper;
   transition: all 0.125s ease-in-out;
 
   @media (width <= 375px) {
@@ -80,11 +79,11 @@
     padding: 1.25rem 4.5rem;
     font-weight: 700;
     letter-spacing: 0.025rem;
-    background-color: $btn-hover;
+    background-color: color-mix(in srgb, $primary 42%, $paper 58%);
   }
 
   &:active {
-    color: $background;
+    color: $paper;
     background-color: $text;
   }
 }

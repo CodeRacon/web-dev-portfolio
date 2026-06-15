@@ -1,0 +1,9 @@
+<svg width="360" height="180" viewBox="78 72 360 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">MB logo</title>
+  <desc id="desc">A layered MB monogram using the portfolio design system colors.</desc>
+  <g font-family="Montserrat, Arial Black, Arial, sans-serif" font-size="188" font-weight="900" text-anchor="middle" dominant-baseline="middle">
+    <text x="268" y="188" fill="#f1aa2d" stroke="#11100f" stroke-width="6" paint-order="stroke fill" stroke-linejoin="miter">MB</text>
+    <text x="256" y="176" fill="#9edfd4" stroke="#11100f" stroke-width="6" paint-order="stroke fill" stroke-linejoin="miter">MB</text>
+    <text x="244" y="164" fill="#fff1dc" stroke="#11100f" stroke-width="10" paint-order="stroke fill" stroke-linejoin="miter">MB</text>
+  </g>
+</svg>

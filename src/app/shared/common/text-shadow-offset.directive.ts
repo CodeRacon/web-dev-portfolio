@@ -7,8 +7,15 @@ import { Subscription, combineLatest } from 'rxjs';
   standalone: true,
 })
 export class TextShadowOffsetDirective implements OnInit, OnDestroy {
-  @Input() maxOffset: number = 8;
+  @Input() maxOffset: number = 4;
+  @Input() shadowColors: string[] = ['#128f94', '#df553d', '#f1aa2d'];
+  @Input() layerStep: number = 1;
+  @Input() outlineWidth: number = 0;
+  @Input() outlineColor: string = '#11100f';
+  @Input() activeClass: string = '';
   private subscription!: Subscription;
+  private classObserver?: MutationObserver;
+  private isDesktopDevice = false;
 
   /**
    * Constructs a new `TextShadowOffsetDirective` instance.
@@ -26,15 +33,14 @@ export class TextShadowOffsetDirective implements OnInit, OnDestroy {
    * When the device is not a desktop, it sets a fixed text shadow.
    */
   ngOnInit() {
+    this.watchActiveClass();
+
     this.subscription = combineLatest([
       this.shadowOffsetService.getMousePosition$(),
       this.shadowOffsetService.getIsDesktopDevice$(),
     ]).subscribe(([_, isDesktop]) => {
-      if (isDesktop) {
-        this.updateShadow();
-      } else {
-        this.setFixedShadow();
-      }
+      this.isDesktopDevice = isDesktop;
+      this.applyShadow();
     });
   }
 
@@ -47,6 +53,8 @@ export class TextShadowOffsetDirective implements OnInit, OnDestroy {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+
+    this.classObserver?.disconnect();
   }
 
   /**
@@ -61,12 +69,83 @@ export class TextShadowOffsetDirective implements OnInit, OnDestroy {
       this.maxOffset
     );
 
-    this.el.nativeElement.style.textShadow = `${x}px ${y}px 0 #f0dbc7`;
+    this.el.nativeElement.style.textShadow = this.buildLayeredShadow(x, y);
     this.el.nativeElement.style.transition = 'text-shadow 0.675s ease-out';
   }
 
   private setFixedShadow() {
-    this.el.nativeElement.style.textShadow = `0.25rem 0.25rem 0 #f0dbc7`;
+    this.el.nativeElement.style.textShadow = this.buildLayeredShadow(2, 2);
     this.el.nativeElement.style.transition = 'unset';
+  }
+
+  private applyShadow(): void {
+    if (!this.isActive()) {
+      this.clearShadow();
+      return;
+    }
+
+    if (this.isDesktopDevice) {
+      this.updateShadow();
+    } else {
+      this.setFixedShadow();
+    }
+  }
+
+  private clearShadow(): void {
+    this.el.nativeElement.style.textShadow = 'none';
+  }
+
+  private isActive(): boolean {
+    if (!this.activeClass) {
+      return true;
+    }
+
+    return this.el.nativeElement.classList.contains(this.activeClass);
+  }
+
+  private watchActiveClass(): void {
+    if (!this.activeClass) {
+      return;
+    }
+
+    this.classObserver = new MutationObserver(() => this.applyShadow());
+    this.classObserver.observe(this.el.nativeElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  }
+
+  private buildLayeredShadow(x: number, y: number): string {
+    const signX = x < 0 ? -1 : 1;
+    const signY = y < 0 ? -1 : 1;
+    const stepX = x + signX * this.layerStep;
+    const stepY = y + signY * this.layerStep;
+
+    const outlineShadows = this.buildOutlineShadows();
+    const colorShadows = this.shadowColors
+      .map((color, index) => {
+        const depth = index + 1;
+        const layerX = stepX * depth;
+        const layerY = stepY * depth;
+        return `${layerX.toFixed(2)}px ${layerY.toFixed(2)}px 0 ${color}`;
+      });
+
+    return [...outlineShadows, ...colorShadows].join(', ');
+  }
+
+  private buildOutlineShadows(): string[] {
+    const shadows: string[] = [];
+
+    for (let x = -this.outlineWidth; x <= this.outlineWidth; x++) {
+      for (let y = -this.outlineWidth; y <= this.outlineWidth; y++) {
+        if (x === 0 && y === 0) {
+          continue;
+        }
+
+        shadows.push(`${x}px ${y}px 0 ${this.outlineColor}`);
+      }
+    }
+
+    return shadows;
   }
 }

@@ -1,0 +1,13 @@
+<svg
+      preserveAspectRatio="none"
+      viewBox="0 0 1440 120"
+      xmlns="http://www.w3.org/2000/svg"
+      style="
+        fill: #1b1819;
+        width: 150%;
+        height: 150px;
+        transform: rotate(180deg);
+      "
+    >
+      <path d="M1440 120L0 16.48V0h1440v120z" />
+    </svg>

@@ -10,7 +10,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $accent;
+  background-color: $secondary;
 }
 
 ::-webkit-scrollbar-track {
@@ -54,7 +54,10 @@ body {
   margin: 0 auto;
   padding: 0;
   color: $text;
-  background-image: radial-gradient($primary 1px, transparent 2px);
+  background-image: radial-gradient(
+    color-mix(in srgb, $teal 24%, transparent) 1px,
+    transparent 2px
+  );
   background-size: 5rem 5rem;
 
   &::before {
@@ -66,7 +69,7 @@ body {
     height: 100%;
     background-image: radial-gradient(
       circle at var(--mouse-x) var(--mouse-y),
-      $bg-hover 1rem,
+      $background 1rem,
       $transparent var(--radius),
       $transparent calc(var(--radius) + 1px),
       $transparent 100%
