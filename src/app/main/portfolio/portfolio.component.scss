@@ -2,8 +2,8 @@
 @import "../../../mixins.scss";
 
 :host ::ng-deep .portfolio .accent-highlight {
-  color: $accent;
-  font-weight: 400;
+  color: $teal;
+  font-weight: 700;
 }
 
 .portfolio {
@@ -26,7 +26,7 @@
   }
 
   h1.animated {
-    color: $text;
+    color: $paper;
     transition: color 0.15s ease-in-out;
   }
 
@@ -38,6 +38,7 @@
     p {
       max-width: 62ch;
       margin: 0;
+      white-space: pre-line;
     }
   }
 
@@ -45,14 +46,115 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.625rem;
+    gap: 2.25rem;
     margin-top: 2rem;
+  }
+
+  .protected-access {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 26rem);
+    gap: 1.25rem 2rem;
+    align-items: end;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: $standard-border;
+    background-color: color-mix(in srgb, $paper 82%, $primary 18%);
+
+    h2 {
+      margin: 0;
+      font-family: "Overpass", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: $text;
+    }
+
+    p {
+      @include sectionText;
+      max-width: 66ch;
+      margin: 0.35rem 0 0;
+      font-size: 1rem;
+    }
+
+    .protected-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-family: "Overpass", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1;
+      color: $text;
+    }
+
+    .protected-input-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.6rem;
+    }
+
+    input {
+      min-width: 0;
+      border: $standard-border;
+      background-color: $paper;
+      padding: 0.7rem 0.75rem;
+      font-family: "Overpass", sans-serif;
+      font-size: 1rem;
+      color: $text;
+      outline: none;
+
+      &:focus-visible {
+        background-color: $bg-hover;
+      }
+    }
+
+    button {
+      border: $standard-border;
+      background-color: $secondary;
+      padding: 0.7rem 0.9rem;
+      font-family: "Overpass", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: $text;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: color-mix(in srgb, $paper 72%, $disabled 28%);
+        cursor: not-allowed;
+      }
+    }
+
+    .protected-feedback {
+      margin-top: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+
+      &.error {
+        color: $coral;
+      }
+
+      &.success {
+        color: $deep-teal;
+      }
+    }
+
+    @media (width <= 760px) {
+      grid-template-columns: 1fr;
+
+      .protected-input-row {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 
   .work-card {
     width: 100%;
-    border: 4px solid $text;
-    background-color: $background;
+    border: $standard-border;
+    background-color: $paper;
     padding: clamp(1rem, 0.816vw + 0.847rem, 1.5rem);
     opacity: 0;
     transform: translateY(8px);
@@ -75,43 +177,98 @@
         justify-content: flex-end;
         align-items: center;
         gap: 0.45rem;
+        cursor: default;
 
         .tag {
           margin-top: 0.15rem;
-          padding: 0.175rem 0.55rem;
-          border: 1px solid $secondary;
+          padding: 0.25rem;
+          padding-top: 0.5rem;
+          background: color-mix(in srgb, $teal 24%, $paper 58%);
           font-family: "Overpass", sans-serif;
           font-size: 0.875rem;
           font-weight: 500;
-          line-height: 1.2;
+          line-height: 0.8;
           letter-spacing: 0.02em;
           text-transform: uppercase;
           white-space: nowrap;
-          color: $accent;
-        }
-
-        .tag--plain {
-          border: none;
-          padding: 0;
-          margin-top: 0;
-          opacity: 0.95;
-        }
-
-        .tag--earlier {
-          border: none;
-          padding: 0;
-          margin-top: 0;
+          color: $text;
         }
       }
     }
 
+    .card-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem 2rem;
+      margin-top: 0.8rem;
+
+      &.has-aside-links {
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+    }
+
+    .card-main {
+      min-width: 0;
+    }
+
+    .card-aside {
+      justify-self: end;
+    }
+
+    .card-links-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .qr-link {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+      justify-items: start;
+      width: 7rem;
+
+      a {
+        @include sectionText;
+        display: inline;
+        margin: 0;
+        padding: 0;
+        font-family: "Overpass", sans-serif;
+        font-size: 1rem;
+        color: $text;
+        text-align: left;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2rem;
+        text-decoration-color: $secondary;
+        cursor: pointer;
+        transition:
+          color 0.125s ease-in-out,
+          text-decoration-color 0.125s ease-in-out;
+
+        &:hover {
+          color: $accent;
+          text-decoration-color: $primary;
+        }
+      }
+
+      img {
+        width: 7rem;
+        height: 7rem;
+        border: 2px solid $text;
+        background-color: $paper;
+      }
+    }
+
     .stack {
-      margin: 0.8rem 0 0;
+      margin: 0;
       font-family: "Overpass", sans-serif;
       font-size: 1.1rem;
       font-weight: 600;
       line-height: 1.35;
       color: $accent;
+      cursor: default;
     }
 
     .context,
@@ -145,13 +302,14 @@
         text-decoration-thickness: 1px;
         text-underline-offset: 0.2rem;
         text-decoration-color: $secondary;
+        cursor: pointer;
         transition:
           color 0.125s ease-in-out,
           text-decoration-color 0.125s ease-in-out;
 
         &:hover {
           color: $accent;
-          text-decoration-color: $accent;
+          text-decoration-color: $primary;
         }
       }
     }
@@ -164,6 +322,15 @@
         .tags {
           justify-content: flex-start;
         }
+      }
+
+      .card-content,
+      .card-content.has-aside-links {
+        grid-template-columns: 1fr;
+      }
+
+      .card-aside {
+        justify-self: start;
       }
 
       .links {

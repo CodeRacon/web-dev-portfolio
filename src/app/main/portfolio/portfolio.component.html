@@ -5,7 +5,9 @@
     [threshold]="1"
     [rootMargin]="'0px 0px -33% 0px'"
     appTextShadowOffset
+    [activeClass]="'animated'"
     [maxOffset]="6"
+    [outlineWidth]="2"
   >
     {{ "portfolio.title" | translate }}
   </h1>
@@ -14,6 +16,53 @@
       {{ "portfolio.intro.text" | translate }}
     </p>
   </div>
+
+  <form class="protected-access" (ngSubmit)="unlockProtectedDetails()">
+    <div class="protected-copy">
+      <h2>{{ "portfolio.protectedAccess.title" | translate }}</h2>
+      <p>{{ "portfolio.protectedAccess.description" | translate }}</p>
+    </div>
+
+    <div class="protected-controls">
+      <label for="portfolio-password">
+        {{ "portfolio.protectedAccess.label" | translate }}
+      </label>
+      <div class="protected-input-row">
+        <input
+          id="portfolio-password"
+          name="portfolioPassword"
+          type="password"
+          autocomplete="off"
+          [(ngModel)]="protectedPassword"
+          placeholder="{{
+            'portfolio.protectedAccess.placeholder' | translate
+          }}"
+        />
+        <button
+          type="submit"
+          [disabled]="isUnlockingProtectedDetails || !hasProtectedPassword()"
+        >
+          {{
+            (isUnlockingProtectedDetails
+              ? "portfolio.protectedAccess.loading"
+              : "portfolio.protectedAccess.submit"
+            ) | translate
+          }}
+        </button>
+      </div>
+
+      @if (protectedAccessErrorKey) {
+        <p class="protected-feedback error">
+          {{ protectedAccessErrorKey | translate }}
+        </p>
+      } @else if (protectedAccessSuccess) {
+        <p class="protected-feedback success">
+          {{ "portfolio.protectedAccess.success" | translate }}
+        </p>
+      }
+    </div>
+  </form>
+
   <div class="work-list">
     @for (entry of selectedWork; track entry.id) {
       <article
@@ -27,45 +76,112 @@
         [rootMargin]="'0px 0px -10% 0px'"
       >
         <div class="card-header">
-          <h3>{{ entry.titleKey | translate }}</h3>
+          @if (getProtectedTitle(entry.id); as protectedTitle) {
+            <h3>{{ protectedTitle }}</h3>
+          } @else {
+            <h3>{{ entry.titleKey | translate }}</h3>
+          }
+
           <div class="tags">
             @if (entry.roleBadgeKey) {
-              <span class="tag tag--plain">{{
-                entry.roleBadgeKey | translate
-              }}</span>
+              <span class="tag">{{ entry.roleBadgeKey | translate }}</span>
             }
 
             @if (entry.isEarlierWork) {
-              <span class="tag tag--earlier">{{
+              <span class="tag">{{
                 "portfolio.labels.earlierWork" | translate
               }}</span>
             }
           </div>
         </div>
 
-        <p class="stack">{{ entry.stackKey | translate }}</p>
-        <p class="context" [innerHTML]="entry.contextKey | translate"></p>
-        <p
-          class="contribution"
-          [innerHTML]="entry.contributionKey | translate"
-        ></p>
+        @if (getProtectedLinks(entry.id); as protectedLinks) {
+          @if (getQrLinks(entry); as qrLinks) {
+            <div
+              class="card-content"
+              [class.has-aside-links]="protectedLinks.length || qrLinks.length"
+            >
+              <div class="card-main">
+                <p class="stack">
+                  {{ entry.stackKey | translate }}@if (shouldShowFsd(entry.id)) {
+                    ⋅ FSD
+                  }
+                </p>
+                <p
+                  class="context"
+                  [innerHTML]="entry.contextKey | translate"
+                ></p>
+                <p
+                  class="contribution"
+                  [innerHTML]="entry.contributionKey | translate"
+                ></p>
 
-        @if (entry.noteKey) {
-          <p class="note">{{ entry.noteKey | translate }}</p>
-        }
+                @if (entry.noteKey && !shouldHideNote(entry.id)) {
+                  <p class="note">{{ entry.noteKey | translate }}</p>
+                }
 
-        @if (entry.links.length) {
-          <div class="links">
-            @for (link of entry.links; track link.labelKey) {
-              <a
-                href="{{ link.url }}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {{ link.labelKey | translate }}
-              </a>
-            }
-          </div>
+                @if (getTextLinks(entry); as textLinks) {
+                  @if (textLinks.length) {
+                    <div class="links">
+                      @for (link of textLinks; track link.labelKey) {
+                        <a
+                          href="{{ link.url }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {{ link.labelKey | translate }}
+                        </a>
+                      }
+                    </div>
+                  }
+                }
+              </div>
+
+              @if (protectedLinks.length || qrLinks.length) {
+                <div class="card-aside">
+                  <div class="card-links-aside">
+                    @for (link of protectedLinks; track link.url) {
+                      <div class="qr-link">
+                        <a
+                          href="{{ link.url }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {{ link.label }}
+                        </a>
+                        <img
+                          [src]="link.qrCodeDataUrl"
+                          [alt]="link.label + ' QR Code'"
+                          width="112"
+                          height="112"
+                        />
+                      </div>
+                    }
+
+                    @for (link of qrLinks; track link.url) {
+                      @if (getPublicLinkQrCode(link.url); as qrCodeDataUrl) {
+                        <div class="qr-link">
+                          <a
+                            href="{{ link.url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {{ link.labelKey | translate }}
+                          </a>
+                          <img
+                            [src]="qrCodeDataUrl"
+                            [alt]="(link.labelKey | translate) + ' QR Code'"
+                            width="112"
+                            height="112"
+                          />
+                        </div>
+                      }
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          }
         }
       </article>
     }

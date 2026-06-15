@@ -8,6 +8,28 @@
     },
     "cta": "Sag Hey!"
   },
+
+  "hero": {
+    "role": {
+      "main": "Software-Developer",
+      "sub": "Web & Mobile"
+    },
+    "title": {
+      "line1": "Web- und Mobile-Anwendungen mit Fokus auf saubere Umsetzung, Usability und Design"
+    },
+    "proofLines": {
+      "line1": "Entwicklung mit React, Next.js, React Native und Express",
+      "line2": "State Management, API-Anbindung und Backend-Abstimmung",
+      "line3": "Blick für User Guidance und visuelle Stimmigkeit"
+    },
+
+    "cta": {
+      "primary": "Kontakt",
+      "secondary": "Portfolio"
+    },
+    "scroll": "Weiter zu Über mich"
+  },
+
   "skills": {
     "title": "Stack & Fokus",
     "intro": "Ich entwickle Web- und Mobile-Interfaces mit Fokus auf klare UX, strukturierte Frontend-Logik und wartbare Umsetzung.",
@@ -15,14 +37,17 @@
       "core": {
         "title": "Kern-Stack"
       },
-      "additional": {
-        "title": "Weitere Erfahrung"
+      "frontendPractice": {
+        "title": "Frontend Practice"
+      },
+      "backendData": {
+        "title": "Backend & Data"
       },
       "styling": {
         "title": "Styling & UI"
       },
-      "expanding": {
-        "title": "Aktuell im Ausbau"
+      "additional": {
+        "title": "Weitere Erfahrung"
       }
     },
     "items": {
@@ -30,67 +55,52 @@
       "typescript": "TypeScript",
       "nextjs": "Next.js",
       "reactNative": "React Native",
-      "javascript": "JavaScript",
-      "nodejs": "Node.js",
-      "nestjs": "NestJS",
+      "stateManagement": "State Management",
       "restApis": "REST APIs",
-      "angular": "Angular",
+      "featureSlicedDesign": "Feature-Sliced Design (FSD)",
+      "nodejs": "Node.js",
+      "express": "Express",
+      "nestjs": "NestJS",
+      "postgresql": "PostgreSQL",
+      "prisma": "Prisma",
       "firebase": "Firebase",
       "scss": "SCSS",
       "tailwindCss": "Tailwind CSS",
-      "testing": "Testing",
-      "architectureFundamentals": "Architektur-Grundlagen",
-      "backendBasics": "Backend-Grundlagen",
-      "dataModeling": "Datenmodellierung"
+      "angular": "Angular",
+      "vuejs": "Vue.js",
+      "figma": "Figma"
     }
   },
-  "hero": {
-    "role": {
-      "main": "Software Developer",
-      "sub": "Frontend & Mobile"
-    },
-    "title": {
-      "line1": "I build user-oriented web and mobile applications."
-    },
-    "proofLines": {
-      "line1": "Productive experience across web & mobile",
-      "line2": "Strong UI / UX orientation",
-      "line3": "Currently expanding into architecture and backend"
-    },
-    "subline": "Fokus auf React, TypeScript, Next.js und React Native — mit klarem Anspruch an verständliche UIs, wartbare Umsetzung und verlässliche Feature-Umsetzung.",
-    "proofPoints": {
-      "product": "Web- und Mobile-Feature-Umsetzung im realen Produktkontext",
-      "uiux": "Klare Interfaces mit starkem UX-Verständnis",
-      "growth": "Aktuell im Ausbau: Architektur, Testing und Backend-Grundlagen"
-    },
-    "cta": {
-      "primary": "Kontakt",
-      "secondary": "Portfolio"
-    },
-    "scroll": "Weiter zu Über mich"
-  },
+
   "about": {
     "title": "Über mich",
     "paragraph1": {
-      "start": "Ich bin ein ",
-      "highlight1": "Software Developer mit Schwerpunkt auf Frontend- und Mobile-Anwendungen",
-      "middle1": " aus Dresden. In meiner aktuellen Rolle übersetze ich Anforderungen in zuverlässige Web- und Mobile-Features mit ",
-      "highlight2": "React, TypeScript, Next.js und React Native",
+      "start": "",
+      "highlight1": "Web- und Mobile-Entwickler",
+      "middle1": " mit gutem Blick für ",
+      "highlight2": "Usability, visuelle Stimmigkeit und verlässliche Umsetzung",
       "end": "."
     },
     "paragraph2": {
-      "start": "Ich übersetze Anforderungen in ",
-      "highlight1": "klare User Interfaces",
-      "middle1": ", strukturierte Frontend-Logik und verlässliches Applikationsverhalten. Wichtig sind mir verständlicher Code, ",
-      "highlight2": "wartbare Umsetzung",
-      "end": " und nachhaltige Qualität. Gleichzeitig entwickle ich mich gezielt in Richtung breiteres Software Engineering mit mehr Tiefe in Architektur, Testing und Backend-Grundlagen."
+      "start": "Der Fokus liegt auf ",
+      "highlight1": "klaren User Interfaces",
+      "middle1": ", nachvollziehbaren Flows und Frontend-Arbeit, die ",
+      "highlight2": "Produktanforderungen, Design und technische Schnittstellen",
+      "end": " zusammenbringt."
+    },
+    "paragraph3": {
+      "start": "Wichtig ist dabei, Anforderungen nicht nur abzuarbeiten, sondern ",
+      "highlight1": "mitzudenken",
+      "middle1": ": vom ersten Screen über Datenflüsse bis zu Details, die ",
+      "highlight2": "Nutzung und Gesamteindruck",
+      "end": " spürbar verbessern."
     },
     "cta": "Kontakt aufnehmen"
   },
   "portfolio": {
-    "title": "Portfolio",
+    "title": "Selected Work",
     "intro": {
-      "text": "Eine kuratierte Auswahl an Arbeiten, die meinen Beitrag in realen Web- und Mobile-Anwendungen zeigt — von klaren Interfaces und nutzbaren Flows bis zu wartbarer Umsetzung."
+      "text": "Eine kuratierte Auswahl meiner Arbeiten.\n\nÜber den jeweiligen QR-Code kann die mobile Version der Web-App direkt auf dem Smartphone geöffnet werden."
     },
     "labels": {
       "earlierWork": "Frühere Arbeit",
@@ -99,28 +109,48 @@
     },
     "links": {
       "github": "GitHub",
+      "liveApp": "Live App",
       "liveDemo": "Live Demo"
+    },
+    "protectedAccess": {
+      "title": "Geschützte Projektdetails",
+      "description": "Einige berufliche Arbeiten können nicht vollständig öffentlich gezeigt werden. Namen, Links, Screenshots und Implementierungsdetails sind per Passwort zugänglich.",
+      "label": "Passwort",
+      "placeholder": "Passwort eingeben",
+      "submit": "Freischalten",
+      "loading": "Prüfe...",
+      "success": "Geschützte Details freigeschaltet.",
+      "errors": {
+        "invalid": "Das Passwort wurde nicht erkannt.",
+        "server": "Die geschützten Details konnten nicht geladen werden."
+      }
     },
     "entries": {
       "webApp": {
-        "title": "Professional Experience",
+        "title": "Professional Experience — Web Platform",
         "stack": "React ⋅ TypeScript ⋅ Next.js ⋅ Zustand",
-        "context": "Mitarbeit an einem <span class=\"accent-highlight\">vollständigen Web-Plattform-Makeover für eine Social-Impact-Organisation</span>, die Betroffene von digitaler Gewalt und Online-Hass unterstützt.",
-        "contribution": "Mein Beitrag umfasste ein <span class=\"accent-highlight\">komplettes Frontend-Rebuild</span>, von wiederverwendbaren Core-Components bis zu <span class=\"accent-highlight\">komplexen, mehrstufigen Formular- und Terminbuchungs-Flows</span>, inklusive API-Anbindung für verlässliche Bearbeitungsprozesse.",
-        "note": "Aufgrund von Vertraulichkeit und Produktstatus sind öffentlicher Code und detaillierte Visuals nicht verfügbar."
+        "context": "Mitarbeit an einer <span class=\"accent-highlight\">Web-Plattform im Social-Impact-Kontext</span>. Der Fokus lag auf einer nutzerfreundlichen Oberfläche, klaren Flows und verlässlicher Verarbeitung sensibler Anfragen.",
+        "contribution": "Mein Beitrag umfasste Frontend-Umsetzung auf Basis vorgegebener Designs, statische Inhalte, einen <span class=\"accent-highlight\">mehrstufigen Terminbuchungs-Wizard</span>, State Management und API-Anbindung.",
+        "note": "Projektname, Live-Link, Screenshots und weitere Details sind passwortgeschützt verfügbar."
       },
       "ynspool": {
-        "title": "YNSPOOL",
+        "title": "Professional Experience — iOS App",
         "stack": "React Native ⋅ TypeScript ⋅ Expo",
-        "context": "Mitarbeit an YNSPOOL, einer <span class=\"accent-highlight\">Mobile-App für KI-unterstützte Content-Creation</span> im DIY-Kontext.",
-        "contribution": "Mein Beitrag umfasste eine Expo-Migration, die Implementierung eines neuen AI-assisted Create-Flows, die <span class=\"accent-highlight\">Abstimmung der API-Datenstruktur mit dem Backend</span> sowie die Umsetzung von Design- und Feature-Anforderungen.",
-        "note": "Öffentlicher Source Code ist nicht verfügbar. Ausgewählte Implementierungsdetails können in persönlichen Gesprächen besprochen werden."
+        "context": "iOS-App für <span class=\"accent-highlight\">DIY-Projekte</span>: Nutzerinnen und Nutzer können Projekte entdecken, erstellen und schrittweise Bastelanleitungen konsumieren oder selbst anlegen.",
+        "contribution": "Mein Beitrag umfasste die Erweiterung der App um einen neuen Create-Flow mit zwei Wegen: manuelle Erstellung und <span class=\"accent-highlight\">AI-assisted Erstellung</span>. Dazu kamen API-Datenstruktur-Abstimmung mit dem Backend sowie Umsetzung und Bewertung von Design- und Feature-Anforderungen.",
+        "note": "Screenshots, Code-Snippets und weitere Details sind passwortgeschützt verfügbar."
+      },
+      "roomfull": {
+        "title": "RoomFull",
+        "stack": "React ⋅ Next.js ⋅ TypeScript ⋅ Express ⋅ PostgreSQL ⋅ Prisma",
+        "context": "Eigenes Produktprojekt für <span class=\"accent-highlight\">Buchungs- und Verwaltungsflows</span> rund um Räume, Verfügbarkeiten und Reservierungen.",
+        "contribution": "Der Fokus liegt auf sauberer Full-Stack-Struktur, Rollenlogik, Formularvalidierung, Datenmodellierung und einer klaren Verbindung zwischen Frontend, API und Datenbank."
       },
       "mybubble": {
         "title": "MyBubble",
         "stack": "Angular ⋅ TypeScript ⋅ Firebase",
         "context": "Ein Teamprojekt für eine <span class=\"accent-highlight\">Messaging-Plattform</span> mit Channels, Profilen, Notifications, Suche und responsivem Verhalten.",
-        "contribution": "Mein Beitrag umfasste die Implementierung der Suche, den <span class=\"accent-highlight\">Aufbau zentraler Screens und Interaktionsflüsse</span> sowie die Unterstützung bei Feature-Planung und Teamkoordination."
+        "contribution": "Mein Beitrag lag vor allem in der Suche, <span class=\"accent-highlight\">zentralen Screens und Interaktionsflüssen</span> sowie in Feature-Planung und Teamabstimmung."
       }
     }
   },
@@ -185,9 +215,9 @@
     "email": "E-Mail",
     "disclaimer": {
       "title": "Ein paar Gedanken zu Verantwortung",
-      "paragraph1": "Ich bin fest davon überzeugt, dass wir als Entwickler und auch Designer eine Pflicht haben, sicherzustellen, dass unsere Produkte keinen Schaden anrichten. Ich bemühe mich, bei den Projekten die ich angehe, hohe ethische Standards einzuhalten.",
-      "paragraph2": "Wenn Ihre Organisation in Online-Glücksspiele, Kurzzeitkredite, die Tabakindustrie oder die Monetarisierung persönlicher Daten involviert ist, bin ich möglicherweise nicht der richtige Ansprechpartner für Ihr Projekt. Aufgrund des erheblichen Energieverbrauchs, der mit Krypto-Tech verbunden ist, vermeide ich zudem Projekte in diesem Bereich. Obwohl ich keine Technologie kategorisch ablehne, kann ich zum derzeitigen Stand der Technik nicht guten Gewissens damit arbeiten. Ich würde meine Meinung eventuell überdenken, wenn sie tatsächlich CO2-neutral wird, über einfaches Offsetting hinaus. Aber bis dahin bin ich nicht die richtige Person für Projekte in den vorgenannten Bereichen.",
-      "paragraph3": "Wenn Du jedoch etwas entwickeln möchtest, das Nachhaltigkeit, Vielfalt oder allgemein Positives fördert und zum Ziel hat, lass uns überlegen, wie wir das gemeinsam umsetzen können."
+      "paragraph1": "Ich bin davon überzeugt, dass digitale Produkte Verantwortung tragen. Als Entwickler möchte ich meinen Teil dazu beitragen, dass sie verständlich, nützlich und förderlich gestaltet sind.",
+      "paragraph2": "Nicht jedes technisch machbare Produkt ist auch ein gutes Projekt. Ich möchte meine Arbeit dort einbringen, wo digitale Produkte einen positiven Effekt haben.",
+      "paragraph3": "Wenn du etwas entwickeln möchtest, das sinnvoll ist, Menschen hilft oder das Web einfach ein Stück besser macht — lass uns darüber sprechen."
     }
   },
   "contact": {
@@ -195,8 +225,8 @@
       "part1": "Sag",
       "part2": "Hey!"
     },
-    "subtitle": "Offen für professionellen Austausch.",
-    "description": "Wenn du über Frontend- und Mobile-Engineering im realen Produktkontext sprechen möchtest, melde dich gern.",
+    "subtitle": "Ein starkes Projekt beginnt oft ganz einfach:\nmit einer klaren Idee.",
+    "description": "Wenn du etwas im Kopf hast, schreib mir gern.",
     "form": {
       "name": {
         "label": "Dein Name",

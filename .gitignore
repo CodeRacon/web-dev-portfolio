@@ -44,4 +44,6 @@ Thumbs.db
 # Assets
 **/vid/
 **/fonts/
-**/img/
+
+# Server-side secrets / protected portfolio data
+src/app/protectedPortfolio.config.php

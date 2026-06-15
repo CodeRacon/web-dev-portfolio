@@ -23,12 +23,25 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/assets",
+              {
+                "glob": "sendMail.php",
+                "input": "src/app",
+                "output": "/"
+              },
+              {
+                "glob": "protectedPortfolio.php",
+                "input": "src/app",
+                "output": "/"
+              }
+            ],
             "styles": [
               "src/fonts.scss",
               "src/styles.scss",
               "src/variables.scss"
             ],
+            "allowedCommonJsDependencies": ["qrcode"],
             "scripts": []
           },
           "configurations": {
@@ -79,7 +92,7 @@
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": []
           }
