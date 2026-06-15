@@ -1,10 +1,15 @@
 <section class="hero">
   <div class="atf">
-    <h1 class="role-main" appTextShadowOffset [maxOffset]="10">
+    <h1
+      class="role-main"
+      appTextShadowOffset
+      [maxOffset]="6"
+      [outlineWidth]="2"
+    >
       {{ "hero.role.main" | translate }}
     </h1>
     <div class="role-sub-row">
-      <div class="stroke" appBoxShadowOffset [maxOffset]="6"></div>
+      <div class="stroke"></div>
       <p class="role-sub">{{ "hero.role.sub" | translate }}</p>
     </div>
 
@@ -22,18 +27,10 @@
       <button
         type="button"
         appBoxShadowOffset
-        [maxOffset]="8"
+        [maxOffset]="6"
         (click)="scrollToSection('portfolio')"
       >
         {{ "hero.cta.secondary" | translate }}
-      </button>
-      <button
-        type="button"
-        appBoxShadowOffset
-        [maxOffset]="8"
-        (click)="scrollToSection('contact')"
-      >
-        {{ "hero.cta.primary" | translate }}
       </button>
     </div>
   </div>

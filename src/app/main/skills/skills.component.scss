@@ -8,20 +8,27 @@
   align-items: center;
   padding: 0 $section-padding-960;
   margin: 2rem 0 4rem 0;
+  cursor: default;
 
   fieldset {
     width: 100%;
     border: $standard-border;
     text-align: left;
-    background-color: $background;
+    background-color: $paper;
+    padding: 0.75rem;
 
     legend {
       margin: 0 auto !important;
-      padding: 0 0.5rem;
+      padding: 0 0.75rem;
       text-align: center;
-      background-color: $background;
       @include sectionHeading;
       color: $text;
+
+      &.animated {
+        color: $paper;
+        transition: color 0.15s ease-in-out;
+      }
+
       @media (width <= 428px) {
         font-size: 4rem;
       }
@@ -50,6 +57,7 @@
         line-height: 1.55;
         white-space: pre-line;
         opacity: 0;
+        color: color-mix(in srgb, $text 88%, $deep-teal 12%);
       }
 
       .skills-groups {
@@ -61,6 +69,14 @@
 
       .skills-group {
         padding: 1rem 1.125rem;
+        border-left: 3px solid $secondary;
+        background:
+          linear-gradient(
+            90deg,
+            color-mix(in srgb, $accent 12%, $paper 8%),
+            $paper 46%
+          ),
+          $paper;
         opacity: 0;
 
         h3 {
@@ -68,7 +84,10 @@
           font-family: "Overpass", sans-serif;
           font-size: clamp(1.25rem, 0.612vw + 1.135rem, 1.625rem);
           font-weight: 700;
-          color: $accent;
+          color: $text;
+          text-shadow:
+            1px 1px 0 $primary,
+            2px 2px 0 $secondary;
           line-height: 1.25;
         }
 
@@ -95,7 +114,7 @@
               transform: translateY(-45%);
               width: 0.35rem;
               height: 0.35rem;
-              background-color: $secondary;
+              background-color: $coral;
             }
           }
         }

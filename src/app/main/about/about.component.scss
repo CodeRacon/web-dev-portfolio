@@ -30,12 +30,11 @@ $portrait-size: clamp(20rem, 24.242vw + 15.455rem, 30rem);
   }
 
   .animated {
-    color: $text;
     transition: color 0.15s ease-in-out;
 
     & ~ .about-content .text {
       span:not(:first-of-type) {
-        color: $accent;
+        color: $teal;
         transition: color 0.15s ease-in-out;
         animation: textAttention 0.325s ease-in-out;
         animation-play-state: running;
@@ -51,6 +50,10 @@ $portrait-size: clamp(20rem, 24.242vw + 15.455rem, 30rem);
     & ~ .about-content .img-box {
       opacity: 1;
     }
+  }
+
+  h1.animated {
+    color: $paper;
   }
 
   .about-content {
@@ -104,31 +107,26 @@ $portrait-size: clamp(20rem, 24.242vw + 15.455rem, 30rem);
 
       button {
         @include contactButton;
+        font-weight: 800;
+        text-transform: uppercase;
       }
     }
 
     .img-box {
-      position: relative;
       margin-top: 6rem;
-      background-image: url("../../../assets/img/me.jpeg");
+      background-image: url("../../../assets/img/me.png");
       background-size: cover;
       background-position: center;
       width: $portrait-size;
       height: $portrait-size;
       opacity: 0;
-      filter: sepia(0.0875);
+      border: 4px solid $text;
+      box-shadow:
+        6px 6px 0 0 $primary,
+        6px 6px 0 1px $text,
+        12px 12px 0 0 $secondary,
+        12px 12px 0 1px $text;
       transition: opacity 0.25s ease-in-out;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: -1rem;
-        left: -1rem;
-        width: calc(100% - 0.25rem);
-        height: calc(100% - 0.25rem);
-        outline: 4px $text solid;
-        transition: all 0.15s ease-in-out;
-      }
 
       @media (width <= 960px) {
         margin-top: 2rem;

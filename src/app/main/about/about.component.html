@@ -5,7 +5,9 @@
     [threshold]="1"
     [rootMargin]="'50% 0px -35% 0px'"
     appTextShadowOffset
-    [maxOffset]="6"
+    [activeClass]="'animated'"
+    [maxOffset]="4"
+    [outlineWidth]="2"
   >
     {{ "about.title" | translate }}
   </h1>
@@ -25,6 +27,13 @@
         {{ "about.paragraph2.middle1" | translate }}
         <span>{{ "about.paragraph2.highlight2" | translate }}</span
         >{{ "about.paragraph2.end" | translate }}
+      </p>
+      <p>
+        {{ "about.paragraph3.start" | translate }}
+        <span>{{ "about.paragraph3.highlight1" | translate }}</span>
+        {{ "about.paragraph3.middle1" | translate }}
+        <span>{{ "about.paragraph3.highlight2" | translate }}</span
+        >{{ "about.paragraph3.end" | translate }}
       </p>
       <div class="btn-box">
         <button

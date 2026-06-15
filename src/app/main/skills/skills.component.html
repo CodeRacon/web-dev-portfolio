@@ -1,8 +1,14 @@
 <section class="skills" id="skills">
   <fieldset appBoxShadowOffset [maxOffset]="6">
     <legend
+      appScrollAnimation
+      [animationClass]="'animated'"
+      [threshold]="1"
+      [rootMargin]="'0px 0px -33% 0px'"
       appTextShadowOffset
+      [activeClass]="'animated'"
       [maxOffset]="6"
+      [outlineWidth]="2"
     >
       {{ "skills.title" | translate }}
     </legend>

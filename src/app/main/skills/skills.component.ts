@@ -23,16 +23,20 @@ export class SkillsComponent {
       items: ['react', 'typescript', 'nextjs', 'reactNative'],
     },
     {
-      key: 'additional',
-      items: ['javascript', 'nodejs', 'nestjs', 'restApis', 'angular', 'firebase'],
+      key: 'frontendPractice',
+      items: ['stateManagement', 'restApis', 'featureSlicedDesign'],
+    },
+    {
+      key: 'backendData',
+      items: ['nodejs', 'express', 'nestjs', 'postgresql', 'prisma', 'firebase'],
     },
     {
       key: 'styling',
       items: ['scss', 'tailwindCss'],
     },
     {
-      key: 'expanding',
-      items: ['testing', 'architectureFundamentals', 'backendBasics', 'dataModeling'],
+      key: 'additional',
+      items: ['angular', 'vuejs', 'figma'],
     },
   ];
 }

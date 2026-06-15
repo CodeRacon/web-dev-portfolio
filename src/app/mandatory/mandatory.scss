@@ -16,6 +16,7 @@ section {
   h1 {
     width: 100%;
     @include sectionHeading;
+    color: $text;
     margin-bottom: 1rem;
 
     @media (width <= 560px) {
@@ -24,6 +25,11 @@ section {
 
     &:hover {
       color: initial;
+    }
+
+    &.animated {
+      color: $background;
+      transition: color 0.15s ease-in-out;
     }
 
     @media (width <= 520px) {
@@ -54,6 +60,10 @@ section {
   address {
     @include sectionText;
     font-style: normal;
+  }
+
+  address {
+    margin-top: 1.25rem;
   }
 
   span {
