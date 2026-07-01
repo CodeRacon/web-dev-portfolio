@@ -1,6 +1,8 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Origin: *');
+
+require_once __DIR__ . '/protectedPortfolio.lib.php';
+
+startProtectedPortfolioSession();
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
@@ -10,37 +12,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'error' => 'Invalid request method']);
-    exit;
+    sendProtectedPortfolioJson(405, ['success' => false, 'error' => 'Invalid request method']);
 }
 
-$configPath = __DIR__ . '/protectedPortfolio.config.php';
-
-if (!file_exists($configPath)) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'error' => 'Protected portfolio config missing']);
-    exit;
-}
-
-$config = require $configPath;
-$configuredPassword = normalizePassword((string) ($config['password'] ?? ''));
-$projects = $config['projects'] ?? [];
+$config = requireProtectedPortfolioConfig();
+$configuredPassword = normalizeProtectedPortfolioPassword((string) ($config['password'] ?? ''));
 $payload = json_decode(file_get_contents('php://input'), true);
-$password = normalizePassword(is_array($payload) ? (string) ($payload['password'] ?? '') : '');
+$password = normalizeProtectedPortfolioPassword(
+    is_array($payload) ? (string) ($payload['password'] ?? '') : ''
+);
+$language = normalizeProtectedPortfolioLanguage(
+    is_array($payload) ? (string) ($payload['language'] ?? '') : ''
+);
 
-if ($configuredPassword === '' || !hash_equals((string) $configuredPassword, $password)) {
-    http_response_code(401);
-    echo json_encode(['success' => false, 'error' => 'Invalid password']);
-    exit;
+$isPasswordValid = $configuredPassword !== '' && hash_equals((string) $configuredPassword, $password);
+
+if (!$isPasswordValid && !isProtectedPortfolioUnlocked()) {
+    sendProtectedPortfolioJson(401, ['success' => false, 'error' => 'Invalid password']);
 }
 
-echo json_encode([
+if ($isPasswordValid) {
+    markProtectedPortfolioUnlocked();
+}
+
+sendProtectedPortfolioJson(200, [
     'success' => true,
-    'projects' => $projects,
+    'projects' => buildProtectedPortfolioProjectsPayload($config, $language),
 ]);
-
-function normalizePassword(string $password): string
-{
-    return preg_replace('/[\s\x00-\x1F\x7F\x{200B}-\x{200D}\x{FEFF}]+/u', '', $password) ?? '';
-}
