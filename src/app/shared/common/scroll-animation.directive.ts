@@ -19,9 +19,11 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
   @Input() animationClass = 'animated';
   @Input() threshold = 0.1;
   @Input() rootMargin = '-100px 0px -100px 0px';
+  @Input() animateOnce = true;
   @Output() elementVisible = new EventEmitter<boolean>();
 
   private subscription!: Subscription;
+  private hasAnimated = false;
 
   /**
    * Constructs a new instance of the `ScrollAnimationDirective`.
@@ -42,8 +44,9 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
    * The directive uses the `ScrollObserverService` to observe the element's visibility
    * based on the provided `threshold` and `rootMargin` options. When the element becomes
    * visible, the `triggerAnimation()` method is called to add the `animationClass` to
-   * the element, triggering the animation. When the element goes out of view, the
-   * `animationClass` is removed.
+   * the element, triggering the animation. By default the animation only runs once and
+   * the class is kept afterwards so elements that start hidden do not become invisible
+   * again after leaving the viewport.
    *
    * The `elementVisible` event is emitted to notify when the element becomes visible or
    * goes out of view.
@@ -61,9 +64,19 @@ export class ScrollAnimationDirective implements OnInit, OnDestroy {
       .observe(this.el.nativeElement, options)
       .subscribe((entry) => {
         if (entry.isIntersecting) {
+          if (this.animateOnce && this.hasAnimated) {
+            this.elementVisible.emit(true);
+            return;
+          }
+
           this.triggerAnimation();
+          this.hasAnimated = true;
           this.elementVisible.emit(true);
-        } else {
+
+          if (this.animateOnce) {
+            this.subscription.unsubscribe();
+          }
+        } else if (!this.animateOnce || !this.hasAnimated) {
           this.renderer.removeClass(this.el.nativeElement, this.animationClass);
           this.elementVisible.emit(false);
         }

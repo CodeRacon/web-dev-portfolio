@@ -6,6 +6,7 @@
     "start": "ng serve",
     "dev": "ng serve",
     "build": "ng build",
+    "check:portfolio-scroll": "node scripts/check-portfolio-scroll-animation.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

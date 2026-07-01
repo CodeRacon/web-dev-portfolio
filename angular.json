@@ -34,6 +34,16 @@
                 "glob": "protectedPortfolio.php",
                 "input": "src/app",
                 "output": "/"
+              },
+              {
+                "glob": "protectedPortfolioAsset.php",
+                "input": "src/app",
+                "output": "/"
+              },
+              {
+                "glob": "protectedPortfolio.lib.php",
+                "input": "src/app",
+                "output": "/"
               }
             ],
             "styles": [
