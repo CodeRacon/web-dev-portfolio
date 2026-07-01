@@ -96,7 +96,8 @@
   "portfolio": {
     "title": "Selected Work",
     "intro": {
-      "text": "A curated selection of my work.\n\nThe QR code for each Web App opens its mobile version directly on a smartphone."
+      "text": "A curated selection of my work.",
+      "qrHint": "The QR code for each web app opens the responsive web app directly on a smartphone."
     },
     "labels": {
       "earlierWork": "Earlier Work",
@@ -105,7 +106,7 @@
     },
     "links": {
       "github": "GitHub",
-      "liveApp": "Live App",
+      "liveApp": "Live Demo",
       "liveDemo": "Live Demo"
     },
     "protectedAccess": {
@@ -125,22 +126,23 @@
       "webApp": {
         "title": "Professional Experience — Web Platform",
         "stack": "React ⋅ TypeScript ⋅ Next.js ⋅ Zustand",
-        "context": "Worked on a <span class=\"accent-highlight\">web platform in a social-impact context</span>. The focus was on a user-friendly interface, clear flows and reliable handling of sensitive requests.",
-        "contribution": "My contribution included frontend implementation based on provided designs, static content, a <span class=\"accent-highlight\">multi-step form flows and appointment-booking wizard</span>, state management and API integration.",
-        "note": "Project name, live link, screenshots and further details are available behind password protection."
+        "context": "Worked on a <span class=\"accent-highlight\">web app in a social-impact context</span> with a focus on clear user guidance, understandable support processes and handling sensitive requests.",
+        "contribution": "",
+        "note": "Project name, live link and further details are available behind password protection."
       },
       "ynspool": {
         "title": "Professional Experience — iOS App",
         "stack": "React Native ⋅ TypeScript ⋅ Expo",
-        "context": "iOS app for <span class=\"accent-highlight\">DIY projects</span>: users can discover, create and follow step-by-step craft instructions.",
-        "contribution": "My contribution included extending the app with a new creation flow offering two paths: manual creation and <span class=\"accent-highlight\">AI-assisted creation</span>. This included API data-structure alignment with backend as well as implementation and evaluation of design and feature requirements.",
+        "context": "Worked on an iOS app in the <span class=\"accent-highlight\">DIY and creator space</span> with a focus on project creation, guided flows and user-friendly content creation.",
+        "contribution": "",
         "note": "Screenshots, code snippets and further details are available behind password protection."
       },
       "roomfull": {
         "title": "RoomFull",
         "stack": "React ⋅ Next.js ⋅ TypeScript ⋅ Express ⋅ PostgreSQL ⋅ Prisma",
         "context": "Personal product project for <span class=\"accent-highlight\">booking and management flows</span> around rooms, availability and reservations.",
-        "contribution": "The focus is on clean full-stack structure, role logic, form validation, data modeling and a clear connection between frontend, API and database."
+        "contribution": "The focus is on clean full-stack structure, role logic, form validation, data modeling and a clear connection between frontend, API and database.",
+        "note": "Work in progress - coming soon"
       },
       "mybubble": {
         "title": "MyBubble",

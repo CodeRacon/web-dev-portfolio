@@ -100,7 +100,8 @@
   "portfolio": {
     "title": "Selected Work",
     "intro": {
-      "text": "Eine kuratierte Auswahl meiner Arbeiten.\n\nÜber den jeweiligen QR-Code kann die mobile Version der Web-App direkt auf dem Smartphone geöffnet werden."
+      "text": "Eine kuratierte Auswahl meiner Arbeiten.",
+      "qrHint": "Über den jeweiligen QR-Code kann die responsive Web-App direkt auf dem Smartphone geöffnet werden."
     },
     "labels": {
       "earlierWork": "Frühere Arbeit",
@@ -109,7 +110,7 @@
     },
     "links": {
       "github": "GitHub",
-      "liveApp": "Live App",
+      "liveApp": "Live Demo",
       "liveDemo": "Live Demo"
     },
     "protectedAccess": {
@@ -129,22 +130,23 @@
       "webApp": {
         "title": "Professional Experience — Web Platform",
         "stack": "React ⋅ TypeScript ⋅ Next.js ⋅ Zustand",
-        "context": "Mitarbeit an einer <span class=\"accent-highlight\">Web-Plattform im Social-Impact-Kontext</span>. Der Fokus lag auf einer nutzerfreundlichen Oberfläche, klaren Flows und verlässlicher Verarbeitung sensibler Anfragen.",
-        "contribution": "Mein Beitrag umfasste Frontend-Umsetzung auf Basis vorgegebener Designs, statische Inhalte, einen <span class=\"accent-highlight\">mehrstufigen Terminbuchungs-Wizard</span>, State Management und API-Anbindung.",
-        "note": "Projektname, Live-Link, Screenshots und weitere Details sind passwortgeschützt verfügbar."
+        "context": "Mitarbeit an einer <span class=\"accent-highlight\">Web-App im Social-Impact-Kontext</span> mit Fokus auf klare Nutzerführung, verständliche Unterstützungsprozesse und den Umgang mit sensiblen Anfragen.",
+        "contribution": "",
+        "note": "Projektname, Live-Link und weitere Details sind passwortgeschützt verfügbar."
       },
       "ynspool": {
         "title": "Professional Experience — iOS App",
         "stack": "React Native ⋅ TypeScript ⋅ Expo",
-        "context": "iOS-App für <span class=\"accent-highlight\">DIY-Projekte</span>: Nutzerinnen und Nutzer können Projekte entdecken, erstellen und schrittweise Bastelanleitungen konsumieren oder selbst anlegen.",
-        "contribution": "Mein Beitrag umfasste die Erweiterung der App um einen neuen Create-Flow mit zwei Wegen: manuelle Erstellung und <span class=\"accent-highlight\">AI-assisted Erstellung</span>. Dazu kamen API-Datenstruktur-Abstimmung mit dem Backend sowie Umsetzung und Bewertung von Design- und Feature-Anforderungen.",
+        "context": "Mitarbeit an einer iOS-App im <span class=\"accent-highlight\">DIY- und Creator-Kontext</span> mit Fokus auf Projekterstellung, geführte Abläufe und nutzerfreundliche Content-Creation.",
+        "contribution": "",
         "note": "Screenshots, Code-Snippets und weitere Details sind passwortgeschützt verfügbar."
       },
       "roomfull": {
         "title": "RoomFull",
         "stack": "React ⋅ Next.js ⋅ TypeScript ⋅ Express ⋅ PostgreSQL ⋅ Prisma",
         "context": "Eigenes Produktprojekt für <span class=\"accent-highlight\">Buchungs- und Verwaltungsflows</span> rund um Räume, Verfügbarkeiten und Reservierungen.",
-        "contribution": "Der Fokus liegt auf sauberer Full-Stack-Struktur, Rollenlogik, Formularvalidierung, Datenmodellierung und einer klaren Verbindung zwischen Frontend, API und Datenbank."
+        "contribution": "Der Fokus liegt auf sauberer Full-Stack-Struktur, Rollenlogik, Formularvalidierung, Datenmodellierung und einer klaren Verbindung zwischen Frontend, API und Datenbank.",
+        "note": "Work in progress - coming soon"
       },
       "mybubble": {
         "title": "MyBubble",
