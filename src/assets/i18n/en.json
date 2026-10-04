@@ -38,12 +38,14 @@
       "featureSlicedDesign": "Feature-Sliced Design (FSD)",
       "nodejs": "Node.js",
       "express": "Express",
-      "nestjs": "NestJS",
       "postgresql": "PostgreSQL",
       "prisma": "Prisma",
       "firebase": "Firebase",
       "scss": "SCSS",
       "tailwindCss": "Tailwind CSS",
+      "git": "Git",
+      "bitbucket": "Bitbucket",
+      "deploymentTooling": "CI/CD pipelines with GitHub Actions, Vercel, Render and Neon",
       "angular": "Angular",
       "vuejs": "Vue.js",
       "figma": "Figma"
@@ -140,9 +142,8 @@
       "roomfull": {
         "title": "RoomFull",
         "stack": "React ⋅ Next.js ⋅ TypeScript ⋅ Express ⋅ PostgreSQL ⋅ Prisma",
-        "context": "Personal product project for <span class=\"accent-highlight\">booking and management flows</span> around rooms, availability and reservations.",
-        "contribution": "The focus is on clean full-stack structure, role logic, form validation, data modeling and a clear connection between frontend, API and database.",
-        "note": "Work in progress - coming soon"
+        "context": "Full-stack coworking booking app with <span class=\"accent-highlight\">customer flows, admin management, availability checks and protected session handling</span>.",
+        "contribution": "Built with a real API, PostgreSQL data model, Prisma migrations and a <span class=\"accent-highlight\">production-like deployment pipeline</span> using GitHub Actions, Vercel, Render and Neon."
       },
       "mybubble": {
         "title": "MyBubble",
