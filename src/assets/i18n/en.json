@@ -260,7 +260,7 @@
       },
       "submit": "Send message",
       "feedback": {
-        "success": "Thank's for your message!\n\nI will get back to you in no time.",
+        "success": "Thanks for your message!\n\nI will get back to you in no time.",
         "error": "Oops, that didn't work.\n\nPlease try again later.",
         "serverError": "An error occurred.\n\nPlease try again later."
       }
