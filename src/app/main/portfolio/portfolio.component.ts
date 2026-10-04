@@ -20,7 +20,6 @@ export interface WorkEntry {
   contributionKey: string;
   noteKey?: string;
   isEarlierWork?: boolean;
-  linksEnabled?: boolean;
   links: ProjectLink[];
 }
 
@@ -154,8 +153,6 @@ export class PortfolioComponent implements OnInit, OnDestroy {
       stackKey: 'portfolio.entries.roomfull.stack',
       contextKey: 'portfolio.entries.roomfull.context',
       contributionKey: 'portfolio.entries.roomfull.contribution',
-      noteKey: 'portfolio.entries.roomfull.note',
-      linksEnabled: false,
       links: [
         {
           labelKey: 'portfolio.links.github',
@@ -233,18 +230,10 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   getTextLinks(entry: WorkEntry): ProjectLink[] {
-    if (entry.linksEnabled === false) {
-      return [];
-    }
-
     return entry.links.filter((link) => !link.showQrCode);
   }
 
   getQrLinks(entry: WorkEntry): ProjectLink[] {
-    if (entry.linksEnabled === false) {
-      return [];
-    }
-
     return entry.links.filter((link) => link.showQrCode);
   }
 
@@ -392,9 +381,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
 
   private async generatePublicLinkQrCodes(): Promise<void> {
     const qrLinks = this.selectedWork.flatMap((entry) =>
-      entry.linksEnabled === false
-        ? []
-        : entry.links.filter((link) => link.showQrCode)
+      entry.links.filter((link) => link.showQrCode)
     );
     const qrCodeEntries = await Promise.all(
       qrLinks.map(async (link) => [

@@ -28,7 +28,7 @@ export class SkillsComponent {
     },
     {
       key: 'backendData',
-      items: ['nodejs', 'express', 'nestjs', 'postgresql', 'prisma', 'firebase'],
+      items: ['nodejs', 'express', 'postgresql', 'prisma', 'firebase'],
     },
     {
       key: 'styling',
@@ -36,7 +36,14 @@ export class SkillsComponent {
     },
     {
       key: 'additional',
-      items: ['angular', 'vuejs', 'figma'],
+      items: [
+        'git',
+        'bitbucket',
+        'deploymentTooling',
+        'angular',
+        'vuejs',
+        'figma',
+      ],
     },
   ];
 }
