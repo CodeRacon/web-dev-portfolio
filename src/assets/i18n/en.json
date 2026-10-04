@@ -10,7 +10,7 @@
   },
   "skills": {
     "title": "Stack & Focus",
-    "intro": "I build web and mobile interfaces with a focus on clear UX, structured frontend logic and maintainable implementation.",
+    "intro": "I build web and mobile applications with a focus on clear product logic, maintainable structures and a clean connection between frontend, APIs and data.",
     "groups": {
       "core": {
         "title": "Core"
@@ -57,12 +57,12 @@
       "sub": "Web & Mobile"
     },
     "title": {
-      "line1": "Web and mobile applications with a focus on clean implementation, usability and design"
+      "line1": "Web and mobile applications focused on clear product logic, intuitive user journeys and reliable technical execution"
     },
     "proofLines": {
-      "line1": "Development with React, Next.js, React Native and Express",
-      "line2": "State management, API integration and backend coordination",
-      "line3": "An eye for user guidance and visual consistency"
+      "line1": "React, Next.js, React Native and TypeScript",
+      "line2": "APIs, state management, PostgreSQL and server-side logic",
+      "line3": "Structured development with coding agents, tests and CI/CD"
     },
     "cta": {
       "primary": "Get in Touch",
@@ -76,22 +76,22 @@
       "start": "",
       "highlight1": "Web and mobile developer",
       "middle1": " with a good eye for ",
-      "highlight2": "usability, visual consistency and reliable implementation",
+      "highlight2": "clear user journeys, how systems fit together and reliable delivery",
       "end": "."
     },
     "paragraph2": {
-      "start": "The focus is on ",
-      "highlight1": "clear user interfaces",
-      "middle1": ", understandable flows and frontend work that brings together ",
-      "highlight2": "product requirements, design and technical interfaces",
-      "end": "."
+      "start": "I enjoy working on applications where ",
+      "highlight1": "interfaces, data flows and business logic",
+      "middle1": " work well together. My main focus is ",
+      "highlight2": "React and TypeScript",
+      "end": "; through my own projects, I now also work across APIs, data models and server-side logic."
     },
     "paragraph3": {
-      "start": "What matters is not just delivering requirements, but ",
-      "highlight1": "thinking them through",
-      "middle1": ": from the first screen to data flows and details that improve ",
-      "highlight2": "usability and the overall look & feel",
-      "end": "."
+      "start": "I care about ",
+      "highlight1": "understanding and questioning requirements",
+      "middle1": " rather than simply working through them. I use coding agents in a structured way for ",
+      "highlight2": "analysis, implementation and review",
+      "end": " – and remain responsible for technical decisions."
     },
     "cta": "Get in touch"
   },
@@ -143,7 +143,7 @@
         "title": "RoomFull",
         "stack": "React ⋅ Next.js ⋅ TypeScript ⋅ Express ⋅ PostgreSQL ⋅ Prisma",
         "context": "Full-stack coworking booking app with <span class=\"accent-highlight\">customer flows, admin management, availability checks and protected session handling</span>.",
-        "contribution": "Built with a real API, PostgreSQL data model, Prisma migrations and a <span class=\"accent-highlight\">production-like deployment pipeline</span> using GitHub Actions, Vercel, Render and Neon."
+        "contribution": "The frontend, API, data model and deployment were built as a <span class=\"accent-highlight\">cohesive full-stack system</span> – with PostgreSQL, Prisma and automated CI/CD workflows for production deployment."
       },
       "mybubble": {
         "title": "MyBubble",

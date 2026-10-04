@@ -15,12 +15,12 @@
       "sub": "Web & Mobile"
     },
     "title": {
-      "line1": "Web- und Mobile-Anwendungen mit Fokus auf saubere Umsetzung, Usability und Design"
+      "line1": "Web- und Mobile-Anwendungen mit Fokus auf klare Produktlogik, gute Nutzerführung und verlässliche technische Umsetzung"
     },
     "proofLines": {
-      "line1": "Entwicklung mit React, Next.js, React Native und Express",
-      "line2": "State Management, API-Anbindung und Backend-Abstimmung",
-      "line3": "Blick für User Guidance und visuelle Stimmigkeit"
+      "line1": "React, Next.js, React Native und TypeScript",
+      "line2": "APIs, State Management, PostgreSQL und serverseitige Logik",
+      "line3": "Strukturierte Entwicklung mit Coding Agents, Tests und CI/CD"
     },
 
     "cta": {
@@ -32,7 +32,7 @@
 
   "skills": {
     "title": "Stack & Fokus",
-    "intro": "Ich entwickle Web- und Mobile-Interfaces mit Fokus auf klare UX, strukturierte Frontend-Logik und wartbare Umsetzung.",
+    "intro": "Ich entwickle Web- und Mobile-Anwendungen mit Fokus auf klare Produktlogik, wartbare Strukturen und eine saubere Verbindung von Frontend, API und Daten.",
     "groups": {
       "core": {
         "title": "Kern-Stack"
@@ -79,23 +79,23 @@
     "paragraph1": {
       "start": "",
       "highlight1": "Web- und Mobile-Entwickler",
-      "middle1": " mit gutem Blick für ",
-      "highlight2": "Usability, visuelle Stimmigkeit und verlässliche Umsetzung",
+      "middle1": " mit einem guten Blick für ",
+      "highlight2": "klare Nutzerführung, technische Zusammenhänge und verlässliche Umsetzung",
       "end": "."
     },
     "paragraph2": {
-      "start": "Der Fokus liegt auf ",
-      "highlight1": "klaren User Interfaces",
-      "middle1": ", nachvollziehbaren Flows und Frontend-Arbeit, die ",
-      "highlight2": "Produktanforderungen, Design und technische Schnittstellen",
-      "end": " zusammenbringt."
+      "start": "Ich arbeite gern an Anwendungen, bei denen ",
+      "highlight1": "Interface, Datenflüsse und Fachlogik",
+      "middle1": " sinnvoll zusammenspielen. Mein Schwerpunkt liegt in ",
+      "highlight2": "React und TypeScript",
+      "end": "; mit eigenen Projekten arbeite ich inzwischen auch über API, Datenmodell und serverseitige Logik hinweg."
     },
     "paragraph3": {
-      "start": "Wichtig ist dabei, Anforderungen nicht nur abzuarbeiten, sondern ",
-      "highlight1": "mitzudenken",
-      "middle1": ": vom ersten Screen über Datenflüsse bis zu Details, die ",
-      "highlight2": "Nutzung und Gesamteindruck",
-      "end": " spürbar verbessern."
+      "start": "Wichtig ist mir, Anforderungen ",
+      "highlight1": "nicht nur abzuarbeiten, sondern zu verstehen und zu hinterfragen",
+      "middle1": ". Coding Agents nutze ich dabei strukturiert als Werkzeug für ",
+      "highlight2": "Analyse, Umsetzung und Review",
+      "end": " – die Verantwortung für technische Entscheidungen bleibt bei mir."
     },
     "cta": "Kontakt aufnehmen"
   },
@@ -130,14 +130,14 @@
     },
     "entries": {
       "webApp": {
-        "title": "Professional Experience — Web Platform",
+        "title": "Berufserfahrung — Web-Plattform",
         "stack": "React ⋅ TypeScript ⋅ Next.js ⋅ Zustand",
         "context": "Mitarbeit an einer <span class=\"accent-highlight\">Web-App im Social-Impact-Kontext</span> mit Fokus auf klare Nutzerführung, verständliche Unterstützungsprozesse und den Umgang mit sensiblen Anfragen.",
         "contribution": "",
         "note": "Projektname, Live-Link und weitere Details sind passwortgeschützt verfügbar."
       },
       "ynspool": {
-        "title": "Professional Experience — iOS App",
+        "title": "Berufserfahrung — iOS-App",
         "stack": "React Native ⋅ TypeScript ⋅ Expo",
         "context": "Mitarbeit an einer iOS-App im <span class=\"accent-highlight\">DIY- und Creator-Kontext</span> mit Fokus auf Projekterstellung, geführte Abläufe und nutzerfreundliche Content-Creation.",
         "contribution": "",
@@ -147,7 +147,7 @@
         "title": "RoomFull",
         "stack": "React ⋅ Next.js ⋅ TypeScript ⋅ Express ⋅ PostgreSQL ⋅ Prisma",
         "context": "Full-Stack-Buchungs-App für Coworking mit <span class=\"accent-highlight\">Customer-Flows, Admin-Verwaltung, Verfügbarkeitsprüfungen und geschütztem Session-Handling</span>.",
-        "contribution": "Umgesetzt mit einer echten API, einem PostgreSQL-Datenmodell, Prisma-Migrationen und einer <span class=\"accent-highlight\">produktionsnahen Deployment-Pipeline</span> mit GitHub Actions, Vercel, Render und Neon."
+        "contribution": "Frontend, API, Datenmodell und Deployment wurden als <span class=\"accent-highlight\">zusammenhängendes Fullstack-System</span> umgesetzt – mit PostgreSQL, Prisma und automatisierten CI/CD-Workflows für die produktive Bereitstellung."
       },
       "mybubble": {
         "title": "MyBubble",
