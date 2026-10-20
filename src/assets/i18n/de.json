@@ -149,11 +149,11 @@
         "context": "Full-Stack-Buchungs-App für Coworking mit <span class=\"accent-highlight\">Customer-Flows, Admin-Verwaltung, Verfügbarkeitsprüfungen und geschütztem Session-Handling</span>.",
         "contribution": "Frontend, API, Datenmodell und Deployment wurden als <span class=\"accent-highlight\">zusammenhängendes Fullstack-System</span> umgesetzt – mit PostgreSQL, Prisma und automatisierten CI/CD-Workflows für die produktive Bereitstellung."
       },
-      "mybubble": {
-        "title": "MyBubble",
-        "stack": "Angular ⋅ TypeScript ⋅ Firebase",
-        "context": "Ein Teamprojekt für eine <span class=\"accent-highlight\">Messaging-Plattform</span> mit Channels, Profilen, Notifications, Suche und responsivem Verhalten.",
-        "contribution": "Mein Beitrag lag vor allem in der Suche, <span class=\"accent-highlight\">zentralen Screens und Interaktionsflüssen</span> sowie in Feature-Planung und Teamabstimmung."
+      "gitgroove": {
+        "title": "GitGroove",
+        "stack": "Vue 3 ⋅ TypeScript ⋅ Tone.js ⋅ PHP ⋅ GitHub GraphQL API",
+        "context": "Ein <span class=\"accent-highlight\">interaktives Musikstudio</span>, das die GitHub-Beitragshistorie eines Profils in Bass, Akkorde und Melodien übersetzt. Wähle einen Abschnitt des Kalenders und gestalte den Klang direkt im Browser.",
+        "contribution": "Die Entwicklung habe ich über <span class=\"accent-highlight\">Anforderungsklärung, Feature-Tickets und einen strukturierten Agentic-Coding-Workflow</span> gesteuert. Entstanden sind unter anderem teilbare Klang-Snapshots, WAV-Export und eine serverseitige GitHub-Anbindung."
       }
     }
   },
